@@ -7,13 +7,16 @@
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
+* [Two Pointer](#Two-Pointer)
+  * With Sorting, Without Sorting
 * [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
+  * Two Pointer Style 
 * [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
 * [Remove from Array](#Remove-from-Array)
   * Duplicates, requires sorting OR use HashSet
   * WhiteSpaces, Zeros, Even Numbers , does not require sorting
 * [Kadanes Algorithm](#Kadanes-Algorithm)
-  * Maximum Sum Subarray, Stocks Buy Sell,  
+  * Maximum Sum Subarray, Stocks Buy Sell
 <!--te-->
 
 ## Sorting Array
@@ -272,6 +275,8 @@ public int lengthOfLongestSubstring(String s) {
 ---
 ### Find Maximum in Sliding Window
 #### TC: O(N) , MC: O(w)
+- For each of the window create a queue
+- add the element in the queue if if next elemnt is greater
 - [Back to Top](#Table-of-contents)
 ```java
 public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
@@ -314,21 +319,286 @@ public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize
 		} else
 			return result;
 	}
-
 ```
+---
+### Sub arrays with Product Less than a Target.
+#### TC: O(N)  MC: O(N)  ,
+- Some Comments 
+- [Back to Top](#Table-of-contents)
+```java
+ public static List<List<Integer>> findSubarrays(int[] arr, int target) {
+    List<List<Integer>> result = new ArrayList<>();
+    double product = 1;
+    int left = 0;
+    for (int right = 0; right < arr.length; right++) {
+      product *= arr[right];
+      while (product >= target && left < arr.length)
+        product /= arr[left++];
+      // since the product of all numbers from left to right is less than the target therefore,
+      // all subarrays from left to right will have a product less than the target too; to avoid
+      // duplicates, we will start with a subarray containing only arr[right] and then extend it
+      List<Integer> tempList = new LinkedList<>();
+      for (int i = right; i >= left; i--) {
+        tempList.add(0, arr[i]);
+        result.add(new ArrayList<>(tempList));
+      }
+    }
+    return result;
+  }
+```
+---
+
+## Two Pointer
+### Squaring an Array
+#### TC: O(NLogN)  , MC: O(N)
+- Sort the Array, take two pointers at end populate the result[] from last index
+- [Back to Top](#Table-of-contents)
+```java
+public static int[] makeSquares(int[] arr) {
+    int[] squares = new int[arr.length];
+    int squareIndex = arr.length -1 ;
+    int left = 0, right = arr.length - 1;
+
+    while (left < right){
+      int rightSquare = arr[right] * arr[right];
+      int leftSquare = arr[left] * arr[left];
+
+      if(leftSquare > rightSquare){
+        squares[squareIndex--] = leftSquare;
+        left++;
+      }else {
+        squares[squareIndex--] = rightSquare;
+        right--;
+      }
+    }  
+    return squares;
+  }
+```
+---
+### Dutch National Flag Problem
+#### TC: O(N) , MC: O(1)
+- Take two pointers Low and High, iterate array with index i
+- If arr[i] == 0, swap i with Low, I ++ and Low ++
+- If arr[i] == 1,  I ++
+- If arr[i] == 2, swap i with High, I ++ and High ++
+- [Back to Top](#Table-of-contents)
+```java
+public static void sort(int[] arr) {
+    // all elements < low are 0 and all elements > high are 2
+    // all elements from >= low < i are 1
+    int low = 0, high = arr.length - 1;
+    for (int i = 0; i <= high;) {
+      if (arr[i] == 0) {
+        swap(arr, i, low);
+        // increment 'i' and 'low'
+        i++;
+        low++;
+      } else if (arr[i] == 1) {
+        i++;
+      } else { // the case for arr[i] == 2
+        swap(arr, i, high);
+        // decrement 'high' only, after the swap the number at index 'i' could be 0, 1 or 2
+        high--;
+      }
+    }
+  }
+```
+---
+
 ---
 
 ## Two OR Three numbers SUM
 ---
-### Some
-#### TC:  , MC:
+### Pair with Target Sum
+#### TC:O(N)  , MC:O(1)
+- Sort the array, Two pointers at start and end; 
 - [Back to Top](#Table-of-contents)
 ```java
+public static int[] search(int[] arr, int targetSum) {
+    int left = 0, right = arr.length - 1;
+    while (left < right) {
+      int currentSum = arr[left] + arr[right];
+      if (currentSum == targetSum)
+        return new int[] { left, right }; // found the pair
+
+      if (targetSum > currentSum)
+        left++; // we need a pair with a bigger sum
+      else
+        right--; // we need a pair with a smaller sum
+    }
+    return new int[] { -1, -1 };
+  }
+```
+---
+
+---
+### Triplet Sum to Zero
+#### TC: O(N^2)  , MC: O(N)
+- Sort the Array, Iterate from Start using Index
+- TargetSum: - arr[Index], Left = Index
+- Find the TargetSum in the left of Index using Two Sum Problem  
+- [Back to Top](#Table-of-contents)
+```java
+public static List<List<Integer>> searchTriplets(int[] arr) {
+    Arrays.sort(arr);
+    List<List<Integer>> triplets = new ArrayList<>();
+    for (int i = 0; i < arr.length - 2; i++) {
+      if (i > 0 && arr[i] == arr[i - 1]) // skip same element to avoid duplicate triplets
+        continue;
+      searchPair(arr, -arr[i], i + 1, triplets);
+    }
+    return triplets;
+  }
+
+  private static void searchPair(int[] arr, int targetSum, int left, List<List<Integer>> triplets) {
+    int right = arr.length - 1;
+    while (left < right) {
+      int currentSum = arr[left] + arr[right];
+      if (currentSum == targetSum) { // found the triplet
+        triplets.add(Arrays.asList(-targetSum, arr[left], arr[right]));
+        left++;
+        right--;
+        while (left < right && arr[left] == arr[left - 1])
+          left++; // skip same element to avoid duplicate triplets
+        while (left < right && arr[right] == arr[right + 1])
+          right--; // skip same element to avoid duplicate triplets
+      } else if (targetSum > currentSum)
+        left++; // we need a pair with a bigger sum
+      else
+        right--; // we need a pair with a smaller sum
+    }
+  }
+
+```
+---
+
+
+
+---
+
+---
+### Triplet Sum Close to Target
+#### TC: O(N^2) , MC: O(N)
+- Sort the Array, Iterate at Index
+- Left is start Pointer and Right is Tail Pointer 
+- Record the targetDiff at each Index and compare with smallestDiff
+- [Back to Top](#Table-of-contents)
+```java
+public static int searchTriplet(int[] arr, int targetSum) {
+    if (arr == null || arr.length < 3)
+      throw new IllegalArgumentException();
+
+    Arrays.sort(arr);
+    int smallestDifference = Integer.MAX_VALUE;
+    for (int i = 0; i < arr.length - 2; i++) {
+      int left = i + 1, right = arr.length - 1;
+      while (left < right) {
+        // comparing the sum of three numbers to the 'targetSum' can cause overflow
+        // so, we will try to find a target difference
+        int targetDiff = targetSum - arr[i] - arr[left] - arr[right];
+        if (targetDiff == 0) //  we've found a triplet with an exact sum
+          return targetSum; // return sum of all the numbers
+
+        // the second part of the above 'if' is to handle the smallest sum when we have more than one solution
+        if (Math.abs(targetDiff) < Math.abs(smallestDifference)
+            || (Math.abs(targetDiff) == Math.abs(smallestDifference) && targetDiff > smallestDifference))
+          smallestDifference = targetDiff; // save the closest and the biggest difference  
+
+        if (targetDiff > 0)
+          left++; // we need a triplet with a bigger sum
+        else
+          right--; // we need a triplet with a smaller sum
+      }
+    }
+    return targetSum - smallestDifference;
+  }
+```
+---
+---
+### Quadruple Sum to Target
+#### TC: O(N^3) , MC: O(N)
+- Multi loop
+- [Back to Top](#Table-of-contents)
+```java
+public static List<List<Integer>> searchQuadruplets(int[] arr, int target) {
+    Arrays.sort(arr);
+    List<List<Integer>> quadruplets = new ArrayList<>();
+    for (int i = 0; i < arr.length - 3; i++) {
+      if (i > 0 && arr[i] == arr[i - 1]) // skip same element to avoid duplicate quadruplets
+        continue;
+      for (int j = i + 1; j < arr.length - 2; j++) {
+        if (j > i + 1 && arr[j] == arr[j - 1]) // skip same element to avoid duplicate quadruplets
+          continue;
+        searchPairs(arr, target, i, j, quadruplets);
+      }
+    }
+    return quadruplets;
+  }
+
+  private static void searchPairs(int[] arr, int targetSum, int first, int second, List<List<Integer>> quadruplets) {
+    int left = second + 1;
+    int right = arr.length - 1;
+    while (left < right) {
+      int sum = arr[first] + arr[second] + arr[left] + arr[right];
+      if (sum == targetSum) { // found the quadruplet
+        quadruplets.add(Arrays.asList(arr[first], arr[second], arr[left], arr[right]));
+        left++;
+        right--;
+        while (left < right && arr[left] == arr[left - 1])
+          left++; // skip same element to avoid duplicate quadruplets
+        while (left < right && arr[right] == arr[right + 1])
+          right--; // skip same element to avoid duplicate quadruplets
+      } else if (sum < targetSum)
+        left++; // we need a pair with a bigger sum
+      else
+        right--; // we need a pair with a smaller sum
+    }
+  }
 
 ```
 ---
 
 ---
+### Minimum Window that should be Sorted 
+#### TC: O(N)  , MC: O(1)
+- Scan from Left and Right and find pointer that are out of order.
+- Find the Min and Max value in that Range
+- Include the numbers that are greater than MIN and smaller than MAX
+- [Back to Top](#Table-of-contents)
+```java
+public static int sort(int[] arr) {
+    int low = 0, high = arr.length - 1;
+    // find the first number out of sorting order from the beginning
+    while (low < arr.length - 1 && arr[low] <= arr[low + 1])
+      low++;
+
+    if (low == arr.length - 1) // if the array is sorted
+      return 0;
+
+    // find the first number out of sorting order from the end
+    while (high > 0 && arr[high] >= arr[high - 1])
+      high--;
+
+    // find the maximum and minimum of the subarray
+    int subarrayMax = Integer.MIN_VALUE, subarrayMin = Integer.MAX_VALUE;
+    for (int k = low; k <= high; k++) {
+      subarrayMax = Math.max(subarrayMax, arr[k]);
+      subarrayMin = Math.min(subarrayMin, arr[k]);
+    }
+
+    // extend the subarray to include any number which is bigger than the minimum of the subarray 
+    while (low > 0 && arr[low - 1] > subarrayMin)
+      low--;
+    // extend the subarray to include any number which is smaller than the maximum of the subarray
+    while (high < arr.length - 1 && arr[high + 1] < subarrayMax)
+      high++;
+
+    return high - low + 1;
+  }
+```
+---
+
+
 
 ## Nth Smallest OR Largest
 ### Some
@@ -378,14 +648,28 @@ static void moveZerosToLeft(int[] nums) {
 ---
 ---
 
-### Some
-#### TC:  , MC:
-- 
+--- 
+### Remove Duplicates
+#### TC: O(NLogN)  , MC: O(1)
+- Sort the Array, compute adjacent elements, update the nextNonDuplicateIndex  
 - [Back to Top](#Table-of-contents)
 ```java
+public static int remove(int[] arr) {
+    Arrays.sort(arr);
+    int nextNonDuplicate = 1; // index of the next non-duplicate element
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[nextNonDuplicate - 1] != arr[i]) {
+        arr[nextNonDuplicate] = arr[i];
+        nextNonDuplicate++;
+      }
+    }
 
+    return nextNonDuplicate;
+  }
 ```
 ---
+---
+
 ## Kadanes Algorithm
 ### Best Time to Buy and Sell Stock
 #### TC: O(N)  , MC: O(1)
@@ -436,14 +720,7 @@ public int maxSubArray(int[] nums) {
 ```
 ---
 
-### Some
-#### TC:  , MC:
-- 
-- [Back to Top](#Table-of-contents)
-```java
 
-```
----
 
 
 
