@@ -1,8 +1,9 @@
 # Arrays
 
-Table of contents
+## Table of contents
 =================
 <!--ts-->
+* [Table of contents](#Table-of-contents) 
 * [Sliding Window](#Sliding-Window)
 * [Sorting Array](#Sorting-Array)
 <!--te-->
@@ -18,6 +19,7 @@ Table of contents
 ---
 ### Maximum Sum Subarray of Size K
 #### TC: O(N)  , MC: O(1), Easy
+[Table of contents](#Table-of-contents)
 - Hint: Have a start pointer, and a currentWindowSum
   - Iterate through the array
     - Keep adding to the currentSum
@@ -600,6 +602,7 @@ class MergeIntervals {
 #### TC: O(n^2)  , MC: O(1)
 - Worst case id Array is reverse sorted
 - Best case is alreday sorted
+  [Table of contents](#Table-of-contents)
 ```
 void sort(int arr[])
     {
