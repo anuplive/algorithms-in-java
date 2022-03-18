@@ -4,6 +4,8 @@
 =================
 <!--ts-->
 * [Sorting Array](#Sorting-Array)
+
+
 * [Searching](#Searching)
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
@@ -24,6 +26,19 @@
 * [Permutations](Permutations)
 
 <!--te-->
+
+## Handy Checks
+[Back to Top](#Table-of-contents)
+```java
+int[] arr = new int[2];
+Arrays.sort(arr);
+Arrays.sort(arr, ((a, b) -> a -b));
+Arrays.fill(arr, -1);
+List<Integer> list = Arrays.asList(arr)
+Integer[] arrInt = list.toArray(new Integer[list.size()]);
+int [] arr = new int[]{1,2,3};
+```
+
 
 ## Sorting Array
 ---
@@ -166,6 +181,39 @@ static int partition(int[] arr, int low, int high) {
 ```
 ---
 
+---
+### Custom Sorting Frequency Sort
+#### TC: O(N∗logN), MC: O(N)
+- Characters will be sorted by their frequency 
+- [Back to Top](#Table-of-contents)
+```java
+public static String sortCharacterByFrequency(String str) {
+    // find the frequency of each character
+    Map<Character, Integer> characterFrequencyMap = new HashMap<>();
+    for (char chr : str.toCharArray()) {
+      characterFrequencyMap.put(chr, characterFrequencyMap.getOrDefault(chr, 0) + 1);
+    }
+
+    PriorityQueue<Map.Entry<Character, Integer>> maxHeap = new PriorityQueue<Map.Entry<Character, Integer>>(
+        (e1, e2) -> e2.getValue() - e1.getValue());
+
+    // add all characters to the max heap
+    maxHeap.addAll(characterFrequencyMap.entrySet());
+
+    // build a string, appending the most occurring characters first
+    StringBuilder sortedString = new StringBuilder(str.length());
+    while (!maxHeap.isEmpty()) {
+      Map.Entry<Character, Integer> entry = maxHeap.poll();
+      for (int i = 0; i < entry.getValue(); i++)
+        sortedString.append(entry.getKey());
+    }
+    return sortedString.toString();
+  }
+```
+---
+
+
+
 ## Searching
 ---
 ### Binary Search on a Sorted Array
@@ -275,6 +323,74 @@ static int binarySearchRotated(int[] arr, int key) {
     }
     return -1;
   } 
+```
+---
+---
+### Search a 2D Matrix
+#### TC: O(logmn)  , MC: O(1)
+- The 2D array is represented as pivotted array
+- 
+- [Back to Top](#Table-of-contents)
+```java
+public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length;
+        if (m == 0)
+            return false;
+        int n = matrix[0].length;
+
+        // binary search
+        int left = 0, right = m * n - 1;
+        int pivotIdx, pivotElement;
+        while (left <= right) {
+            pivotIdx = (left + right) / 2;
+            pivotElement = matrix[pivotIdx / n][pivotIdx % n];
+            if (target == pivotElement)
+                return true;
+            else {
+                if (target < pivotElement)
+                    right = pivotIdx - 1;
+                else
+                    left = pivotIdx + 1;
+            }
+        }
+        return false;
+    }
+
+```
+---
+
+---
+### Order-agnostic Binary Search
+#### TC: O(logN) , MC: O(1)
+- Some comment
+- [Back to Top](#Table-of-contents)
+```java
+public static int search(int[] arr, int key) {
+    int start = 0, end = arr.length - 1;
+    boolean isAscending = arr[start] < arr[end];
+    while (start <= end) {
+      // calculate the middle of the current range
+      int mid = start + (end - start) / 2;
+
+      if (key == arr[mid])
+        return mid;
+
+      if (isAscending) { // ascending order
+        if (key < arr[mid]) {
+          end = mid - 1; // the 'key' can be in the first half
+        } else { // key > arr[mid]
+          start = mid + 1; // the 'key' can be in the second half
+        }
+      } else { // descending order        
+        if (key > arr[mid]) {
+          end = mid - 1; // the 'key' can be in the first half
+        } else { // key < arr[mid]
+          start = mid + 1; // the 'key' can be in the second half
+        }
+      }
+    }
+    return -1; // element not found
+  }
 ```
 ---
 
@@ -1163,7 +1279,7 @@ class MinimumMeetingRooms {
 ## Permutations
 ---
 ### Generate all the possible permutations
-#### TC:  , MC:
+#### TC: O(N∗N!), MC: O(N∗N!)
 - Some comment
 - [Back to Top](#Table-of-contents)
 ```java
