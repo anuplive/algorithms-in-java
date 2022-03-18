@@ -4,19 +4,25 @@
 =================
 <!--ts-->
 * [Sorting Array](#Sorting-Array)
+* [Searching](#Searching)
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
 * [Two Pointer](#Two-Pointer)
   * With Sorting, Without Sorting
-* [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
-  * Two Pointer Style 
-* [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
 * [Remove from Array](#Remove-from-Array)
   * Duplicates, requires sorting OR use HashSet
   * WhiteSpaces, Zeros, Even Numbers , does not require sorting
+* [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
+  * Two Pointer Style 
+* [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
 * [Kadanes Algorithm](#Kadanes-Algorithm)
   * Maximum Sum Subarray, Stocks Buy Sell
+* [Left Scan Right Scan](Left-Scan-Right-Scan)
+* [Two Arrays](#Two-Arrays)
+* [Merging Intervals](#Merging-Intervals)
+* [Permutations](Permutations)
+
 <!--te-->
 
 ## Sorting Array
@@ -159,6 +165,121 @@ static int partition(int[] arr, int low, int high) {
   } 
 ```
 ---
+
+## Searching
+---
+### Binary Search on a Sorted Array
+#### TC:  , MC:
+- Recursive
+- [Back to Top](#Table-of-contents)
+```java
+static int binarySearchRec(int[] a, int key, int low, int high) {
+    if (low > high) {
+      return -1;
+    }
+
+    int mid = low + ((high - low) / 2);
+    if (a[mid] == key) {
+      return mid;
+    } else if (key < a[mid]) {
+      return binarySearchRec(a, key, low, mid - 1);
+    } else {
+      return binarySearchRec(a, key, mid + 1, high);
+    }
+  }
+
+```
+---
+- Iterative
+- [Back to Top](#Table-of-contents)
+```java
+static int binSearch(int[] A, int key) {
+    int low = 0;
+    int high = A.length -1;
+   while (low <= high) {
+      int mid = low + ((high - low) / 2);
+      if (A[mid] == key) {
+        return mid;
+      }
+      if (key < A[mid]) {
+        high = mid - 1;
+      }
+      else {
+        low = mid + 1;
+      }
+    }
+    return -1;
+  }
+```
+---
+---
+### Searching in a Rotated Sorted Array
+#### TC: O(log n) , MC:  O(1)
+- Recursive , we have two sorted arrays search in them
+- [Back to Top](#Table-of-contents)
+```java
+public static int binarySearch(int[] arr, int start, int end, int key) {
+    // assuming all the keys are unique.
+    if (start > end) {
+      return -1;
+    }
+   int mid = start + (end - start) / 2;
+    if (arr[mid] == key) {
+       return mid;
+    }
+    if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start]) {
+      return binarySearch(arr, start, mid - 1, key);
+    }
+    else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end]) {
+      return binarySearch(arr, mid + 1, end, key);
+    }
+    else if (arr[end] <= arr[mid]) {
+      return binarySearch(arr, mid + 1, end, key);
+    }
+    else if (arr[start] >= arr[mid]) {
+      return binarySearch(arr, start, mid - 1, key);
+    }
+    return -1;
+  }
+
+  static int binarySearchRotated(int[] arr, int key) {
+    return binarySearch(arr, 0, arr.length - 1, key);
+  }
+```
+---
+- Iterative, we have two sorted arrays search in them
+- [Back to Top](#Table-of-contents)
+```java
+static int binarySearchRotated(int[] arr, int key) {
+    int start = 0;
+    int mid = 0;
+    int end = arr.length - 1;
+    if (start > end)
+      return -1;
+    while (start <= end){
+      mid = start + (end - start) / 2; 
+     if (arr[mid] == key)
+        return mid;
+      if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start])
+        end = mid - 1;
+      else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end])
+        start = mid + 1;
+      else if (arr[start] <= arr[mid] && arr[mid] <= arr[end] && key > arr[end])
+      start = mid + 1; 
+      else if (arr[end] <= arr[mid])
+        start = mid + 1;  
+      else if (arr[start] >= arr[mid])
+        end = mid - 1;
+      else
+        return -1;  
+    }
+    return -1;
+  } 
+```
+---
+
+
+
 
 ## Sliding Window
 ---
@@ -406,6 +527,32 @@ public static void sort(int[] arr) {
 ---
 
 ---
+### Rearrange Sorted Array in Max/Min Form
+#### TC:  , MC:
+- Keep switching between large and small pointer for every iteration
+- [Back to Top](#Table-of-contents)
+```java
+public static void maxMin(int[] arr) {
+    //Create a result array to hold re-arranged version of given arr
+    int[] result = new int[arr.length];
+    int pointerSmall = 0;     //PointerSmall => Start of arr
+    int pointerLarge = arr.length - 1;   //PointerLarge => End of arr
+
+    //Flag which will help in switching between two pointers
+    boolean switchPointer = true;
+
+    for (int i = 0; i < arr.length; i++) {
+      if (switchPointer)
+        result[i] = arr[pointerLarge--]; // copy large values
+      else 
+        result[i] = arr[pointerSmall++]; // copy small values
+      switchPointer = !switchPointer;   // switching between samll and large
+    } 
+
+```
+---
+
+---
 
 ## Two OR Three numbers SUM
 ---
@@ -598,18 +745,11 @@ public static int sort(int[] arr) {
 ```
 ---
 
-
-
-## Nth Smallest OR Largest
-### Some
-#### TC:  , MC:
-- [Back to Top](#Table-of-contents)
-```java
-
-```
----
-
 ## Remove from Array
+- Two pointer, nextNegativeNumber = 0 ; scanner will run from 0 to N-1
+- Remove Duplicates, WhiteSpaces, etc
+- End the string wit '\0'
+
 ---
 ### Move All Zeros to the Beginning of the Array
 #### TC: O(n) , MC: O(1)
@@ -651,7 +791,7 @@ static void moveZerosToLeft(int[] nums) {
 --- 
 ### Remove Duplicates
 #### TC: O(NLogN)  , MC: O(1)
-- Sort the Array, compute adjacent elements, update the nextNonDuplicateIndex  
+- Sort the Array, compute adjacent elements, update the nextNonDuplicateIndex
 - [Back to Top](#Table-of-contents)
 ```java
 public static int remove(int[] arr) {
@@ -669,6 +809,89 @@ public static int remove(int[] arr) {
 ```
 ---
 ---
+### Re-arrange Positive & Negative Values
+#### TC:  , MC:
+- Some comment
+- [Back to Top](#Table-of-contents)
+```java
+public static void reArrange(int[] arr) 
+  {
+    int nextNegativeNumber = 0; 
+    for (int scanner = 0; scanner < arr.length; scanner++) { 
+      if (arr[scanner] < 0) {   // if negative number found
+        if (scanner != nextNegativeNumber) { 
+          int temp = arr[scanner];
+          arr[scanner] = arr[nextNegativeNumber]; // swapping with leftmost positive
+          arr[nextNegativeNumber] = temp;
+        }
+        nextNegativeNumber++; 
+      } 
+    } 
+  } //end of reArrange()
+```
+---
+
+
+
+---
+
+## Nth Smallest OR Largest
+---
+---
+### Find Second Maximum Value in an Array
+#### TC: O(N) , MC: O(1)
+- min = Integer.min(a[0], a[1]) and max = Integer.max(a[0], a[1])
+- [Back to Top](#Table-of-contents)
+```java
+public static int findSecondMaximum(int[] arr) {
+    int max = Integer.MIN_VALUE;;
+    int secondmax = Integer.MIN_VALUE;
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        secondmax = max;
+        max = arr[i];
+      }
+      else if (arr[i] > secondmax && arr[i] != max) {
+        secondmax = arr[i];
+      }
+    }//end of for-loop
+
+    return secondmax;
+  } 
+
+```
+---
+
+---
+### Kth Largest Element in an Array
+#### TC: O(Nlogk) , MC: O(K)
+- PriorityQueue<E> pq = new PriorityQueue(int initialCapacity, Comparator<E> comparator);
+- [Back to Top](#Table-of-contents)
+```java
+public int findKthLargest(int[] nums, int k) {
+        // init heap 'the smallest element first'
+        PriorityQueue<Integer> heap =
+            new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
+
+        // keep k largest elements in the heap
+        for (int n: nums) {
+          heap.add(n);
+          if (heap.size() > k)
+            heap.poll();
+        }
+
+        // output
+        return heap.poll();        
+  }
+}
+
+```
+---
+
+
+
+
+
 
 ## Kadanes Algorithm
 ### Best Time to Buy and Sell Stock
@@ -720,133 +943,14 @@ public int maxSubArray(int[] nums) {
 ```
 ---
 
-
-
-
-
-
-## DONE
+---
+## Left Scan Right Scan
+---
+### Array of Products of All Elements Except Itself
+#### TC: O(N) , MC: O(1)
+- Some comment
 - [Back to Top](#Table-of-contents)
-
-## 
-
-
-
-
-
-
-
-
-
-
-
----
-### Find Maximum in Sliding Window 
-## TODO
-- If an element is smaller than the one at the back of the queue,
-  - then the index of this element is pushed in and becomes the new back.
-- If the current element is larger,
-  - then
-    - 1.The back of the queue is popped repeatedly until we can find a higher value
-    - 2.Then we’ll push the index of the current element in as the new back.
-
-- The deque stores elements in decreasing order. The front of the deque contains the index for the maximum value in that particular window
-- We will repeat the following steps each time our window moves to the right:
-  - Remove the indices of all elements from the back of the deque, which are smaller than or equal to the current element.
-  - If the element no longer falls in the current window, remove the index of the element from the front.
-  - Push the current element index at the back of the window.
-  - The index of the current maximum element is at the front.
-
-```
-public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
-    ArrayDeque<Integer> result = new ArrayDeque<>(); // ArrayDeque for storing values
-    Deque<Integer> list = new LinkedList<Integer>(); // creating a linked list
-    if(arr.length > 0) {
-      if( arr.length < windowSize) // Invalid State
-        return result;
-      for(int i = 0; i < windowSize; ++i) {
-        // Removing last smallest element index
-        while(!list.isEmpty() && arr[i] >= arr[list.peekLast()]){
-          list.removeLast();      
-        }
-        // Adding newly picked element index
-        list.addLast(i);
-      }
-      for(int i = windowSize; i < arr.length; ++i) {
-        result.add(arr[list.peek()]);
-
-        // Removing all the elements indexes which are not in the current window
-        while((!list.isEmpty()) && list.peek() <= i-windowSize)
-          list.removeFirst();
-      // Removing the smaller elements indexes which are not required
-        while((!list.isEmpty()) && arr[i] >= arr[list.peekLast()])
-          list.removeLast();
-        // Adding newly picked element index
-        list.addLast(i);
-      }
-      // Adding the max number of the current window in the result
-      result.add(arr[list.peek()]);
-      return result; // returning result
-    }
-    else 
-      return result;
-  }
-```
----
-
-
-Two Dimensional Arrays#
-
-### Merge Two Sorted Arrays
-```// Merge arr1 and arr2 into resultantArray
-  public static int[] mergeArrays(int[] arr1, int[] arr2) { 
-    int s1 = arr1.length;
-    int s2 = arr2.length;
-    int[] resultantArray = new int[s1+s2];
-    int i = 0, j = 0, k = 0;
-
-    while (i < s1 && j < s2) { 
-      if (arr1[i] < arr2[j]) 
-        resultantArray[k++] = arr1[i++]; 
-      else
-        resultantArray[k++] = arr2[j++]; 
-    } 
-    while (i < s1) 
-      resultantArray[k++] = arr1[i++]; 
-    while (j < s2) 
-      resultantArray[k++] = arr2[j++]; 
-    return resultantArray;
-  }
-  ```
----
-### Find Two Numbers that Add up to "n"
-- Sorting the array
-```
-public static int[] findSum(int[] arr, int n) {
-    Arrays.sort(arr);   
-    int Pointer1 = 0;    //Pointer 1 -> At Start
-    int Pointer2 = arr.length - 1;   //Pointer 2 -> At End
-    int[] result = new int[2];
-    int sum = 0;
-    while (Pointer1 != Pointer2) {
-      sum = arr[Pointer1] + arr[Pointer2];  //Calulate Sum of Pointer 1 and 2
-      if (sum < n) 
-        Pointer1++;  //if sum is less than given value => Move Pointer 1 to Right
-      else if (sum > n) 
-        Pointer2--; 
-      else {
-        result[0] = arr[Pointer1];
-        result[1] = arr[Pointer2];
-        return result; // containing 2 number 
-      }
-    }
-    return arr; 
-  } 
-```
----
-### Array of Products of All Elements Except Itself 
-- Scan from Left and Right  
-```
+```java
 public static int[] findProduct(int arr[])  
   { 
     int n = arr.length;
@@ -874,337 +978,17 @@ public static int[] findProduct(int arr[])
     }
     return result; 
   } 
-```
----
-### First Non-Repeating Integer in an Array
-- Use a HashMap, below is an ArrayBased solution
-```
-public static int findFirstUnique(int[] arr) {
-    //Inside Inner Loop Check Each index of outerLoop If it's repeated in array
-    //If it's not repeated then return this as first unique Integer
-    boolean isRepeated = false;
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr.length; j++) {
-        if (arr[i] == arr[j] && i != j) {
-          isRepeated = true;
-          break;
-        }
-      } //end of InnerLoop
-      if (isRepeated == false) {
-        return arr[i];
-      }
-      else {
-        isRepeated = false;
-      }
-    } //end of OuterLoop
-    return - 1;
-  }
-```
----
-### Find Second Maximum Value in an Array
-- min = Integer.min(a[0], a[1]) and max = Integer.max(a[0], a[1])
-```
-public static int findSecondMaximum(int[] arr) {
-    int max = Integer.MIN_VALUE;;
-    int secondmax = Integer.MIN_VALUE;
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] > max) {
-        secondmax = max;
-        max = arr[i];
-      }
-      else if (arr[i] > secondmax && arr[i] != max) {
-        secondmax = arr[i];
-      }
-    }//end of for-loop
-
-    return secondmax;
-  } 
-```
----
-### Right Rotate the Array by One Index
-- a[i] = a[i-1]  and a[0] = a[lastElement]
-```
-  public static void rotateArray(int[] arr) {
- int lastElement = arr[arr.length - 1];
-    for (int i = arr.length - 1; i > 0; i--) {
-      arr[i] = arr[i - 1];
-    }
-
-    arr[0] = lastElement;
-  }  
-```
----
-### Re-arrange Positive & Negative Values
-- Two pointer, nextNegativeNumber = 0 ; scanner will run from 0 to N-1
-- Remove Duplicates, WhiteSpaces, etc
-- End the string wit '\0'
-```
-public static void reArrange(int[] arr) 
-  {
-    int nextNegativeNumber = 0; 
-    for (int scanner = 0; scanner < arr.length; scanner++) { 
-      if (arr[scanner] < 0) {   // if negative number found
-        if (scanner != nextNegativeNumber) { 
-          int temp = arr[scanner];
-          arr[scanner] = arr[nextNegativeNumber]; // swapping with leftmost positive
-          arr[nextNegativeNumber] = temp;
-        }
-        nextNegativeNumber++; 
-      } 
-    } 
-  } //end of reArrange()
-```
-
----
-### Move All Zeros to the Beginning of the Array
-- Start from the last index , copy the elements that are required  
-```
-static void moveZerosToLeft(int[] A) {
-    int nextNonZeroIndex = A.length -1 ;
-    for (int runner = A.length -1 ; runner >= 0 ; runner --){
-      if (A[runner] != 0){
-          A[nextNonZeroIndex--] = A[runner];
-      }
-  }
- while (nextNonZeroIndex >=0){
-    A[nextNonZeroIndex--] = 0;
-  }
-  }
-```
----
-### Rearrange Sorted Array in Max/Min Form
-- Keep switching between large and small pointer for every iteration
-```
-public static void maxMin(int[] arr) {
-    //Create a result array to hold re-arranged version of given arr
-    int[] result = new int[arr.length];
-    int pointerSmall = 0;     //PointerSmall => Start of arr
-    int pointerLarge = arr.length - 1;   //PointerLarge => End of arr
-
-    //Flag which will help in switching between two pointers
-    boolean switchPointer = true;
-
-    for (int i = 0; i < arr.length; i++) {
-      if (switchPointer)
-        result[i] = arr[pointerLarge--]; // copy large values
-      else 
-        result[i] = arr[pointerSmall++]; // copy small values
-      switchPointer = !switchPointer;   // switching between samll and large
-    } 
-```
----
-### Find the Sum of Maximum Sum Subarray
-- Kadane Algo , localMax = a[0];
-- localMax = MAX(a[i], LocalMax + a[i])
-  - for i = 1 to N-1 
-- GlobalMax = MAX(GlobalMax, localMax)
-```
-static int maxSubArraySum(int a[], int size)
-    {
-    int max_so_far = a[0];
-    int curr_max = a[0];
- 
-    for (int i = 1; i < size; i++)
-    {
-           curr_max = Math.max(a[i], curr_max+a[i]);
-        max_so_far = Math.max(max_so_far, curr_max);
-    }
-    return max_so_far;
-    }
-```
----
----
-### Best time to Buy and Sell Stocks
-- Get the Global min(current(i), min)
-- Get the Global maxprofit( maxProfit, a[i] - min)
 
 ```
-  public int maxProfit(int[] prices) {
-        
-        int maxProfit = Integer.MIN_VALUE; 
-        int minPrice = Integer.MAX_VALUE; 
-        
-        
-        for(int i = 0; i < prices.length; i ++)
-        {
-            minPrice = Integer.min(minPrice, prices[i]);
-            maxProfit = Integer.max(maxProfit, prices[i] - minPrice);
-            
-        }
-        
-        return maxProfit;
-        
-    }
-```
-
-
-## Search
-### Binary Search on a Sorted Array
-- Recursive
-```
-static int binarySearchRec(int[] a, int key, int low, int high) {
-    if (low > high) {
-      return -1;
-    }
-
-    int mid = low + ((high - low) / 2);
-    if (a[mid] == key) {
-      return mid;
-    } else if (key < a[mid]) {
-      return binarySearchRec(a, key, low, mid - 1);
-    } else {
-      return binarySearchRec(a, key, mid + 1, high);
-    }
-  }
-```
-- Iterative
-```
-static int binSearch(int[] A, int key) {
-    int low = 0;
-    int high = A.length -1;
-   while (low <= high) {
-      int mid = low + ((high - low) / 2);
-      if (A[mid] == key) {
-        return mid;
-      }
-      if (key < A[mid]) {
-        high = mid - 1;
-      }
-      else {
-        low = mid + 1;
-      }
-    }
-    return -1;
-  }
-```
-
----
-### Search a Rotated Array
-#### TC: O(log n) , MC:  O(1)
-- Recursive , we have two sorted arrays search in them 
-```
-public static int binarySearch(int[] arr, int start, int end, int key) {
-    // assuming all the keys are unique.
-    if (start > end) {
-      return -1;
-    }
-   int mid = start + (end - start) / 2;
-    if (arr[mid] == key) {
-       return mid;
-    }
-    if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start]) {
-      return binarySearch(arr, start, mid - 1, key);
-    }
-    else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end]) {
-      return binarySearch(arr, mid + 1, end, key);
-    }
-    else if (arr[end] <= arr[mid]) {
-      return binarySearch(arr, mid + 1, end, key);
-    }
-    else if (arr[start] >= arr[mid]) {
-      return binarySearch(arr, start, mid - 1, key);
-    }
-    return -1;
-  }
-
-  static int binarySearchRotated(int[] arr, int key) {
-    return binarySearch(arr, 0, arr.length - 1, key);
-  } 
-```
----
-### Search in Rotated Sorted Array 
-#### TC: O(log n) , MC:  O(1)
-- Iterative
-```
-static int binarySearchRotated(int[] arr, int key) {
-    int start = 0;
-    int mid = 0;
-    int end = arr.length - 1;
-    if (start > end)
-      return -1;
-    while (start <= end){
-      mid = start + (end - start) / 2; 
-     if (arr[mid] == key)
-        return mid;
-      if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start])
-        end = mid - 1;
-      else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end])
-        start = mid + 1;
-      else if (arr[start] <= arr[mid] && arr[mid] <= arr[end] && key > arr[end])
-      start = mid + 1; 
-      else if (arr[end] <= arr[mid])
-        start = mid + 1;  
-      else if (arr[start] >= arr[mid])
-        end = mid - 1;
-      else
-        return -1;  
-    }
-    return -1;
-  } 
-```
----
----
-### Find Low/High Index of a Key in a Sorted Array
-#### TC: O(N logN) , MC: O(1)
-- Do not compare on the key
-  - if key > arr[mid]
-    - then low = mid + 1
-  -else high = mid -1
-- At the end low Will point the lower bound
-```
-static int findLowIndex (List<Integer> arr, int key) {
-    int low = 0;
-    int high = arr.size() - 1;
-    int mid = high / 2;
-    while (low <= high) {
-      int midElem = arr.get(mid);
-      if (midElem < key) {
-        low = mid + 1;
-      }
-      else {
-      high = mid - 1;
-      }
-      mid = low + (high - low) / 2;
-    }
-    if (low < arr.size() && arr.get(low) == key) {
-      return low;
-    }
-    return -1;
-  }
- ```
-``` 
-static int findHighIndex(List<Integer> arr, int key) {
-    int low = 0;
-    int high = arr.size() - 1;
-    int mid = high / 2;
-    while (low <= high) {
-      int midElem = arr.get(mid);
-      if (midElem <= key) {
-        low = mid + 1;
-      }
-      else {
-        high = mid - 1;
-      }
-      mid = low + (high - low) / 2;
-    }
-    if(high == -1){
-      return high;
-    }
-    if (high < arr.size() && arr.get(high) == key) {
-      return high;
-    }
-    return -1;
-  }  
-```
----
-## Two Arrays  
-
 ---
 
-### Find the Smallest Common Number
-#### TC: O(NlogN) , MC: O(1)
-- some
-```
+## Two Arrays
+---
+### Find the Smallest Common Number in Sorted Arrays 
+#### TC:  , MC:
+- If Arrays are not Sorted Sort them 
+- [Back to Top](#Table-of-contents)
+```java
 static Integer findLeastCommonNumber(int[] arr1, int[] arr2, int[] arr3) {
     int i = 0, j = 0, k = 0;
 
@@ -1232,17 +1016,18 @@ static Integer findLeastCommonNumber(int[] arr1, int[] arr2, int[] arr3) {
     }
     return -1;
   } 
-```
-## Merging Arrays 
 
+```
 ---
 
+## Merging Intervals
+---
 ### Merge an Array With Overlapping Intervals
-#### TC: O(n)  , MC: O(n)
+#### TC:  , MC:
 - Hint: Sort the intervals and Initialize the interval with first entry.
 - Compare a[i-1].end with a[i] start
-  
-```
+- [Back to Top](#Table-of-contents)
+```java
 class Pair {
 	public int first;
 	public int second;
@@ -1282,150 +1067,152 @@ class MergeIntervals {
 
 		return result;
 ```
-	}
 ---
-### Smallest Subarray With a Greater Sum
-#### TC: O(N) , MC: O(1) ,  Easy
-- Have a start , currentWindow and minLength
-  - while currentWindow >= Target
-    - check min(minLength, end - start + 1)
-  - Return minLength
-```
-public static int findMinSubArray(int S, int[] arr) {
-    int start = 0; 
-    int minWindowLength = Integer.MAX_VALUE;
-    int currentWindowSum = 0;
-    for (int end = 0; end < arr.length; end ++ ){
-      currentWindowSum += arr[end];
-      while( currentWindowSum >= S){
-        minWindowLength = Integer.min(minWindowLength, end - start + 1);
-        currentWindowSum -= arr[start];
-        start ++;
+---
+### Conflicting Appointments
+#### TC: O (NLogN)  , MC: O(N)
+- sort the intervals by start time
+- [Back to Top](#Table-of-contents)
+```java
+class Interval {
+  int start;
+  int end;
+
+  public Interval(int start, int end) {
+    this.start = start;
+    this.end = end;
+  }
+};
+
+class ConflictingAppointments {
+
+  public static boolean canAttendAllAppointments(Interval[] intervals) {
+    // sort the intervals by start time
+    Arrays.sort(intervals, (a, b) -> Integer.compare(a.start, b.start));
+
+    // find any overlapping appointment
+    for (int i = 1; i < intervals.length; i++) {
+      if (intervals[i].start < intervals[i - 1].end) {
+        // please note the comparison above, it is "<" and not "<="
+        // while merging we needed "<=" comparison, as we will be merging the two
+        // intervals having condition "intervals[i].start == intervals[i - 1].end" but
+        // such intervals don't represent conflicting appointments as one starts right
+        // after the other
+        return false;
       }
     }
-    return (minWindowLength == Integer.MAX_VALUE) ? -1 : minWindowLength;
-  } 
+    return true;
+  }
 ```
 ---
-
-## Left Right Pointer
-  - While loops are better for such problems where pointers should be
-      incremented conditionally. 
-
 ---
+### Minimum Meeting Rooms
+#### TC:  , MC:
+- Sort using Comparator, then call iterator over the List
+- [Back to Top](#Table-of-contents)
+```java
+class Meeting {
+  int start;
+  int end;
 
-### Square a sorted Array
-#### TC: O(N)  , MC: O (N), Easy
-- Initialize the two pointers at start and end and move towards the center.
-  - While loops are better for such problems 
-```
-public static int[] makeSquares(int[] arr) {
-    int[] squares = new int[arr.length];
-    int squareIndex = arr.length -1 ;
-    int left = 0, right = arr.length - 1;
+  public Meeting(int start, int end) {
+    this.start = start;
+    this.end = end;
+  }
+};
 
-    while (left < right){
-      int rightSquare = arr[right] * arr[right];
-      int leftSquare = arr[left] * arr[left];
+class MinimumMeetingRooms {
 
-      if(leftSquare > rightSquare){
-        squares[squareIndex--] = leftSquare;
-        left++;
-      }else {
-        squares[squareIndex--] = rightSquare;
-        right--;
+  public static int findMinimumMeetingRooms(List<Meeting> meetings) {
+
+    Collections.sort(meetings, (a, b) -> Integer.compare(a.start, b.start));
+    Iterator<Meeting> itr = meetings.iterator();
+    int rooms = 1;
+    Meeting m = itr.next();
+    int start = m.start;
+    int end = m.end;
+    int prevEnd = m.end;
+
+    while(itr.hasNext()){
+      Meeting meet =  itr.next();
+      int s = meet.start;
+      int e = meet.end;
+
+      if (s < end ){
+        if (rooms > 1){
+            if (s < prevEnd)
+              rooms += 1;
+            else   
+              rooms += 1;
+        }      
+        prevEnd = Math.min(end, e );
+        end = Math.max(end, e );
       }
+      else {
+        start = s;
+        prevEnd = Math.min(end, e);
+        end = e;
+      }
+
+      return rooms;  
+
     }  
-    return squares;
-  } 
-```
----
-### Some
-#### TC:  , MC:
-- some
-```
-some 
 ```
 ---
 
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
+## Permutations
 ---
-### Some
+### Generate all the possible permutations
 #### TC:  , MC:
-- some
-```
-some 
+- Some comment
+- [Back to Top](#Table-of-contents)
+```java
+public class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return result;
+        }
+        perm(result, nums, 0, nums.length - 1);
+        return result;
+    }
+
+    public void perm(List<List<Integer>> result, int[] nums, int start, int end) {
+        if (start >= end) {
+            List<Integer> list = new ArrayList<>();
+            for (int num : nums) {
+                list.add(num);
+            }
+            result.add(list);
+        } else {
+            for (int i = start; i <= end; i++) {
+                swap(nums, start, i);
+                perm(result, nums, start + 1, end);
+                swap(nums, start, i);
+            }
+        }
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+}
+
 ```
 ---
 
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
+
+
+
+
+
+
+## DONE
+- [Back to Top](#Table-of-contents)
 ---
 
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
-
-### Some
-#### TC:  , MC:
-- some
-```
-some 
-```
----
 
 
 ### Find the subsets that add to a number in an Array
