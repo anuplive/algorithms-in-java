@@ -3,16 +3,156 @@
 ## Table of contents
 =================
 <!--ts-->
-* [Sliding Window](#Sliding-Window)
 * [Sorting Array](#Sorting-Array)
+* [Sliding Window](#Sliding-Window)
+  * Finding Substrings with limits on distinct characters.
+  * Find Max in sliding windows 
+* [Two OR Three numbers SUM](#Two OR Three numbers SUM)
+* [Nth Smallest OR Largest](#Nth Smallest OR Largest)
+* [Remove from Array](#Remove-from-Array)
 <!--te-->
 
 
-### Find the subsets that add to a number in an Array 
-[Video Link](https://www.youtube.com/watch?v=nqlNzOcnCfs)
-- Use recursion and trees
+## Sorting Array
+---
+### Insertion Sort
+#### TC: O(n^2)  , MC: O(1)
+- Worst case id Array is reverse sorted
+- Best case is alreday sorted
+- [Back to Top](#Table-of-contents)
+```java
+void sort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            /* Move elements of arr[0..i-1], that are greater than key, to one position ahead
+               of their current position */
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    } 
+```
+---
 
+### Merge Sort
+#### TC: O(NlogN) , MC: O(N)
+- Split the array in the mid till start < end
+- Then keep merging the array using 
+- - [Back to Top](#Table-of-contents)
+```java
+public int[] sortArray(int[] nums) {
+     mergesort(nums, 0, nums.length-1);
+     return nums;
+    }
+    public void mergesort(int[] nums, int start, int end){
+        if(start < end){
+            int mid = (start + end) / 2;
+            mergesort(nums, start, mid);
+            mergesort(nums, mid+1, end);
+            merge(nums, start, mid, end);
+        }
+    }
+    
+    public void merge(int[] nums, int start, int mid, int end){
+    int i= start;
+    int j= mid+1;
+    int[] temp = new int[end-start+1];
+    int k=0; 
+    while( i <= mid && j<= end)
+    {
+        if (nums[i] < nums[j])
+            temp[k++] = nums[i++];
+        else
+            temp[k++] = nums[j++];
+    }
+    while (i <= mid) { temp[k++] = nums[i++]; } //copy remaining elements
+    while (j <= end) { temp[k++] = nums[j++]; } //copy remaining elements
+    for (int pointer = start; pointer <= end; pointer++){
+        nums[pointer] = temp[pointer-start];
+    }
+  }
+```
+---
+### Quicksort Algorithm
+#### TC: O(NlogN)  , MC: O(logN)
+- Recursive Algo has three parts
+  - partition: divides the array at pivot
+  - quickSortRec: Recursively calls the Quick Sort
+  - quickSort: Initializes the algo
+- [Back to Top](#Table-of-contents)
+```java
+static int partition(int[] arr, int low, int high) {
+		// Initializing pivot's index to low
+		int pivotValue = arr[low];
+		int i = low;
+		int j = high;
+		// Loop till i pointer crosses j pointer
+		while (i < j) {
+			// Increment the 'i' pointer till it finds an element greater than pivot
+			while (i <= high && arr[i] <= pivotValue)
+				i++;
+			// Decrement the 'j' pointer till it finds an element less than pivot
+			while (arr[j] > pivotValue)
+				j--;
+			// Swap the numbers on 'i' and 'j'
+			if (i < j) {
+				// swap arr[i] and arr[j]
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+		// Swap pivot element with element on 'j' pointer.
+		arr[low] = arr[j];
+		arr[j] = pivotValue;
+		// return the pivot index
+		return j;
+	}
+	// Recursive function implementing QuickSort
+	static void quickSortRec(int[] arr, int low, int high) {
+		if (high > low) {
+			// pivot_index is the partitioning index
+			int pivotIndex = partition(arr, low, high);
 
+			// Sort elements before partition
+			quickSortRec(arr, low, pivotIndex - 1);
+
+			// Sort elements after partition
+			quickSortRec(arr, pivotIndex + 1, high);
+		}
+	}
+	static void quickSort(int[] arr) {
+		quickSortRec(arr, 0, arr.length - 1);
+	} 
+```
+---
+### Cyclic Sort
+#### TC:O(N)  , MC: O(1) ,Easy
+- Iterate from i = 0
+  - increment i only if a[i] == i + 1
+  - else keep swap( a[i], a[a[i] -1])
+- [Back to Top](#Table-of-contents)
+```java
+  public static void sort(int[] nums) {
+    // TODO: Write your code here
+   int i = 0; 
+   while(i < nums.length){
+     if (nums[i]!= i + 1){
+       int temp = nums[nums[i]-1];
+       nums[nums[i] -1] = nums[i];
+       nums[i] = temp;
+     }else{
+       i ++;
+     }
+   }
+  } 
+```
+---
 
 ## Sliding Window
 ---
@@ -24,7 +164,7 @@
     - Keep adding to the currentSum
       - If the iterator value > Size K , then currentSum -= array[start++]
     - compare the currentSum with globalMax Sum 
-```
+```java
  public static int findMaxSumSubArray(int k, int[] arr) {
     // TODO: Write your code here
     int start = 0;
@@ -41,6 +181,175 @@
     return (maxWindowSum == Integer.MIN_VALUE)? -1 : maxWindowSum;
   }
 ```
+
+---
+### Smallest Subarray With a Sum greater than Target 
+#### TC:  , MC:
+- [Back to Top](#Table-of-contents)
+```java
+public static int findMinSubArray(int S, int[] arr) {
+
+        int start = 0;
+        int minWindowLength = Integer.MAX_VALUE;
+        int currentWindowSum = 0;
+
+        for (int end = 0; end < arr.length; end ++ ){
+        currentWindowSum += arr[end];
+
+        while( currentWindowSum >= S){
+        minWindowLength = Integer.min(minWindowLength, end - start + 1);
+        currentWindowSum -= arr[start];
+        start ++;
+        }
+        }
+        return (minWindowLength == Integer.MAX_VALUE) ? -1 : minWindowLength;
+        }
+
+
+```
+---
+### Longest Substring with maximum K Distinct Characters
+#### TC: O(N) , MC: O(N)
+- [Back to Top](#Table-of-contents)
+```java
+public static int findLength(String str, int k) {
+    if (str == null || str.length() == 0)
+      throw new IllegalArgumentException();
+
+    int windowStart = 0, maxLength = 0;
+    Map<Character, Integer> charFrequencyMap = new HashMap<>();
+    // in the following loop we'll try to extend the range [windowStart, windowEnd]
+    for (int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
+      char rightChar = str.charAt(windowEnd);
+      charFrequencyMap.put(rightChar, charFrequencyMap.getOrDefault(rightChar, 0) + 1);
+      // shrink the sliding window, until we are left with 'k' distinct characters in the frequency map
+      while (charFrequencyMap.size() > k) {
+        char leftChar = str.charAt(windowStart);
+        charFrequencyMap.put(leftChar, charFrequencyMap.get(leftChar) - 1);
+        if (charFrequencyMap.get(leftChar) == 0) {
+          charFrequencyMap.remove(leftChar);
+        }
+        windowStart++; // shrink the window
+      }
+      maxLength = Math.max(maxLength, windowEnd - windowStart + 1); // remember the maximum length so far
+    }
+
+    return maxLength;
+  }
+
+
+```
+---
+### Longest Substring with Distinct Characters
+#### TC: O(N) , MC: O(K)
+- [Back to Top](#Table-of-contents)
+```java
+public int lengthOfLongestSubstring(String s) {
+        
+        char[] arr = s.toCharArray();
+        HashSet<Character> charSet = new HashSet<Character>();
+        int windowStart = 0;
+        int maxLength = Integer.MIN_VALUE;
+        
+        for (int end = 0; end < arr.length; end ++){
+                char rightChar = arr[end];
+                while (charSet.contains(rightChar))
+                {
+                    charSet.remove(arr[windowStart]);
+                    windowStart += 1;
+                } 
+                
+                charSet.add(rightChar);
+                maxLength = Integer.max(maxLength, end - windowStart + 1 );
+                } 
+        
+        return ( maxLength == Integer.MIN_VALUE) ? 0 : maxLength;
+}
+```
+---
+### Find Maximum in Sliding Window
+#### TC: O(N) , MC: O(w)
+- [Back to Top](#Table-of-contents)
+```java
+public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
+		ArrayDeque<Integer> result = new ArrayDeque<>(); // ArrayDeque for storing values
+		Deque<Integer> list = new ArrayDeque<Integer>(); // creating a linked list
+
+		if (arr.length > 0) {
+			// If window_size is greater than the array size,
+			// set the window_size to nums.size()
+			if (arr.length < windowSize)
+				windowSize = arr.length;
+			for (int i = 0; i < windowSize; ++i) {
+				// Removing last smallest element index
+				while (!list.isEmpty() && arr[i] >= arr[list.peekLast()]) {
+					list.removeLast();
+				}
+
+				// Adding newly picked element index
+				list.addLast(i);
+			}
+
+			for (int i = windowSize; i < arr.length; ++i) {
+				result.add(arr[list.peek()]);
+
+				// Removing all the elements indexes which are not in the current window
+				while ((!list.isEmpty()) && list.peek() <= i - windowSize)
+					list.removeFirst();
+
+				// Removing the smaller elements indexes which are not required
+				while ((!list.isEmpty()) && arr[i] >= arr[list.peekLast()])
+					list.removeLast();
+
+				// Adding newly picked element index
+				list.addLast(i);
+			}
+
+			// Adding the max number of the current window in the result
+			result.add(arr[list.peek()]);
+			return result; // returning result
+		} else
+			return result;
+	}
+
+```
+---
+
+## Two OR Three numbers SUM
+---
+### Some
+#### TC:  , MC:
+- [Back to Top](#Table-of-contents)
+```java
+
+```
+---
+
+---
+
+## Nth Smallest OR Largest
+### Some
+#### TC:  , MC:
+- [Back to Top](#Table-of-contents)
+```java
+
+```
+---
+
+## Remove from Array
+### Some
+#### TC:  , MC:
+- [Back to Top](#Table-of-contents)
+```java
+
+```
+---
+
+## DONE
+- [Back to Top](#Table-of-contents)
+
+## 
+
 
 
 
@@ -595,143 +904,6 @@ class MergeIntervals {
 ```
 	}
 ---
-## Sorting Array  
----
-### Insertion Sort 
-#### TC: O(n^2)  , MC: O(1)
-- Worst case id Array is reverse sorted
-- Best case is alreday sorted
-- [Back to Top](#Table-of-contents)
-```
-void sort(int arr[])
-    {
-        int n = arr.length;
-        for (int i = 1; i < n; ++i) {
-            int key = arr[i];
-            int j = i - 1;
-            /* Move elements of arr[0..i-1], that are greater than key, to one position ahead
-               of their current position */
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
-        }
-    } 
-```
----
-
-### Merge Sort
-#### TC: O(NlogN) , MC: O(N)
-- some
-```java
-public int[] sortArray(int[] nums) {
-     mergesort(nums, 0, nums.length-1);
-     return nums;
-    }
-    public void mergesort(int[] nums, int start, int end){
-        if(start < end){
-            int mid = (start + end) / 2;
-            mergesort(nums, start, mid);
-            mergesort(nums, mid+1, end);
-            merge(nums, start, mid, end);
-        }
-    }
-    
-    public void merge(int[] nums, int start, int mid, int end){
-    int i= start;
-    int j= mid+1;
-    int[] temp = new int[end-start+1];
-    int k=0; 
-    while( i <= mid && j<= end)
-    {
-        if (nums[i] < nums[j])
-            temp[k++] = nums[i++];
-        else
-            temp[k++] = nums[j++];
-    }
-    while (i <= mid) { temp[k++] = nums[i++]; } //copy remaining elements
-    while (j <= end) { temp[k++] = nums[j++]; } //copy remaining elements
-    for (int pointer = start; pointer <= end; pointer++){
-        nums[pointer] = temp[pointer-start];
-    }
-  }
-```
----
-### Quicksort Algorithm
-#### TC: O(NlogN)  , MC: O(logN)
-- Recursive Algo has three parts
-  - partition: divides the array at pivot
-  - quickSortRec: Recursively calls the Quick Sort
-  - quickSort: Initializes the algo
-```java
-static int partition(int[] arr, int low, int high) {
-		// Initializing pivot's index to low
-		int pivotValue = arr[low];
-		int i = low;
-		int j = high;
-		// Loop till i pointer crosses j pointer
-		while (i < j) {
-			// Increment the 'i' pointer till it finds an element greater than pivot
-			while (i <= high && arr[i] <= pivotValue)
-				i++;
-			// Decrement the 'j' pointer till it finds an element less than pivot
-			while (arr[j] > pivotValue)
-				j--;
-			// Swap the numbers on 'i' and 'j'
-			if (i < j) {
-				// swap arr[i] and arr[j]
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-		// Swap pivot element with element on 'j' pointer.
-		arr[low] = arr[j];
-		arr[j] = pivotValue;
-		// return the pivot index
-		return j;
-	}
-	// Recursive function implementing QuickSort
-	static void quickSortRec(int[] arr, int low, int high) {
-		if (high > low) {
-			// pivot_index is the partitioning index
-			int pivotIndex = partition(arr, low, high);
-
-			// Sort elements before partition
-			quickSortRec(arr, low, pivotIndex - 1);
-
-			// Sort elements after partition
-			quickSortRec(arr, pivotIndex + 1, high);
-		}
-	}
-	static void quickSort(int[] arr) {
-		quickSortRec(arr, 0, arr.length - 1);
-	} 
-```
----
-
-### Cyclic Sort
-#### TC:O(N)  , MC: O(1) ,Easy 
-- Iterate from i = 0
-  - increment i only if a[i] == i + 1
-  - else keep swap( a[i], a[a[i] -1]) 
-```
-  public static void sort(int[] nums) {
-    // TODO: Write your code here
-   int i = 0; 
-   while(i < nums.length){
-     if (nums[i]!= i + 1){
-       int temp = nums[nums[i]-1];
-       nums[nums[i] -1] = nums[i];
-       nums[i] = temp;
-     }else{
-       i ++;
-     }
-   }
-  } 
-```
----
 ### Smallest Subarray With a Greater Sum
 #### TC: O(N) , MC: O(1) ,  Easy
 - Have a start , currentWindow and minLength
@@ -803,7 +975,6 @@ some
 some 
 ```
 ---
-
 ### Some
 #### TC:  , MC:
 - some
@@ -877,6 +1048,9 @@ some
 ---
 
 
+### Find the subsets that add to a number in an Array
+[Video Link](https://www.youtube.com/watch?v=nqlNzOcnCfs)
+- Use recursion and trees
   
   
   
