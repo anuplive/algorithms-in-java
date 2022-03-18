@@ -7,7 +7,7 @@
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
-* [Two OR Three numbers SUM](#Two OR Three numbers SUM)
+* [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
 * [Nth Smallest OR Largest](#Nth Smallest OR Largest)
 * [Remove from Array](#Remove-from-Array)
 <!--te-->
