@@ -8,10 +8,13 @@
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
 * [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
-* [Nth Smallest OR Largest](#Nth Smallest OR Largest)
+* [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
 * [Remove from Array](#Remove-from-Array)
+  * Duplicates, requires sorting OR use HashSet
+  * WhiteSpaces, Zeros, Even Numbers , does not require sorting
+* [Kadanes Algorithm](#Kadanes-Algorithm)
+  * Maximum Sum Subarray, Stocks Buy Sell,  
 <!--te-->
-
 
 ## Sorting Array
 ---
@@ -337,13 +340,113 @@ public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize
 ---
 
 ## Remove from Array
+---
+### Move All Zeros to the Beginning of the Array
+#### TC: O(n) , MC: O(1)
+- Read backwards, No Sorting required
+- [Back to Top](#Table-of-contents)
+```java
+static void moveZerosToLeft(int[] nums) {
+		// Return if the list is empty
+		if (nums.length < 1) {
+			return;
+		}
+		int numsLength = nums.length;
+
+		// Initializing the two markers
+		int nextNonZeroNumber = numsLength - 1;
+		int readIndex = numsLength - 1;
+
+		// Iterate read_index marker till the index is less than or equal to 0
+		while (readIndex >= 0) {
+			// Replacing write_index value with read_index value
+			// This step moves the next non-zero value "back" in the array,
+			// making space for the zero at the head of the array
+			if (nums[readIndex] != 0) {
+				nums[nextNonZeroNumber] = nums[readIndex];
+                nextNonZeroNumber--;
+			}
+			readIndex--;
+		}
+		// Replacing initial values with zeroes
+		while (nextNonZeroNumber >= 0) {
+			nums[nextNonZeroNumber] = 0;
+            nextNonZeroNumber--;
+		}
+	}
+```
+---
+---
+
 ### Some
 #### TC:  , MC:
+- 
 - [Back to Top](#Table-of-contents)
 ```java
 
 ```
 ---
+## Kadanes Algorithm
+### Best Time to Buy and Sell Stock
+#### TC: O(N)  , MC: O(1)
+- Find the Global Minima , use that to compute MaxProfit.  
+- [Back to Top](#Table-of-contents)
+```java
+public int maxProfit(int[] prices) {
+        
+        int maxProfit = Integer.MIN_VALUE; 
+        int minPrice = Integer.MAX_VALUE; 
+        
+        
+        for(int i = 0; i < prices.length; i ++)
+        {
+            minPrice = Integer.min(minPrice, prices[i]);
+            maxProfit = Integer.max(maxProfit, prices[i] - minPrice);
+            
+        }
+        
+        return maxProfit;
+        
+    }
+
+```
+---
+### Maximum Subarray Kadane
+#### TC: O(N) , MC: O(1)
+- Maintain GlobalMaxSum and LocalRunningSum
+- LocalRunningSum = max(LocalRunningSum + a[i], a[i])
+- [Back to Top](#Table-of-contents)
+```java
+public int maxSubArray(int[] nums) {
+        // Initialize our variables using the first element.
+        int currentSubarray = nums[0];
+        int maxSubarray = nums[0];
+        
+        // Start with the 2nd element since we already used the first one.
+        for (int i = 1; i < nums.length; i++) {
+            int num = nums[i];
+            // If current_subarray is negative, throw it away. Otherwise, keep adding to it.
+            currentSubarray = Math.max(num, currentSubarray + num);
+            maxSubarray = Math.max(maxSubarray, currentSubarray);
+        }
+        
+        return maxSubarray;
+    }
+
+```
+---
+
+### Some
+#### TC:  , MC:
+- 
+- [Back to Top](#Table-of-contents)
+```java
+
+```
+---
+
+
+
 
 ## DONE
 - [Back to Top](#Table-of-contents)
