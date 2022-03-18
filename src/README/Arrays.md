@@ -596,13 +596,73 @@ class MergeIntervals {
 ---
 ## Sorting Array  
 ---
-### Sort an Array Using Quicksort Algorithm
+### Insertion Sort 
+#### TC: O(n^2)  , MC: O(1)
+- Worst case id Array is reverse sorted
+- Best case is alreday sorted
+```
+void sort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            /* Move elements of arr[0..i-1], that are greater than key, to one position ahead
+               of their current position */
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    } 
+```
+---
+
+### Merge Sort
+#### TC: O(NlogN) , MC: O(N)
+- some
+```java
+public int[] sortArray(int[] nums) {
+     mergesort(nums, 0, nums.length-1);
+     return nums;
+    }
+    public void mergesort(int[] nums, int start, int end){
+        if(start < end){
+            int mid = (start + end) / 2;
+            mergesort(nums, start, mid);
+            mergesort(nums, mid+1, end);
+            merge(nums, start, mid, end);
+        }
+    }
+    
+    public void merge(int[] nums, int start, int mid, int end){
+    int i= start;
+    int j= mid+1;
+    int[] temp = new int[end-start+1];
+    int k=0; 
+    while( i <= mid && j<= end)
+    {
+        if (nums[i] < nums[j])
+            temp[k++] = nums[i++];
+        else
+            temp[k++] = nums[j++];
+    }
+    while (i <= mid) { temp[k++] = nums[i++]; } //copy remaining elements
+    while (j <= end) { temp[k++] = nums[j++]; } //copy remaining elements
+    for (int pointer = start; pointer <= end; pointer++){
+        nums[pointer] = temp[pointer-start];
+    }
+  }
+```
+---
+### Quicksort Algorithm
 #### TC: O(NlogN)  , MC: O(logN)
 - Recursive Algo has three parts
   - partition: divides the array at pivot
   - quickSortRec: Recursively calls the Quick Sort
   - quickSort: Initializes the algo
-```
+```java
 static int partition(int[] arr, int low, int high) {
 		// Initializing pivot's index to low
 		int pivotValue = arr[low];
