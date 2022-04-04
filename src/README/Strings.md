@@ -9,8 +9,6 @@ Table of contents
   * Has both sub sequence and substring problems
 * [Palindrome](#Palindrome)
   * * Has both sub sequence and substring problems
-* [Two Pointer](#Two_Pointer)
-* [Removing Elements](#Removing_Elements)
 * [Permutations](#Permutations)
 * [Sorting](#Sorting)
 <!--te-->
@@ -90,8 +88,6 @@ static void removeDuplicates(char[] str){
 
 ```
 ---
-
-
 ## Substring Use Cases
 ---
 ### Dictionary Word Break Problem
@@ -130,18 +126,20 @@ public static boolean canSegmentString(String inputString, Set<String> dictionar
 ---
 ### Longest Common Substring
 #### TC: O(m*n) , MC: O(n)
+- [Video](https://www.youtube.com/watch?v=Lj90FqNCIJE&t=1623s)
+- [Playlist](https://www.youtube.com/c/JavaAidTutorials/playlists)
 - Note this is not SUB Sequence !!
 - This solution is with memoization
 - Top Down Approach
 - [Back to Top](#Table-of-contents)
 ```java
-public int findLCSLength(String s1, String s2) {
+public int findLCSubStringLength(String s1, String s2) {
         int maxLength = Math.min(s1.length(), s2.length());
         Integer[][][] dp = new Integer[s1.length()][s2.length()][maxLength];
         return findLCSLengthRecursive(dp, s1, s2, 0, 0, 0);
         }
 
-private int findLCSLengthRecursive(Integer[][][] dp, String s1, String s2, int i1, int i2, int count) {
+private int findLCSubStringLengthRecursive(Integer[][][] dp, String s1, String s2, int i1, int i2, int count) {
         if(i1 == s1.length() || i2 == s2.length())
         return count;
 
@@ -161,7 +159,7 @@ private int findLCSLengthRecursive(Integer[][][] dp, String s1, String s2, int i
 ---
 - Bottom up Approach
 ```java
- public int findLCSLength(String s1, String s2) {
+ public int findLCSubStringLength(String s1, String s2) {
     int[][] dp = new int[s1.length()+1][s2.length()+1];
     int maxLength = 0;
     for(int i=1; i <= s1.length(); i++) {
@@ -176,7 +174,6 @@ private int findLCSLengthRecursive(Integer[][][] dp, String s1, String s2, int i
   }
 
 ```
-
 ---
 
 ---
@@ -441,8 +438,6 @@ public int findCPS(String st) {
 
 ```
 ---
-
-
 ## Permutations
 ---
 ### String Permutations by changing case
