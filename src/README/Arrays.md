@@ -3,6 +3,8 @@
 ## Table of contents
 =================
 <!--ts-->
+
+* [Conversions](#Conversions)
 * [Sorting Array](#Sorting-Array)
 
 
@@ -23,7 +25,9 @@
 * [Left Scan Right Scan](Left-Scan-Right-Scan)
 * [Two Arrays](#Two-Arrays)
 * [Merging Intervals](#Merging-Intervals)
-* [Permutations](Permutations)
+* [Permutations](#Permutations)
+* [Mathematical](#Mathematical)
+  * prime numbers, int to hex , string to int etc 
 
 <!--te-->
 
@@ -39,6 +43,19 @@ Integer[] arrInt = list.toArray(new Integer[list.size()]);
 int [] arr = new int[]{1,2,3};
 ```
 
+
+
+## Conversions
+- [Back to Top](#Table-of-contents)
+```java
+Integer.parseInt(s) // String to int
+Integer.valueOf(s) // String to Integer
+String.valueOf(int) // Integer to String
+new String(char []) // charArray to String
+List to Array -> list.toArray(new String[list.size()]);
+Array to List -> Arrays.asList(arr)
+[array to list]: List<String> list = Arrays.asList(arr); //also  for example: Arrays.asList("first", "second");
+```
 
 ## Sorting Array
 ---
@@ -68,6 +85,9 @@ void sort(int arr[])
 
 ### Merge Sort
 #### TC: O(NlogN) , MC: O(N)
+#### Best Case Time Complexity: O(n*log n)
+#### Worst Case Time Complexity: O(n*log n)
+####  Average Time Complexity: O(n*log n)
 - Split the array in the mid till start < end
 - Then keep merging the array using 
 - - [Back to Top](#Table-of-contents)
@@ -394,9 +414,6 @@ public static int search(int[] arr, int key) {
 ```
 ---
 
-
-
-
 ## Sliding Window
 ---
 ### Maximum Sum Subarray of Size K
@@ -620,25 +637,33 @@ public static int[] makeSquares(int[] arr) {
 - If arr[i] == 2, swap i with High, I ++ and High ++
 - [Back to Top](#Table-of-contents)
 ```java
-public static void sort(int[] arr) {
-    // all elements < low are 0 and all elements > high are 2
-    // all elements from >= low < i are 1
-    int low = 0, high = arr.length - 1;
-    for (int i = 0; i <= high;) {
-      if (arr[i] == 0) {
-        swap(arr, i, low);
-        // increment 'i' and 'low'
-        i++;
-        low++;
-      } else if (arr[i] == 1) {
-        i++;
-      } else { // the case for arr[i] == 2
-        swap(arr, i, high);
-        // decrement 'high' only, after the swap the number at index 'i' could be 0, 1 or 2
-        high--;
-      }
-    }
-  }
+public void sortColors(int[] nums) {
+
+    // Set the boundries for the 0 and the 2, and start iterating from 0 
+        int nextZeroIndex = 0 , nextTwoIndex = nums.length -1;
+        int curr = 0;
+
+        int temp = 0;
+    // Boundry condition     
+        while(curr <= nextTwoIndex){
+    
+    // If ==0 then swap increment both Indices        
+        if (nums[curr] == 0){
+        temp = nums[nextZeroIndex];
+        nums[nextZeroIndex ++] = nums[curr];
+        nums[curr++] = temp;
+        
+    // If ==2 decrement only the right Indices
+        }else if (nums[curr] == 2){
+        temp = nums[nextTwoIndex];
+        nums[nextTwoIndex --] = nums[curr];
+        nums[curr] = temp;
+
+        }else {
+        curr ++;
+        }
+        }
+ }
 ```
 ---
 
@@ -1003,9 +1028,6 @@ public int findKthLargest(int[] nums, int k) {
 
 ```
 ---
-
-
-
 
 
 
