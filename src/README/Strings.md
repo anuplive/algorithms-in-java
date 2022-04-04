@@ -126,8 +126,8 @@ public static boolean canSegmentString(String inputString, Set<String> dictionar
 ---
 ### Longest Common Substring
 #### TC: O(m*n) , MC: O(n)
-- [Video](https://www.youtube.com/watch?v=Lj90FqNCIJE&t=1623s)
-- [Playlist](https://www.youtube.com/c/JavaAidTutorials/playlists)
+- [Video](#_https://www.youtube.com/watch?v=Lj90FqNCIJE&t=1623s)
+- [Playlist](#_https://www.youtube.com/c/JavaAidTutorials/playlists)
 - Note this is not SUB Sequence !!
 - This solution is with memoization
 - Top Down Approach
