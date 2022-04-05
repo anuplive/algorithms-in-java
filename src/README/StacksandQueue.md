@@ -34,9 +34,7 @@
   * [DFS_Inorder_PreOrder_and_Post_Order_Traversal](#DFS_Inorder_PreOrder_and_Post_Order_Traversal)
   * [BFS_Tree_Using_Queue](#BFS_Tree_Using_Queue)
 ---  
-* [Priority_Queue_aka_Heap](#Priority_Queue_aka_Heap])
-  * 
-* [Priority Queue](#Priority-Queue)
+* [Priority_Queue_aka_Heap](#Priority_Queue_aka_Heap)
   * [Sort_Array_of_String_vowels_consonants](#Sort_Array_of_String_vowels_consonants)
 ---
 <!--te-->
