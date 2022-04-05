@@ -3,14 +3,14 @@
 ### Table of contents
 =================
 <!--ts-->
-* [Stack and Queue Intro](#Stack_and_Queue_Intro)
-  * [Common Stack and Queue Methods](#Common_Stack_and_Queue_Methods)
-  * [Stack Implementation](#Stack_Implementation) and [Queue Implementation](#Queue_Implementation)
-  * [DeQueue Implementation](#DeQueue_Implementation)
+* [Stack_and_Queue_Intro](#Stack_and_Queue_Intro)
+  * [Common_Stack_and_Queue_Methods](#Common_Stack_and_Queue_Methods)
+  * [Stack_Implementation](#Stack_Implementation) and [Queue_Implementation](#Queue_Implementation)
+  * [DeQueue_Implementation](#DeQueue_Implementation)
 ---
 * [Stack_vs_Queue](#Stack_vs_Queue)
-  * [Implementing Queue using Stack](#Implementing_Queue_using_Stack)
-  * [Implementing Stack using Queue](#Implementing_Stack_using_Queue)
+  * [Implementing_Queue_using_Stack](#Implementing_Queue_using_Stack)
+  * [Implementing_Stack_using_Queue](#Implementing_Stack_using_Queue)
 ---
 * [Queue_Generating_Combinations](#Queue_Generating_Combinations)
   * Queue [Generate_Binary_Numbers_using_Queue](#Generate_Binary_Numbers_using_Queue)
@@ -41,9 +41,9 @@
 ---
 <!--te-->
 
-## Stack and Queue Intro
+## Stack_and_Queue_Intro
 ---
-### Common Stack and Queue Methods
+### Common_Stack_and_Queue_Methods
 - [Back to Top](#Table-of-contents)
 ```java
         // Stack
@@ -85,7 +85,7 @@
 ```
 ---
 
-### Stack Implementation
+### Stack_Implementation
 #### TC:  , MC:
 - Some comment
 - [Back to Top](#Table-of-contents)
@@ -155,7 +155,7 @@ class MyStack<E>{
 ```
 ---
 
-### Queue Implementation
+### Queue_Implementation
 #### TC:  , MC:
 - This is a Circular Queue implementation
 - [Back to Top](#Table-of-contents)
@@ -234,7 +234,7 @@ class MyQueue<E>{
 ```
 ---
 
-### DeQueue Implementation
+### DeQueue_Implementation
 #### TC:  , MC:
 - Check the wrap arround confitions for OfferFirst and PoolLast
 - [Back to Top](#Table-of-contents)
