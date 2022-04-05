@@ -3,15 +3,12 @@
 ### Table of contents
 =================
 <!--ts-->
-* [Heading 1](#Heading-1)
-* [Heading 2](#Heading-2)
+* [LRU_Cache](#LRU_Cache)
 <!--te-->
 
 
-## Heading 1
 ---
----
-### Some
+### LRU_Cache
 #### TC:  , MC:
 - Some comment
 - [Back to Top](#Table-of-contents)

@@ -6,8 +6,6 @@
 
 * [Conversions](#Conversions)
 * [Sorting Array](#Sorting-Array)
-
-
 * [Searching](#Searching)
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.

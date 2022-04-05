@@ -5,29 +5,40 @@
 <!--ts-->
 * [Stack and Queue Intro](#Stack_and_Queue_Intro)
   * [Common Stack and Queue Methods](#Common_Stack_and_Queue_Methods)
-  * [Stack Implementation](#Stack_Implementation)
-  * [Queue Implementation](#Queue_Implementation)
+  * [Stack Implementation](#Stack_Implementation) and [Queue Implementation](#Queue_Implementation)
   * [DeQueue Implementation](#DeQueue_Implementation)
+---
+* [Stack_vs_Queue](#Stack_vs_Queue)
   * [Implementing Queue using Stack](#Implementing_Queue_using_Stack)
   * [Implementing Stack using Queue](#Implementing_Stack_using_Queue)
-  * [Generate_Binary_Numbers_using_Queue](#Generate_Binary_Numbers_using_Queue)
-  * [Implementing_Two_Stack_Using_Array](#Implementing_Two_Stack_Using_Array)
-  * [Implementing_Stack_Using_Queue](#Implementing_Stack_Using_Queue)
-  * [Generate_Binary_Numbers_using_Queue](#Generate_Binary_Numbers_using_Queue)
-  * [Implementing_Two_Stack_Using_Array](#Implementing_Two_Stack_Using_Array)
-  * [Reverse_first_K_elements_in_Queue](#Reverse_first_K_elements_in_Queue)
-  * [Sort_Using_Stack](#Sort_Using_Stack)
+---
+* [Queue_Generating_Combinations](#Queue_Generating_Combinations)
+  * Queue [Generate_Binary_Numbers_using_Queue](#Generate_Binary_Numbers_using_Queue)
+---  
+* [Sorting_and_Stacks](#Sorting_and_Stacks)
+  * Stacks [Sort_Using_Stack](#Sort_Using_Stack)
+---
+* [Parenthesis_and_Expressions](#Parenthesis_and_Expressions)
+  * [Balanced_Parenthesis](#Balanced_Parenthesis) 
   * [Postfix Expression Stack](#Postfix_Expression_Stack)
+  * [Longest_Valid_Parenthesis](#Longest_Valid_Parenthesis)
+---
+* [Stack_and_Arrays](#Stack_and_Arrays)
+  * [Implementing_Two_Stack_Using_Array](#Implementing_Two_Stack_Using_Array)
+  * [Implement_a_MinStack](#Implement_a_MinStack)
   * [Next_Greater_Element_Stack](#Next_Greater_Element_Stack)
   * [Find_Celebrity_using_Stack](#Find_Celebrity_using_Stack)
-  * [Balanced_Parenthesis](#Balanced_Parenthesis)
-  * [Implement_a_MinStack](#Implement_a_MinStack)
-  * [Binary_Tree_Iteration](#Binary_Tree_Iteration)
-  * []
-  
-* [Heading 2](#Heading-2)
+  * **Queue** [Reverse_first_K_elements_in_Queue](#Reverse_first_K_elements_in_Queue)
+---  
+* [Binary_Tree_Iteration](#Binary_Tree_Iteration) 
+  * [DFS_Inorder_PreOrder_and_Post_Order_Traversal](#DFS_Inorder_PreOrder_and_Post_Order_Traversal)
+  * [BFS_Tree_Using_Queue](#BFS_Tree_Using_Queue)
+---  
+* [Priority_Queue_aka_Heap](#Priority_Queue_aka_Heap])
+  * 
 * [Priority Queue](#Priority-Queue)
-
+  * [Sort_Array_of_String_vowels_consonants](#Sort_Array_of_String_vowels_consonants)
+---
 <!--te-->
 
 ## Stack and Queue Intro
@@ -353,6 +364,8 @@ class MyDeque<E>{
 ```
 ---
 
+## Stack_vs_Queue
+---
 ### Implementing Queue using Stack
 #### deque: O(N), enqueue = O(1) , MC: O(N)
 - Slow dequeue, fast enque 
@@ -435,6 +448,7 @@ class QueueUsingStack {
 
 ---
 
+---
 ### Implementing_Stack_Using_Queue
 #### TC: Push : O(1) and Pop : O(N) 
 - Fast Push, slow pop()
@@ -530,6 +544,9 @@ class StackUsingQueue {
 ```
 ---
 
+
+## Queue_Generating_Combinations
+---
 ### Generate_Binary_Numbers_using_Queue
 #### TC:  O (N), SC: 
 - **Theme** 
@@ -559,11 +576,172 @@ class CheckBinary {
         return result; //For number = 3 , result = {"1","10","11"};
     }}
 ```
-
 ---
 
-### Implementing_Two_Stack_Using_Array  
-#### TC: O(1) , 
+
+## Sorting_and_Stacks
+---
+### Sort_Using_Stack
+#### TC: O(n^2)
+-  //1. Use a second tempStack.
+-  //2. Pop value from mainStack.
+-  //3. If the value is greater or equal to the top of tempStack, then push the value in tempStack
+   //else pop all values from tempStack and push them in mainStack and in the end push value in tempStack and repeat from step 2.
+   //till mainStack is not empty.
+-  //4. When mainStack will be empty, tempStack will have sorted values in descending order.
+-  //5. Now transfer values from tempStack to mainStack to make values sorted in ascending order.
+- [Back to Top](#Table-of-contents)
+```java
+class CheckSort {
+    public static void sortStack(Stack<Integer> stack) {
+       
+        Stack<Integer> newStack = new Stack<>(stack.getMaxSize());
+        while (!stack.isEmpty()) {
+            Integer value = stack.pop();
+            if (!newStack.isEmpty() && value >= newStack.top()) {
+                newStack.push(value);
+            } else {
+                while (!newStack.isEmpty() && newStack.top() > value)
+                    stack.push(newStack.pop());
+                newStack.push(value);
+            }
+        }
+        while (!newStack.isEmpty())
+            stack.push(newStack.pop());
+    }
+    public static void main(String args[]) {
+    }
+}
+```
+---
+
+
+## Parenthesis_and_Expressions
+---
+### Balanced_Parenthesis
+#### TC:   ,
+- Notes
+- [Back to Top](#Table-of-contents)
+```java
+class CheckBalancedChallenge {
+    public static boolean isBalanced(String exp) {
+
+        //Iterate through the string exp.
+        //For each opening parentheses, push it into stack
+        //For every closing parenthesis check for its opening parentheses in stack
+        //If you can't find the opening parentheses for any closing one then returns false.
+        //and after complete traversal of string exp, if there's any opening parentheses left
+        //in stack then also return false.
+        //At the end return true if you haven't encountered any of the above false conditions.
+        Stack<Character> stack = new Stack<>(exp.length());
+
+        for (int i = 0; i < exp.length(); i++) {
+
+            char character = exp.charAt(i);
+
+            if (character == '}' || character == ')' || character == ']') {
+
+                if (stack.isEmpty()) return false;
+
+                if ((character == '}' && stack.pop() != '{') || (character == ')' && stack.pop() != '(') || (character == ']' && stack.pop() != '[')) return false;
+
+            }
+            else stack.push(character);
+
+        } //end of for
+        if (!stack.isEmpty()) return false;
+
+        return true;
+    }
+
+    public static void main(String args[]) {}
+}
+
+```
+---
+---
+---
+### Longest_Valid_Parenthesis
+#### TC: O(N)  ,
+- Using a Stack
+- [Back to Top](#Table-of-contents)
+```java
+public class Solution {
+
+    public int longestValidParentheses(String s) {
+        int maxans = 0;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.empty()) {
+                    stack.push(i);
+                } else {
+                    maxans = Math.max(maxans, i - stack.peek());
+                }
+            }
+        }
+        return maxans;
+    }
+}
+```
+---
+### Postfix_Expression_Stack
+#### TC: O(n),
+- //1.Scan expression character by character,
+- //2.If character is a number push it in stack
+- //3.If character is operator then pop two elements from stack
+- //perform the operation and put the result back in stack
+- //At the end, Stack will contain result of whole expression.
+- [Back to Top](#Table-of-contents)
+```java
+class EvaluatePostfixChallenge {
+    public static int evaluatePostFix(String expression) {
+        Stack<Integer> stack = new Stack<>(expression.length());
+        for (int i = 0; i < expression.length(); i++) {
+            char character = expression.charAt(i);
+
+            if (!Character.isDigit(character)) {
+                Integer x = stack.pop();
+                Integer y = stack.pop();
+
+                switch (character) {
+                    case '+':
+                        stack.push(y + x);
+                        break;
+                    case '-':
+                        stack.push(y - x);
+                        break;
+                    case '*':
+                        stack.push(y * x);
+                        break;
+                    case '/':
+                        stack.push(y / x);
+                        break;
+                }
+
+            } else
+                stack.push(Character.getNumericValue(character));
+        }
+        return stack.pop();
+    }
+	public static void main(String args[]) {
+	
+		System.out.println(evaluatePostFix("921*-8-4+"));
+		//Try your own examples belo
+ }
+}
+```
+---
+
+
+## Stack_and_Arrays
+---
+### Implementing_Two_Stack_Using_Array
+#### TC: O(1) ,
 - Take the array maintain two tops of stack at both ends
 - [Back to Top](#Table-of-contents)
 ```java
@@ -617,132 +795,60 @@ public class TwoStacks<V> {
 
 
 ```
----
 
-### Reverse_first_K_elements_in_Queue 
-#### TC: O(N) ,
-- Notes: Use a Stack, add first K elements in queue
-- Pop the elements from stack and add them in queue
-- Then dequeue the queue till kth element and again enqueue in same queue. 
+---
+---
+### Implement_a_MinStack
+#### TC: O(1)  ,
+- Notes
 - [Back to Top](#Table-of-contents)
 ```java
-class CheckReverse {
-
-    //1.Push first k elements in queue in a stack.
-    //2.Pop Stack elements and enqueue them at the end of queue
-    //3.Dequeue queue elements till "k" and append them at the end of queue   
-    //4.Dequeue the remaining elements and enqueue them again to append them at end of the queue
-    public static <V> void reverseK(Queue<V> queue, int k) {
-        if (queue.isEmpty() || k <= 0)
-            return;
-        Stack<V> stack = new Stack<>(k);
-
-        while(!stack.isFull())
-            stack.push(queue.dequeue());
-
-        while(!stack.isEmpty())
-            queue.enqueue(stack.pop());
-
-        int size = queue.getCurrentSize();
-        for(int i = 0; i < size - k; i++)
-            queue.enqueue(queue.dequeue());
+public class MinStack {
+    int maxSize;
+    Stack<Integer> mainStack;
+    Stack<Integer> minStack;
+    //constructor
+    public MinStack(int maxSize) {
+        //We will use two stacks mainStack to hold original values
+        //and minStack to hold minimum values. Top of minStack will always
+        //be the minimum value from mainStack
+        this.maxSize = maxSize;
+        mainStack = new Stack<>(maxSize);
+        minStack = new Stack<>(maxSize);
     }
-    public static void main(String args[]) {
-
-        Queue<Integer> queue = new Queue<Integer>(10);
-    }}
-
-```
----
-
-### Sort_Using_Stack
-#### TC: O(n^2)
--  //1. Use a second tempStack.
--  //2. Pop value from mainStack.
--  //3. If the value is greater or equal to the top of tempStack, then push the value in tempStack
-   //else pop all values from tempStack and push them in mainStack and in the end push value in tempStack and repeat from step 2.
-   //till mainStack is not empty.
--  //4. When mainStack will be empty, tempStack will have sorted values in descending order.
--  //5. Now transfer values from tempStack to mainStack to make values sorted in ascending order.
-- [Back to Top](#Table-of-contents)
-```java
-class CheckSort {
-    public static void sortStack(Stack<Integer> stack) {
-       
-        Stack<Integer> newStack = new Stack<>(stack.getMaxSize());
-        while (!stack.isEmpty()) {
-            Integer value = stack.pop();
-            if (!newStack.isEmpty() && value >= newStack.top()) {
-                newStack.push(value);
-            } else {
-                while (!newStack.isEmpty() && newStack.top() > value)
-                    stack.push(newStack.pop());
-                newStack.push(value);
-            }
-        }
-        while (!newStack.isEmpty())
-            stack.push(newStack.pop());
+    //removes and returns value from stack
+    public int pop(){
+        //1. Pop element from minStack to make it sync with mainStack,
+        //2. Pop element from mainStack and return that value
+        minStack.pop();
+        return mainStack.pop();
     }
-    public static void main(String args[]) {
+    //pushes value into the stack
+    public void push(Integer value){
+        //1. Push value in mainStack and check value with the top value of minStack
+        //2. If value is greater than top, then push top in minStack
+        //else push value in minStack
+        mainStack.push(value);
+        if(!minStack.isEmpty() && minStack.top() < value)
+            minStack.push(minStack.top());
+        else
+            minStack.push(value);
+    }
+    //returns minimum value in O(1)
+    public int min(){
+        return minStack.top();
     }
 }
+
 ```
 ---
-
-### Postfix_Expression_Stack
-#### TC: O(n),
-- //1.Scan expression character by character,
-- //2.If character is a number push it in stack
-- //3.If character is operator then pop two elements from stack
-- //perform the operation and put the result back in stack
-- //At the end, Stack will contain result of whole expression.
-- [Back to Top](#Table-of-contents)
-```java
-class EvaluatePostfixChallenge {
-    public static int evaluatePostFix(String expression) {
-        Stack<Integer> stack = new Stack<>(expression.length());
-        for (int i = 0; i < expression.length(); i++) {
-            char character = expression.charAt(i);
-
-            if (!Character.isDigit(character)) {
-                Integer x = stack.pop();
-                Integer y = stack.pop();
-
-                switch (character) {
-                    case '+':
-                        stack.push(y + x);
-                        break;
-                    case '-':
-                        stack.push(y - x);
-                        break;
-                    case '*':
-                        stack.push(y * x);
-                        break;
-                    case '/':
-                        stack.push(y / x);
-                        break;
-                }
-
-            } else
-                stack.push(Character.getNumericValue(character));
-        }
-        return stack.pop();
-    }
-	public static void main(String args[]) {
-	
-		System.out.println(evaluatePostFix("921*-8-4+"));
-		//Try your own examples belo
- }
-}
-```
 ---
-
-### Next_Greater_Element_Stack 
+### Next_Greater_Element_Stack
 #### TC:  ,
 - iterate from last
   - stack.pop() elements from stack if arr[i] > stack.top()
   - If Stack empty ?, result[i] = -1
-        else result[i] = stack.top()
+    else result[i] = stack.top()
   - 3. stack.push(arr[i])
 
 - [Back to Top](#Table-of-contents)
@@ -775,10 +881,10 @@ class NextGreaterChallenge {
 
 ```
 ---
-
+---
 ### Find_Celebrity_using_Stack
 #### TC:   ,
-- pop two elements, push one back to stack 
+- pop two elements, push one back to stack
 - [Back to Top](#Table-of-contents)
 ```java
 class FindCelebChallenge {
@@ -838,97 +944,45 @@ class FindCelebChallenge {
     }}
 ```
 ---
-
-### Balanced_Parenthesis
-#### TC:   ,
-- Notes
+---
+### Reverse_first_K_elements_in_Queue
+#### TC: O(N) ,
+- Notes: Use a Stack, add first K elements in queue
+- Pop the elements from stack and add them in queue
+- Then dequeue the queue till kth element and again enqueue in same queue.
 - [Back to Top](#Table-of-contents)
 ```java
-class CheckBalancedChallenge {
-    public static boolean isBalanced(String exp) {
+class CheckReverse {
 
-        //Iterate through the string exp.
-        //For each opening parentheses, push it into stack
-        //For every closing parenthesis check for its opening parentheses in stack
-        //If you can't find the opening parentheses for any closing one then returns false.
-        //and after complete traversal of string exp, if there's any opening parentheses left
-        //in stack then also return false.
-        //At the end return true if you haven't encountered any of the above false conditions.
-        Stack<Character> stack = new Stack<>(exp.length());
+    //1.Push first k elements in queue in a stack.
+    //2.Pop Stack elements and enqueue them at the end of queue
+    //3.Dequeue queue elements till "k" and append them at the end of queue   
+    //4.Dequeue the remaining elements and enqueue them again to append them at end of the queue
+    public static <V> void reverseK(Queue<V> queue, int k) {
+        if (queue.isEmpty() || k <= 0)
+            return;
+        Stack<V> stack = new Stack<>(k);
 
-        for (int i = 0; i < exp.length(); i++) {
+        while(!stack.isFull())
+            stack.push(queue.dequeue());
 
-            char character = exp.charAt(i);
+        while(!stack.isEmpty())
+            queue.enqueue(stack.pop());
 
-            if (character == '}' || character == ')' || character == ']') {
-
-                if (stack.isEmpty()) return false;
-
-                if ((character == '}' && stack.pop() != '{') || (character == ')' && stack.pop() != '(') || (character == ']' && stack.pop() != '[')) return false;
-
-            }
-            else stack.push(character);
-
-        } //end of for
-        if (!stack.isEmpty()) return false;
-
-        return true;
+        int size = queue.getCurrentSize();
+        for(int i = 0; i < size - k; i++)
+            queue.enqueue(queue.dequeue());
     }
+    public static void main(String args[]) {
 
-    public static void main(String args[]) {}
-}
+        Queue<Integer> queue = new Queue<Integer>(10);
+    }}
 
 ```
----
 
-### Implement_a_MinStack
-#### TC: O(1)  ,
-- Notes
-- [Back to Top](#Table-of-contents)
-```java
-public class MinStack {
-    int maxSize;
-    Stack<Integer> mainStack;
-    Stack<Integer> minStack;
-    //constructor
-    public MinStack(int maxSize) {
-        //We will use two stacks mainStack to hold original values
-        //and minStack to hold minimum values. Top of minStack will always
-        //be the minimum value from mainStack
-        this.maxSize = maxSize;
-        mainStack = new Stack<>(maxSize);
-        minStack = new Stack<>(maxSize);
-    }
-    //removes and returns value from stack
-    public int pop(){
-        //1. Pop element from minStack to make it sync with mainStack,
-        //2. Pop element from mainStack and return that value
-        minStack.pop();
-        return mainStack.pop();
-    }
-    //pushes value into the stack
-    public void push(Integer value){
-        //1. Push value in mainStack and check value with the top value of minStack
-        //2. If value is greater than top, then push top in minStack
-        //else push value in minStack
-        mainStack.push(value);
-        if(!minStack.isEmpty() && minStack.top() < value)
-            minStack.push(minStack.top());
-        else
-            minStack.push(value);
-    }
-    //returns minimum value in O(1)
-    public int min(){
-        return minStack.top();
-    }
-}
-
-```
----
----
 
 ## Binary_Tree_Iteration
-### Inorder, PreOrder and Post Order Traversal. 
+### DFS_Inorder_PreOrder_and_Post_Order_Traversal. 
 #### TC: O(n), SC: O(n)
 - In-Order 
 - [Back to Top](#Table-of-contents)
@@ -1033,7 +1087,7 @@ class Solution {
 }
 ```
 ---
-
+---
 ### BFS_Tree_Using_Queue 
 #### TC:  , MC:
 - Level Order Traversal
@@ -1069,11 +1123,9 @@ class BinaryTree {
 ```
 ---
 
-
-## Priority Queue aka Heap
+## Priority_Queue_aka_Heap
 ---
----
-### Sort Array of String by diff of vowels and consonants
+### Sort_Array_of_String_vowels_consonants
 #### TC: O(n^2) , MC: O(N)
 - Using the Priority a
 - [Back to Top](#Table-of-contents)
