@@ -1,5 +1,4 @@
 # Topic
-
 ### Table of contents
 =================
 <!--ts-->
