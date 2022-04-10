@@ -10,6 +10,7 @@
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
+  * [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)
 * [Two Pointer](#Two-Pointer)
   * With Sorting, Without Sorting
 * [Remove from Array](#Remove-from-Array)
