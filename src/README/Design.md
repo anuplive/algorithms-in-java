@@ -5,6 +5,7 @@
 <!--ts-->
 * [Caching](#Caching)
   * [LRU_Cache](#LRU_Cache) and [LFU_Cache](#LFU_Cache) 
+  
 ---
 * [SINGLETON](#SINGLETON)
   * [Eager_Initialization](#Eager_Initialization)
