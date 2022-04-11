@@ -5,29 +5,57 @@
 <!--ts-->
 
 * [Conversions](#Conversions)
+---
 * [Sorting Array](#Sorting-Array)
+---
 * [Searching](#Searching)
+  * Binary Search and  Rotated Array and Matrix and Order Agnoistic
+  * 
+---
 * [Sliding Window](#Sliding-Window)
   * Finding Substrings with limits on distinct characters.
   * Find Max in sliding windows 
-  * [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)
+  * [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz)
+  * [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) and [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)
+---
 * [Two Pointer](#Two-Pointer)
+  * [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) and [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r)
+  * [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) and [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)
+  * [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0)
   * With Sorting, Without Sorting
 * [Remove from Array](#Remove-from-Array)
   * Duplicates, requires sorting OR use HashSet
   * WhiteSpaces, Zeros, Even Numbers , does not require sorting
 * [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
   * Two Pointer Style 
+---
+* Pattern: Fast & Slow pointers **Linked List** 
+  * [LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) and [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) 
+  * [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM) and [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM)
+___
 * [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
+___
 * [Kadanes Algorithm](#Kadanes-Algorithm)
   * Maximum Sum Subarray, Stocks Buy Sell
+---
+*Dynamic Programming
+
+___
 * [Left Scan Right Scan](Left-Scan-Right-Scan)
+___
 * [Two Arrays](#Two-Arrays)
+___
 * [Merging Intervals](#Merging-Intervals)
+___
 * [Permutations](#Permutations)
+  * [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)
+___
 * [Mathematical](#Mathematical)
   * prime numbers, int to hex , string to int etc 
-
+  * [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes)
+* [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) and [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution)
+* 
+___
 <!--te-->
 
 ## Handy Checks
