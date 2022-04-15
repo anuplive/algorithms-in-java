@@ -1,10 +1,16 @@
-# Topic
+# ALL 
 
 ### Table of contents
 =================
 <!--ts-->
-* [Usage](#Usage)
-* [Heading 2](#Heading-2)
+* [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)
+---
+* [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)
+
+* [AKKA](https://github.com/bilal-fazlani/akka-actor-tutorial/tree/master/src/main/scala)
+---
+* [JDBC](https://www.onlinetutorialspoint.com/jdbc/transaction-management-jdbc-example.html)
+
 <!--te-->
 
 
