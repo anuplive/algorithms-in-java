@@ -10,6 +10,8 @@
 * [AKKA](https://github.com/bilal-fazlani/akka-actor-tutorial/tree/master/src/main/scala)
 ---
 * [JDBC](https://www.onlinetutorialspoint.com/jdbc/transaction-management-jdbc-example.html)
+---
+* [Exceptions](https://www.geeksforgeeks.org/exceptions-in-java/)
 
 <!--te-->
 
