@@ -9,7 +9,7 @@
   * Tree Traversal
   * In-Order [Recursive](https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/1878284/Recursive-Java-solution.-Easy-to-understand.) and [Iterative](https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/1889237/Java-Solution-using-Stack)
   * Pre-Order[Recursive](https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/1888434/Recursive-%2B-Iterative-solutions-JAVA) and [Iterative](https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/1888434/Recursive-%2B-Iterative-solutions-JAVA)
-  * Post-Order[Recursive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1883195/Java-Solutions-Iterative-and-Recursive-or-Intuition-and-Explanation) and [Ireratiive]()
+  * Post-Order[Recursive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1883195/Java-Solutions-Iterative-and-Recursive-or-Intuition-and-Explanation) and [Ireratiive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1963914/Java-with-One-Stack)
 * [Height of Binary Tree]()
 <!--te-->
   
