@@ -12,20 +12,9 @@
   * Post-Order[Recursive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1883195/Java-Solutions-Iterative-and-Recursive-or-Intuition-and-Explanation) and [Ireratiive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1963914/Java-with-One-Stack)
 * [Height of Binary Tree]()
 <!--te-->
-  
-
 
 ---
 ### Binary_Tree_Implementation
-#### TC:  , MC:
-- Some comment
-- [Back to Top](#Table-of-contents)
-```java
-
-```
----
----
-### LRU_Cache
 #### TC:  , MC:
 - Some comment
 - [Back to Top](#Table-of-contents)
