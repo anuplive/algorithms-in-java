@@ -7,62 +7,20 @@
 | Label         |  Links         | Links |
 | ------------- |:-------------:| -----:|
 | Conversion | [Conversions](#Conversions)      |    [NA] |
-| Sort | [Sorting Array](#Sorting-Array)      |    [NA] |
+| Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting       |
 | Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
 | Sliding Window| [Sliding Window](#Sliding-Window)      | Max-Sliding-Window^____ [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz) ___ [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) ___ [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)  |
 | Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) ___ [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) ___ [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) ___ [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
-| Two Pointer | [Remove from Array](#Remove-from-Array) | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
-* 
----
-* [Sorting Array](#Sorting-Array)
----
-* [Searching](#Searching)
-  * Binary Search and  Rotated Array and Matrix and Order Agnoistic
-  * 
----
-* [Sliding Window](#Sliding-Window)
-  * Finding Substrings with limits on distinct characters.
-  * Find Max in sliding windows 
-  * [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz)
-  * [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) and [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)
----
-* [Two Pointer](#Two-Pointer)
-  * [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) and [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r)
-  * [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) and [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)
-  * [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0)
-  * With Sorting, Without Sorting
-* [Remove from Array](#Remove-from-Array)
-  * Duplicates, requires sorting OR use HashSet
-  * WhiteSpaces, Zeros, Even Numbers , does not require sorting
-* [Two OR Three numbers SUM](#Two-OR-Three-numbers-SUM)
-  * Two Pointer Style 
----
-* Pattern: Fast & Slow pointers **Linked List** 
-  * [LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) and [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) 
-  * [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM) and [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM)
+| Two Pointer | [Remove from Array](#Remove-from-Array) Duplicates, Whitespaces, Zeros  | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
+| Fast Slow Pointers|[LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) ___ [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) __ [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM) ___ [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM) ||
+|[Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)||
+|[Kadanes Algorithm](#Kadanes-Algorithm)|Maximum Sum Subarray ___ Stocks Buy Sell|
+|[Left Scan Right Scan](Left-Scan-Right-Scan)|
+|[Two Arrays](#Two-Arrays)|
+|[Merging Intervals](#Merging-Intervals)|
+|[Permutations](#Permutations)| [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv) ||
+| [Mathematical](#Mathematical) | prime numbers ___ Int to Hex___String To Int etc | [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) ___  [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes) ___ [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) ___ [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution) |
 ___
-* [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)
-___
-* [Kadanes Algorithm](#Kadanes-Algorithm)
-  * Maximum Sum Subarray, Stocks Buy Sell
----
-*Dynamic Programming
-
-___
-* [Left Scan Right Scan](Left-Scan-Right-Scan)
-___
-* [Two Arrays](#Two-Arrays)
-___
-* [Merging Intervals](#Merging-Intervals)
-___
-* [Permutations](#Permutations)
-  * [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)
-___
-* [Mathematical](#Mathematical)
-  * prime numbers, int to hex , string to int etc 
-  * [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes)
-* [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) and [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution)
-* 
 ___
 <!--te-->
 
