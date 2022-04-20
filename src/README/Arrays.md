@@ -4,8 +4,8 @@
 =================
 <!--ts-->
 
-| Label         |  Links         | Links |
-| ------------- |:-------------:| -----:|
+| Label         |  Links        | Links | Links | Links | Links | Links | 
+| ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| 
 | Conversion | [Conversions](#Conversions)      |    [NA] |
 | Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting       |
 | Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
