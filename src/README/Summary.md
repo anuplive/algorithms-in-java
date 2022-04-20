@@ -1,67 +1,34 @@
-# Topic
-### Table of Data Structures
-=================
 <!--ts-->
 * DataStructures
   | Label         | Arrays         | Strings          | LinkedList | Stacks  | Queue | HashMap | Tree | Trie | Graphs | Heaps |
-  | -------------|:-------------:|:-------------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
-  | Grocking         | [ArraysG](https://www.educative.io/module/lesson/data-structures-in-java/g7K8xgjRyyZ) | [Strings-G](https://www.educative.io/module/lesson/data-structures-in-java/B1mNWlJxvnX) | [LinkedList-G](https://www.educative.io/module/lesson/data-structures-in-java/B12o76Zq1z2) | [Stacks-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [Queue-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [HashMap-G](https://www.educative.io/module/lesson/data-structures-in-java/YVwVlxR010K) | [Tree-G](https://www.educative.io/module/lesson/data-structures-in-java/xopm7m0pEol) | [Trie-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ3qoVDO72o) | [Graphs-G](https://www.educative.io/module/lesson/data-structures-in-java/qA8VWG1NlDp) | [Heaps-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ5wl6N6RWP) |
-  | Leetcode         | [Arrays-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=array&page=1) | [Strings-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=string) | [LinkedList-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=linked-list) | [Stacks-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=stack) | [Queue-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=queue) | [HashMap-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=hash-table) | [Tree-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=tree) | [Trie-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=trie&page=1) | [Graphs-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=graph) | [Heaps-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=heap-priority-queue) |
+  | -------------| -------------:| -------------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+  | Grocking         | [Arr-G](https://www.educative.io/module/lesson/data-structures-in-java/g7K8xgjRyyZ) | [Str-G](https://www.educative.io/module/lesson/data-structures-in-java/B1mNWlJxvnX) | [LL-G](https://www.educative.io/module/lesson/data-structures-in-java/B12o76Zq1z2) | [Stk-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [Q-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [Map-G](https://www.educative.io/module/lesson/data-structures-in-java/YVwVlxR010K) | [Tre-G](https://www.educative.io/module/lesson/data-structures-in-java/xopm7m0pEol) | [Tri-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ3qoVDO72o) | [Grf-G](https://www.educative.io/module/lesson/data-structures-in-java/qA8VWG1NlDp) | [Hps-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ5wl6N6RWP) |
+  | Leetcode         | [Arr-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=array&page=1) | [Str-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=string) | [LL-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=linked-list) | [Stk-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=stack) | [Q-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=queue) | [Map-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=hash-table) | [Tre-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=tree) | [Tri-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=trie&page=1) | [Grf-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=graph) | [Hps-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=heap-priority-queue) |
   | Notes         | [Notes](Arrays) | [Notes](Strings) | [Notes](LinkedList) | [Notes](Queue) | [Notes](Stacks) | [Notes](HashMaps) | [Notes](Tree) | [Notes](Trie) | [Notes](Graphs) | [Notes](Heaps) | 
 ---
-  *Patterns in Coding
+* Patterns in Coding
   | Label         | Dynamic Programming          | Recurssion |Sorting-Searching |Greedy |Divide-n-Conquer |Graphs |
   | ------------- |:-------------:| :-----:|:-----:|:-----:|:-----:|:-----:|
   | Grocking | [DP-G](https://www.educative.io/module/lesson/dynamic-programming-patterns/g2q4PWK3jlD)      | [Rec-G](https://www.educative.io/module/lesson/recursion-in-java/q2WVWWwrLR3)      |[SortSerac-G](https://www.educative.io/module/lesson/algorithms-in-java/YMEyz4Y0jmA)      |[Greedy-G](https://www.educative.io/module/lesson/algorithms-in-java/B8LjzQqNnnW)      |[Divide-G](https://www.educative.io/module/lesson/algorithms-in-java/mEmxX11Kw2n)      |[Graphs-G](https://www.educative.io/module/lesson/algorithms-in-java/RLNQMB3zr1q)      |
   | Leetcode | [DP-L]()      | [Rec-L]()      | [SortnSearch-L]()      | [Greedy-L]()      | [Divide-L]()      | [Graphs-L]()      |
   | Notes | [DP-Notes]()      | [DP-Notes]()      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      |
 ___
-
-  *Tutorials
+* Tutorials
   | Coding Interview           | OOPS          | System |
   | ------------- |:-------------:| -----:|
   | [Coding-Interview-G](https://www.educative.io/courses/grokking-the-coding-interview) | [OOPS-G](https://www.educative.io/module/oop-design-interview)      |    [System-G](https://www.educative.io/courses/grokking-the-system-design-interview/B8nMkqBWONo) |  
-
-  *Other
+---
+* Other
   | LeetCode-100         | Link          | Link |
   | ------------- |:-------------:| -----:|
   | [LC-100]() | [NA]()      |    [NA]() |
-<!--te-->
+---
+* Runtime Complexity  
+  | Links         |
+  | ------------- |
+  | [Cheat](https://www.bigocheatsheet.com/) |
 
-# Topic
-### Must Do Coding Problems  
-=================
-<!--ts-->
-*[Leet Code](https://leetcode.com/problem-list/top-100-liked-questions/)
-<!--te-->
 
-# Patterns 
-### Different Programming Styles
-=================
-<!--ts-->
-* [Dynamic Programming](https://www.educative.io/module/lesson/dynamic-programming-patterns/g2q4PWK3jlD)
----
-* [Recurssion](https://www.educative.io/module/lesson/recursion-in-java/q2WVWWwrLR3)
----
-* [Sorting and Searching](https://www.educative.io/module/lesson/algorithms-in-java/YMEyz4Y0jmA)
----
-* [Greedy Algorithms](https://www.educative.io/module/lesson/algorithms-in-java/B8LjzQqNnnW)
----
-* [Divide and Conquer](https://www.educative.io/module/lesson/algorithms-in-java/mEmxX11Kw2n)
----
-* [Graphs](https://www.educative.io/module/lesson/algorithms-in-java/RLNQMB3zr1q)
-
-<!--te-->
-
-# TUTORIALS 
-### 
-=================
-<!--ts-->
-* [GROCKING THE CODING INTERVIEW](https://www.educative.io/courses/grokking-the-coding-interview)
----
-* [Object Oriented Design](https://www.educative.io/module/oop-design-interview)
----
-* [System Design](https://www.educative.io/courses/grokking-the-system-design-interview/B8nMkqBWONo)
 <!--te-->
 
 # RunTimeComplexity
