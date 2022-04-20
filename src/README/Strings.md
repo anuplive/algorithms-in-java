@@ -3,14 +3,16 @@
 Table of contents
 =================
 <!--ts-->
-* [Handy Checks](#Handy_Checks)
-* [Remove Characters](#Remove-Characters)
-* [Substring Use Cases](#Substring-Use-Cases)
-  * Has both sub sequence and substring problems
-* [Palindrome](#Palindrome)
-  * * Has both sub sequence and substring problems
-* [Permutations](#Permutations)
-* [Sorting](#Sorting)
+
+
+| Label         | Link          | Links | Links | Links | Links | Links | Links |
+| ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| -----:|
+| [Handy Checks](#Handy_Checks) |      |     |    |    |     |     |     |
+| [Remove Characters](#Remove-Characters) | |     |    |    |     |     |     |
+| [Substring Use Cases](#Substring-Use-Cases) | Substrings | SubSequences  |    |    |     |     |     |
+| [Palindrome](#Palindrome) | |     |    |    |     |     |     | 
+| [Permutations](#Permutations) | |     |    |    |     |     |     | 
+| [Sorting](#Sorting) | |     |    |    |     |     |     | 
 <!--te-->
 ---
 ## Handy Checks
