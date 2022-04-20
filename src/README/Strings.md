@@ -3,16 +3,14 @@
 Table of contents
 =================
 <!--ts-->
-
-
 | Label         | Link          | Links | Links | Links | Links | Links | Links |
 | ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| -----:|
 | [Handy Checks](#Handy_Checks) |      |     |    |    |     |     |     |
 | [Remove Characters](#Remove-Characters) | |     |    |    |     |     |     |
 | [Substring Use Cases](#Substring-Use-Cases) | Substrings | SubSequences  |    |    |     |     |     |
 | [Palindrome](#Palindrome) | |     |    |    |     |     |     | 
-| [Permutations](#Permutations) | |     |    |    |     |     |     | 
-| [Sorting](#Sorting) | |     |    |    |     |     |     | 
+| [Permutations](#Permutations) | Parenthesis  | String Combinations   |    |    |     |     |     | 
+| [Sorting](#Sorting) | Char Frequency |     |    |    |     |     |     | 
 <!--te-->
 ---
 ## Handy Checks
@@ -549,8 +547,8 @@ public class Solution {
         nums[j] = tmp;
     }
 }
-
-
+```
+---
 
 ## Sorting
 ### Custom Sorting Frequency Sort
