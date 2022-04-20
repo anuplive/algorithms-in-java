@@ -10,7 +10,7 @@
   | Label         | Dynamic Programming          | Recurssion |Sorting-Searching |Greedy |Divide-n-Conquer |Graphs |
   | ------------- |:-------------:| :-----:|:-----:|:-----:|:-----:|:-----:|
   | Grocking | [DP-G](https://www.educative.io/module/lesson/dynamic-programming-patterns/g2q4PWK3jlD)      | [Rec-G](https://www.educative.io/module/lesson/recursion-in-java/q2WVWWwrLR3)      |[SortSerac-G](https://www.educative.io/module/lesson/algorithms-in-java/YMEyz4Y0jmA)      |[Greedy-G](https://www.educative.io/module/lesson/algorithms-in-java/B8LjzQqNnnW)      |[Divide-G](https://www.educative.io/module/lesson/algorithms-in-java/mEmxX11Kw2n)      |[Graphs-G](https://www.educative.io/module/lesson/algorithms-in-java/RLNQMB3zr1q)      |
-  | Leetcode | [DP-L]()      | [Rec-L]()      | [SortnSearch-L]()      | [Greedy-L]()      | [Divide-L]()      | [Graphs-L]()      |
+  | Leetcode | [DP-L]      | [Rec-L]      | [SortnSearch-L]      | [Greedy-L]      | [Divide-L]      | [Graphs-L]      |
   | Notes | [DP-Notes]()      | [DP-Notes]()      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      | [DP-Notes]      |
 ___
 * Tutorials

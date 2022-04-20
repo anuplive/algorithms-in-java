@@ -4,7 +4,13 @@
 =================
 <!--ts-->
 
-* [Conversions](#Conversions)
+| Label         |  Links         | Links |
+| ------------- |:-------------:| -----:|
+| Conversion | [Conversions](#Conversions)      |    [NA] |
+| Sort | [Sorting Array](#Sorting-Array)      |    [NA] |
+| Searching | [Searching](#Searching)      |    BinarySearch, Rotated_Array , Matrix and  Order_Agnoistic |
+| Sliding Window| [Sliding Window](#Sliding-Window)      |    [BinarySearch], [Rotated_Array] , [Matrix]  [Order_Agnoistic] |
+* 
 ---
 * [Sorting Array](#Sorting-Array)
 ---
