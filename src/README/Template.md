@@ -5,6 +5,10 @@
 * [LRU_Cache](#LRU_Cache)
 <!--te-->
 
+| Links         | Link          | Links |
+| ------------- |:-------------:| -----:|
+| zebra stripes | are neat      |    $1 |
+
 
 ---
 ### LRU_Cache
