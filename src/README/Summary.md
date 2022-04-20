@@ -2,6 +2,17 @@
 ### Table of Data Structures
 =================
 <!--ts-->
+* DataStructures
+  | Label         | Arrays         | Strings          | LinkedList | Stacks  | Queue | HashMap | Tree | Trie | Graphs | Heaps |
+  | -------------|:-------------:|:-------------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+  | Grocking         | [ArraysG](https://www.educative.io/module/lesson/data-structures-in-java/g7K8xgjRyyZ) | [Strings-G](https://www.educative.io/module/lesson/data-structures-in-java/B1mNWlJxvnX) | [LinkedList-G](https://www.educative.io/module/lesson/data-structures-in-java/B12o76Zq1z2) | [Stacks-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [Queue-G](https://www.educative.io/module/lesson/data-structures-in-java/B6mP2lRBmkW) | [HashMap-G](https://www.educative.io/module/lesson/data-structures-in-java/YVwVlxR010K) | [Tree-G](https://www.educative.io/module/lesson/data-structures-in-java/xopm7m0pEol) | [Trie-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ3qoVDO72o) | [Graphs-G](https://www.educative.io/module/lesson/data-structures-in-java/YVwVlxR010K) | [Heaps-G](https://www.educative.io/module/lesson/data-structures-in-java/JQ5wl6N6RWP) |
+  | Leetcode         | [Arrays-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=array&page=1) | [Strings-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=string) | [LinkedList-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=linked-list) | [Stacks-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=stack) | [Queue-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=queue) | [HashMap-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=hash-table) | [Tree-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=tree) | [Trie-L](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=trie&page=1) | [Graphs-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=graph) | [Heaps-L](https://leetcode.com/problem-list/top-100-liked-questions/?page=1&topicSlugs=heap-priority-queue) |
+  | Notes         | [Notes](Arrays) | [Notes](Strings) | [Notes](LinkedList) | [Notes](Queue) | [Notes](Stacks) | [Notes](HashMaps) | [Notes](Tree) | [Notes](Trie) | [Notes](Graphs) | [Notes](Heaps) | 
+---
+
+
+
+
 * Arrays
   * [Grocking](https://www.educative.io/module/lesson/data-structures-in-java/g7K8xgjRyyZ) 
   * [LeetCode](https://leetcode.com/problem-list/top-100-liked-questions/?topicSlugs=array&page=1)
