@@ -8,8 +8,10 @@
 | ------------- |:-------------:| -----:|
 | Conversion | [Conversions](#Conversions)      |    [NA] |
 | Sort | [Sorting Array](#Sorting-Array)      |    [NA] |
-| Searching | [Searching](#Searching)      |    BinarySearch, Rotated_Array , Matrix and  Order_Agnoistic |
-| Sliding Window| [Sliding Window](#Sliding-Window)      |    [BinarySearch], [Rotated_Array] , [Matrix]  [Order_Agnoistic] |
+| Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
+| Sliding Window| [Sliding Window](#Sliding-Window)      | Max-Sliding-Window^____ [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz) ___ [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) ___ [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)  |
+| Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) ___ [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) ___ [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) ___ [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
+| Two Pointer | [Remove from Array](#Remove-from-Array) | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
 * 
 ---
 * [Sorting Array](#Sorting-Array)
