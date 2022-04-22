@@ -440,6 +440,8 @@ public int findCPS(String st) {
 ---
 ## Permutations
 ---
+[Generate All Permutations in String](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+---
 ### String Permutations by changing case
 #### TC: O(n * 2^N)  , MC:
 - Some comment
