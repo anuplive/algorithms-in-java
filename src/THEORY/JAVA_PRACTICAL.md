@@ -14,7 +14,8 @@
 * Trouble Shooting
   | Links         | Link          | Links |
   | ------------- |:-------------:| -----:|
-  | [Memory Leaks](https://www.javamadesoeasy.com/2016/11/how-to-use-jhat-to-analyze-heat-dump.html) | [Out Of Memory: HeapSpace](https://www.javamadesoeasy.com/2017/02/exception-in-thread-javalangoutofmemory.html#2)   |    $1 |
+  | [Memory Leaks](https://www.javamadesoeasy.com/2016/11/how-to-use-jhat-to-analyze-heat-dump.html) | [Out Of Memory: HeapSpace](https://www.javamadesoeasy.com/2017/02/exception-in-thread-javalangoutofmemory.html#2)
+|   [JAVA Command Utilities](https://www.educative.io/courses/java-interview-handbook/RM1KpADwZwY) |
 
 
 * JVM Architecture
