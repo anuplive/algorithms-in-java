@@ -20,6 +20,13 @@
 |[Merging Intervals](#Merging-Intervals)|
 |[Permutations](#Permutations)| [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv) ||
 | [Mathematical](#Mathematical) |  [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) ___  [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes) ___ | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) ___ [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution) |
+
+|Matrix| [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)||
+|Matrix |DFS |[Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)| [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))| 
+|Matrix | DP |[Maximal Square in Matrix](https://leetcode.com/problems/maximal-square/discuss/1726028/brute-force-and-dp-solution-with-comments)|
+|MATRIX | BFS | [Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76934/10ms-BFS-Java-solution-with-explanation) | [Rotting_Oranges](#Rotting_Oranges) |
+|MATRIX | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution) | [Winner of Tic Tac Toe ](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.)|
+|Matrix| [Search_a_2D_Matrix](#Search_a_2D_Matrix) ||
 ___
 ___
 <!--te-->
@@ -339,7 +346,7 @@ static int binarySearchRotated(int[] arr, int key) {
 ```
 ---
 ---
-### Search a 2D Matrix
+### Search_a_2D_Matrix
 #### TC: O(logmn)  , MC: O(1)
 - The 2D array is represented as pivotted array
 - 
@@ -1328,6 +1335,77 @@ public class Solution {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
+    }
+}
+
+```
+---
+
+
+---
+## Matrix
+### Rotting_Oranges
+#### TC:  , MC:
+- BFS Search
+- [Back to Top](#Table-of-contents)
+```java
+class Solution {
+    public int orangesRotting(int[][] mat) {
+        
+		Queue<int[]> q = new LinkedList<>();  //queue of arr to store {i,q} position of roton orange
+       
+	   int freshCount = 0;     //to count all fresh oranges
+        int m = mat.length;    //rows count to run loop 
+        int n = mat[0].length; //cols count to run loop
+        
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){    //iterate over matrix
+               if(mat[i][j]==1){
+                    freshCount++;   //count all fresh oranges present
+                }
+                else if(mat[i][j]==2){
+                    q.add(new int[] {i,j});  //add {i,q} position of rooten oranges in queue
+                }
+            }
+        }
+        
+        int minutes = 0;  //minutes which we have to return if all oranges rotten
+        
+        int[][] dirs = {     //Matrix of coordinate to which rotten orange can spread rotteness
+            { 0, 1}, //right
+            { 0,-1}, //left
+            {-1, 0}, //up
+            { 1, 0}  //down
+        };
+        
+        while(!q.isEmpty()){  //if queue is not empty rotten oranges is present in queue
+            int size = q.size();  //size count to runn a loop to chech adjecent of each rotten orange present in queue
+            for(int i=0;i<size;i++){  //check for adjecent fresh oranges of rotten orange
+                int[] curr = q.poll();  //remove rot orange from queue & consider as current orange
+                for(int[] arr: dirs){  //for each arr in dirs mat
+                    int x = curr[0]+arr[0];  //add possible rotten coordinate to curr cordinate
+                    int y = curr[1]+arr[1];  //for checking all direction of rotten orange
+                    
+                    if(x<0 || y<0 || x>=m || y>=n || mat[x][y]==2 || mat[x][y]==0){  
+                        continue;  //skip outOfBound & already rotten & empty cell
+                    }
+                    else{  //if fresh orange found in adjecent of rotten orange
+                        mat[x][y] = 2; //make it rotten
+                        freshCount--;  //reduce the no of fresh count
+                        q.add(new int[] {x,y}); //add this rotten orange in queue
+                    }
+                }
+            }
+            
+            if(!q.isEmpty()){  //if fresh oranges rot and added to queue means minutes++
+                minutes++;
+            }
+        }
+        
+        if(freshCount==0){ //if no fresh orange remains return minutes
+            return minutes;
+        }
+        return -1; // else return -1 if some fresh oranges remain
     }
 }
 
