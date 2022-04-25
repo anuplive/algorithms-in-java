@@ -1,4 +1,10 @@
 <!--ts-->
+* Other
+  | LeetCode-100         | Microsoft-100          | Link |
+  | ------------- |:-------------:| -----:|
+  | [LC-100](https://leetcode.com/problem-list/top-100-liked-questions/) | [MS-100](https://leetcode.com/problem-list/top-microsoft-questions/)      |    [NA]() |
+---
+
 * DataStructures
   | Label         | Arrays         | Strings          | LinkedList | Stacks  | Queue | HashMap | Tree | Trie | Graphs | Heaps |
   | -------------| -------------:| -------------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
@@ -18,11 +24,7 @@ ___
   | ------------- |:-------------:| -----:|
   | [Coding-Interview-G](https://www.educative.io/courses/grokking-the-coding-interview) | [OOPS-G](https://www.educative.io/module/oop-design-interview)      |    [System-G](https://www.educative.io/courses/grokking-the-system-design-interview/B8nMkqBWONo) |  
 ---
-* Other
-  | LeetCode-100         | Link          | Link |
-  | ------------- |:-------------:| -----:|
-  | [LC-100]() | [NA]()      |    [NA]() |
----
+
 * Runtime Complexity  
   | Links         |
   | ------------- |
@@ -33,7 +35,8 @@ ___
 
 # RunTimeComplexity
 - [Back to Top](#Table-of-contents)
-  Below are the Big O performance of common functions of different Java Collections.
+  [Run Time Cheat Sheet - 1](https://www.bigocheatsheet.com/)
+- [Run Time Cheat Sheet - 2](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/)
 
 
 List                 | Add  | Remove | Get  | Contains | Next | Data Structure
