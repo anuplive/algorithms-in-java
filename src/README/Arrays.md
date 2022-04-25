@@ -4,29 +4,25 @@
 =================
 <!--ts-->
 
-| Label         |  Links        | Links | Links | Links | Links | Links | 
+| Label         |  Links____________________________        | Links___________________________ | Links___________________________ | Links___________________________ | Links___________________________ | Links___________________________ | 
 | ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| 
 | Conversion | [Conversions](#Conversions)      |    [NA] |
-| Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting       |
+| Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting |
 | Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
-
-| Sliding Window| [Sliding Window](#Sliding-Window) | [Max in Sliding Window](https://leetcode.com/problems/sliding-window-maximum/discuss/1967108/Java-Simple-Solution-with-Max-Heap-and-Deque) | ___ [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) | ___ [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)  |
-|Sliding Window|[Longest Substring with Same Letters after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)|[Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) | [Permutation in a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)  |[String Anagrams](https://www.educative.io/courses/grokking-the-coding-interview/xl2g3vxrMq3) | [Smallest Window containing Substring](https://www.educative.io/courses/grokking-the-coding-interview/xoyL4q6ApNE) | [Words Concatenation](https://www.educative.io/courses/grokking-the-coding-interview/N8nMBvDQJ0m) |       
-
-| Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) ___ [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) | ___ [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) ___ [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
+| Sliding Window| [Sliding Window](#Sliding-Window) | [Max in Sliding Window](https://leetcode.com/problems/sliding-window-maximum/discuss/1967108/Java-Simple-Solution-with-Max-Heap-and-Deque) | [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) | [Longest Subarray with Ones after_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) |
+|Sliding Window|[Longest Substring with Same Letters after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)|[Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) | [Permutation in a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)  |
+|Sliding Window| [String Anagrams](https://www.educative.io/courses/grokking-the-oding-interview/xl2g3vxrMq3) | [Smallest Window containing Substring](https://www.educative.io/courses/grokking-the-coding-interview/xoyL4q6ApNE) | [Words Concatenation](https://www.educative.io/courses/grokking-the-coding-interview/N8nMBvDQJ0m) |       
+| Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP)|  [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) |  [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) |  [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
 |Two Pointer | [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz)|
-
-
 | Two Pointer | [Remove from Array](#Remove-from-Array) | Duplicates, Whitespaces, Zeros, Squaring Array  | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
-| Fast Slow Pointers|[LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) | ___ [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) | __ [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM) ___ | [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM) ||
+| Fast Slow Pointers|[LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) |  [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) |  [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM)  | [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM) ||
 |[Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)||
-|[Kadanes Algorithm](#Kadanes-Algorithm)|Maximum Sum Subarray | ___ Stocks Buy Sell|
+|[Kadanes Algorithm](#Kadanes-Algorithm)|Maximum Sum Subarray |  Stocks Buy Sell|
 |[Left Scan Right Scan](Left-Scan-Right-Scan)|
 |[Two Arrays](#Two-Arrays)|
 |[Merging Intervals](#Merging-Intervals)|
 |[Permutations](#Permutations)| [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv) ||
 | [Mathematical](#Mathematical) |  [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) ___  [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes) ___ | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) ___ [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution) |
-
 |Matrix| [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)||
 |Matrix |DFS |[Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)| [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))| 
 |Matrix | DP |[Maximal Square in Matrix](https://leetcode.com/problems/maximal-square/discuss/1726028/brute-force-and-dp-solution-with-comments)|

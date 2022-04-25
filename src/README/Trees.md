@@ -19,9 +19,9 @@
   | Find Predecessor   | [Solution](https://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/?ref=lbp)     |
   | Print Tree Perimeter   | [Solution](https://leetcode.com/problems/boundary-of-binary-tree/discuss/1964248/Java-easy-to-understand-solution)      |[Iterative]()     |
   | Connect Same Level Nodes   | [Solution](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/1940128/Easy-to-Understand-(1ms)-solution-for-beginners)     |
-  | Print Tree Perimeter   | [Recursive]()      |[Iterative]()     |
-  | Print Tree Perimeter   | [Recursive]()      |[Iterative]()     |
-  | Print Tree Perimeter   | [Recursive]()      |[Iterative]()     |
+  | Serialize-Deserialize Tree    | [Recursive](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/1945181/Easy-to-Understand-or-Java)      
+  | Distribute Coins in Binary Tree   | [Solution -1](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/1400248/Java-oror-Easy-Approach-with-Explanation-oror-Postorder-oror-DFS)      |[Solution -2](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/938244/simple-java-solution)     |
+  | Good Nodes in a B-tree   | [Solution-1](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1707670/Simple-intuitive-approach-oror-JAVA-oror-Easy-to-understand)      |[Solution-2 ](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1908852/Java-oror-Easy-oror-Recursion)     |
 
 
 <!--te-->
