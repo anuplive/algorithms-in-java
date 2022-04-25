@@ -9,8 +9,14 @@
 | Conversion | [Conversions](#Conversions)      |    [NA] |
 | Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting       |
 | Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
-| Sliding Window| [Sliding Window](#Sliding-Window)      | Max-Sliding-Window^____ [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz) | ___ [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) | ___ [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)  |
+
+| Sliding Window| [Sliding Window](#Sliding-Window) | [Max in Sliding Window](https://leetcode.com/problems/sliding-window-maximum/discuss/1967108/Java-Simple-Solution-with-Max-Heap-and-Deque) | ___ [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) | ___ [Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ)  |
+|Sliding Window|[Longest Substring with Same Letters after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)|[Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) | [Permutation in a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)  |[String Anagrams](https://www.educative.io/courses/grokking-the-coding-interview/xl2g3vxrMq3) | [Smallest Window containing Substring](https://www.educative.io/courses/grokking-the-coding-interview/xoyL4q6ApNE) | [Words Concatenation](https://www.educative.io/courses/grokking-the-coding-interview/N8nMBvDQJ0m) |       
+
 | Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP) ___ [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) | ___ [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) ___ [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
+|Two Pointer | [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz)|
+
+
 | Two Pointer | [Remove from Array](#Remove-from-Array) | Duplicates, Whitespaces, Zeros, Squaring Array  | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
 | Fast Slow Pointers|[LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) | ___ [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) | __ [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM) ___ | [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM) ||
 |[Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)||
@@ -535,40 +541,40 @@ public int lengthOfLongestSubstring(String s) {
 ```java
 public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
 		ArrayDeque<Integer> result = new ArrayDeque<>(); // ArrayDeque for storing values
-		Deque<Integer> list = new ArrayDeque<Integer>(); // creating a linked list
+		Deque<Integer> indexList = new ArrayDeque<Integer>(); // creating a linked list
 
 		if (arr.length > 0) {
 			// If window_size is greater than the array size,
 			// set the window_size to nums.size()
 			if (arr.length < windowSize)
 				windowSize = arr.length;
+            // Populate the window 
 			for (int i = 0; i < windowSize; ++i) {
 				// Removing last smallest element index
-				while (!list.isEmpty() && arr[i] >= arr[list.peekLast()]) {
-					list.removeLast();
+				while (!indexList.isEmpty() && arr[i] >= arr[indexList.peekLast()]) {
+                 indexList.removeLast();
 				}
-
 				// Adding newly picked element index
-				list.addLast(i);
+                indexList.addLast(i);
 			}
 
 			for (int i = windowSize; i < arr.length; ++i) {
-				result.add(arr[list.peek()]);
+				result.add(arr[indexList.peek()]);
 
 				// Removing all the elements indexes which are not in the current window
-				while ((!list.isEmpty()) && list.peek() <= i - windowSize)
-					list.removeFirst();
+				while ((!indexList.isEmpty()) && list.peek() <= i - windowSize)
+                      indexList.removeFirst();
 
 				// Removing the smaller elements indexes which are not required
-				while ((!list.isEmpty()) && arr[i] >= arr[list.peekLast()])
-					list.removeLast();
+				while ((!indexList.isEmpty()) && arr[i] >= arr[indexList.peekLast()])
+                    indexList.removeLast();
 
 				// Adding newly picked element index
-				list.addLast(i);
+                  indexList.addLast(i);
 			}
 
 			// Adding the max number of the current window in the result
-			result.add(arr[list.peek()]);
+			result.add(arr[indexList.peek()]);
 			return result; // returning result
 		} else
 			return result;
