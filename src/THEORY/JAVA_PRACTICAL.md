@@ -4,7 +4,7 @@
 <!--ts-->
 * System Design
   Topics
-  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [AKKA](https://github.com/bilal-fazlani/akka-actor-tutorial/tree/master/src/main/scala)| 
+  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   |
   | ------------- |:-------------:| -----:|-----:|-----:|
 * Exceptions in JAVA 
   | Links         | Link          | Links |
