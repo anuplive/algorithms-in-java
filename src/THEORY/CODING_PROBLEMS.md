@@ -1,8 +1,8 @@
 <!--ts-->
 * Other
-  | LeetCode-100         | Microsoft-100          | Link |
-  | ------------- |:-------------:| -----:|
-  | [LC-100](https://leetcode.com/problem-list/top-100-liked-questions/) | [MS-100](https://leetcode.com/problem-list/top-microsoft-questions/)      |    [NA]() |
+  | LeetCode-100         | Microsoft-100          | Run Time Complexity  |Run Time Complexity 2  |
+  | ------------- |:-------------:| -----:| -----:|
+  | [LC-100](https://leetcode.com/problem-list/top-100-liked-questions/) | [MS-100](https://leetcode.com/problem-list/top-microsoft-questions/)      |    [Cheat](https://www.bigocheatsheet.com/)  | [Cheat - 2](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/) |
 ---
 
 * DataStructures
@@ -32,18 +32,7 @@ ___
   | [Coding-Interview-G](https://www.educative.io/courses/grokking-the-coding-interview) | [OOPS-G](https://www.educative.io/module/oop-design-interview)      |    [System-G](https://www.educative.io/courses/grokking-the-system-design-interview/B8nMkqBWONo) |  
 ---
 
-* Runtime Complexity  
-  | Links         |
-  | ------------- |
-  | [Cheat](https://www.bigocheatsheet.com/) |
-
-
 <!--te-->
-
-# RunTimeComplexity
-- [Back to Top](#Table-of-contents)
-  [Run Time Cheat Sheet - 1](https://www.bigocheatsheet.com/)
-- [Run Time Cheat Sheet - 2](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/)
 
 
 List                 | Add  | Remove | Get  | Contains | Next | Data Structure
