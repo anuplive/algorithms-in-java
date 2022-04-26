@@ -12,24 +12,9 @@ Table of contents
 | [Palindrome](#Palindrome)                               | [Longest Palindromic Subsequence](#Longest-Palindromic-Subsequence)                       | [Longest Palindromic Substring](#Longest-Palindromic-Substring)               | [Count of Palindromic Substrings](Count-of-Palindromic-Substrings)                                            | [Find all Palindrome Substrings](#Find-all-Palindrome-Substrings)                                                                       | [Palindromic Partitioning](#Palindromic-Partitioning)             |                                                                 |                                                                       |                                               |   |
 | [String_Conversions](#String_Conversions)               | [String To Integer](#[String-To-Integer])                                                 | [ROMAN_to_INTEGER](#ROMAN_to_INTEGER)                                         | [INTEGER_to_ROMAN](#INTEGER_to_ROMAN)                                                                         | [INTEGER_to_BINARY](#INTEGER_to_BINARY)                                                                                                 | [BINARY_to_INTEGER](#BINARY_to_INTEGER)                           |                                                                 |                                                                       |                                               |   |
 | [Permutations](#Permutations)                           | [Generate All possible Balanced Parentheses](#Generate-All-possible-Balanced-Parentheses) | [String Permutations by changing case](#String-Permutations-by-changing-case) | [Generate all the possible permutations of String](#Generate-all-the-possible-permutations-of-String)         | [String Permutations by changing case](#String-Permutations-by-changing-case)                                                           |                                                                   |                                                                 |                                                                       |                                               |   |
-|                                                         |                                                                                           |                                                                               |                                                                                                               |                                                                                                                                         |                                                                   |                                                                 |                                                                       |                                               |   |
-
-
-
-
-OLD 
-
-| Label         | Link          | Links | Links | Links | Links | Links | Links |
-| ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| -----:|
-| [Handy Checks](#Handy_Checks) |      |     |    |    |     |     |     |
-| [Remove Characters](#Remove-Characters) | |     |    |    |     |     |     |
-| [Substring Use Cases](#Substring-Use-Cases) | Substrings | SubSequences  |    |    |     |     |     |
-| [Palindrome](#Palindrome) | |     |    |    |     |     |     | 
-| [Permutations](#Permutations) | Parenthesis  | String Combinations   |    |    |     |     |     | 
-| [Sorting](#Sorting) | Char Frequency |     |    |    |     |     |     | 
 <!--te-->
 ---
-## Handy_Checks
+## Handy Checks
 - [Back to Top](#Table-of-contents)
 ```java
 //[0-9] 48 - 57 , [A-Z] 65 - 90 and  [a-z] 97 - 122 
