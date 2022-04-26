@@ -6,7 +6,7 @@
   System Design in JAVA
   | Links         | Link          | Links |
   | ------------- |:-------------:| -----:|
-  | [Design Solution](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | Cache, Deign Patterns    |    |
+  | [Design Solution](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | Deign Patterns    |    |
   
 * Exceptions in JAVA 
   | Links         | Link          | Links |

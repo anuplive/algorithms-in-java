@@ -21,6 +21,7 @@
 ___
 * More Patterns in Coding
   | [Sliding Windows](https://www.educative.io/courses/grokking-the-coding-interview/7D5NNZWQ8Wr) | [Two Pointer](https://www.educative.io/courses/grokking-the-coding-interview/xlK78P3Xl7E) | [Fast-Slow Pointers](https://www.educative.io/courses/grokking-the-coding-interview/g76PJVmL5PZ) |[Merge-Intervals](https://www.educative.io/courses/grokking-the-coding-interview/g76PJVmL5PZ) |[Cyclic Sort](https://www.educative.io/courses/grokking-the-coding-interview/g286M2Gk3YY) |
+
 |[In-place Reversal of LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/JE8vzXroA5P) |[Tree -BFS](https://www.educative.io/courses/grokking-the-coding-interview/qARvkz138r3) | [Tree-DFS](https://www.educative.io/courses/grokking-the-coding-interview/q2GxL8GWB6y) | [Tow-Heaps](https://www.educative.io/courses/grokking-the-coding-interview/xlm8k0ZND93) | [Subsets](https://www.educative.io/courses/grokking-the-coding-interview/R87WmWYrELz) | [Binary Search](https://www.educative.io/courses/grokking-the-coding-interview/JQJOO357VDo) | [Top K Elements](https://www.educative.io/courses/grokking-the-coding-interview/7XBApZGoEvj) | [K - way Merge](https://www.educative.io/courses/grokking-the-coding-interview/xlGGNlQr8jE) | [Kth smallest Element](https://www.educative.io/courses/grokking-the-coding-interview/myJK6Wvj00R)|
  
 * Tutorials
