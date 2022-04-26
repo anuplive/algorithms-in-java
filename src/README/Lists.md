@@ -4,7 +4,7 @@
 <!--ts-->
 | Name           |                                           |                                           |   |   |   |
 |----------------|-------------------------------------------|-------------------------------------------|---|---|---|
-| Implementation | [Doubly Linked List](#Doubly-Linked-List) | [Singly Linked List](#Singly Linked List) |   |   |   |
+| Implementation | [Doubly Linked List](#Doubly-Linked-List) | [Singly Linked List](#Singly-Linked-List) |   |   |   |
 |                |                                           |                                           |   |   |   |
 <!--te-->
 
