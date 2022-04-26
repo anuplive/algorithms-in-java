@@ -3,9 +3,9 @@
 =================
 <!--ts-->
 *
-| Name            |                          |                         |                         |
-|-----------------|--------------------------|-------------------------|-------------------------|
-| Implementation  | [Hash Table](#HASHTABLE) | [LRU_Cache](#LRU_Cache) | [LFU_Cache](#LFU_Cache) |
+| Name            |                          |                         |                         |                                                 |
+|-----------------|--------------------------|-------------------------|-------------------------| ------------------------------------------------|
+| Implementation  | [Hash Table](#HASHTABLE) | [LRU_Cache](#LRU_Cache) | [LFU_Cache](#LFU_Cache) | [Thread Safe LRU_Cache](#Thread-Safe-LRU_Cache) |
 <!--te-->
 ---
 ### HASHTABLE
@@ -390,13 +390,109 @@ class LFUCache {
 
 
 
-## Heading 2
+## Concurrent HashMap 
 ---
-### subHeading 2
-#### TC:   ,
+### Thread Safe LRU_Cache 
+#### TC:  , MC:  
 - Notes
+- [LeetCode](https://leetcode.com/problems/lru-cache/discuss/1011481/thread-safe-java-implementation-with-concurrenthashmap-and-reentrantlock)
 - [Back to Top](#Table-of-contents)
 ```java
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+
+class LRUCache {
+    class Node {
+        int key;
+        int value;
+        Node next;
+        Node prev;
+        
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+            next = null;
+            prev = null;
+        }
+    }
+    
+    private ConcurrentHashMap<Integer, Node> map;
+    private AtomicInteger size;
+    private int capacity;
+    private Node head, tail;
+    private ReentrantLock lock;
+    
+    public LRUCache(int capacity) {
+        map = new ConcurrentHashMap<>();
+        size = new AtomicInteger();
+        this.capacity = capacity;
+        head = new Node(0, 0);
+        tail = new Node(0, 0);
+        head.prev = tail;
+        tail.next = head;
+        lock = new ReentrantLock();
+    }
+    
+    public int get(int key) {
+        if (map.containsKey(key)) {
+            Node node = map.get(key);
+            removeNode(key);
+            addNode(key, node.value);
+            return node.value;
+        } else {
+            return -1;
+        }
+    }
+    
+    public void put(int key, int value) {
+        if (map.containsKey(key)) {
+            removeNode(key);
+            addNode(key, value);
+        } else {
+            addNode(key, value);
+        }
+    }
+    
+    // Remove the Node from DLL
+    private void removeNode(int key) {
+        lock.lock();
+        try {
+            Node node = map.get(key);
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+
+            size.decrementAndGet(); 
+            map.remove(node.key);
+        } finally {
+            lock.unlock();
+        }
+    }
+    
+    // Add the Node at the head of DLL
+    private void addNode(int key, int value) {
+        lock.lock();
+        try {
+            Node node = new Node(key, value);
+
+            node.prev = head.prev;
+            head.prev = node;
+            node.prev.next = node;
+            node.next = head;
+
+            map.put(key, node);
+            size.incrementAndGet(); 
+            if (size.get() > capacity) {
+                removeNode(tail.next.key);
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
+}
 
 ```
 ---
