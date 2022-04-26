@@ -6,7 +6,7 @@
 |--------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---|---|---|
 | Heaps              | [Implementation](#Implementation)                                                                                | Heap O(log(n))  insert and delete, get O(1)                                                         |   |   |   |
 | Sorting            | [Sort By Frequency of Character](#Sort-By-Frequency-of-Character)                                                | [Sort Vowels and Consonants](#Sort-Vowels-and-Consonants)                                           |   |   |   |
-| Two Heap Problems  | [Find the Median of a Number Stream](https://www.educative.io/courses/grokking-the-coding-interview/3Yj2BmpyEy4) | [Sliding Window Median](https://www.educative.io/courses/grokking-the-coding-interview/3Y9jm7XRrXO) |   |   |   |
+| Two Heap Problems  | [Find the Median of a Number Stream](#Find-the-Median-of-a-Number-Stream)                                        | [Sliding Window Median](#Sliding-Window-Median) |   |   |   |
 | Single Heap        | [Sliding Window Max](#Sliding-Window-Max)                                                                        |                                                                                                     |   |   |   |
 |                    |                                                                                                                  |                                                                                                     |   |   |   |
 
@@ -54,6 +54,7 @@ class MedianOfAStream {
 ### Sliding Window Median
 #### TC: O(N * K) , MC: O(K)
 - Two Heap Problems 
+- [Grocking](https://www.educative.io/courses/grokking-the-coding-interview/3Y9jm7XRrXO)
 - [Back to Top](#Table-of-contents)
 ```java
 class SlidingWindowMedian {
