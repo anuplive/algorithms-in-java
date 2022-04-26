@@ -9,118 +9,66 @@
 <!--te-->
 ---
 ### HASHTABLE
-#### TC:  , MC:
-- Some comment
+#### TC: O(L) (L = linkedlist length)  , MC:
+- Chaining
 - [Back to Top](#Table-of-contents)
 ```java
 // HASH TABLE 
-package coding.challenge;
+class Node{
+    public int key,val;
+    public Node next;
 
-public class HashTable<K, V> {
- 
-    private static final int SIZE = 10;
-
-    private static class HashEntry<K, V> {
-
-        K key;
-        V value;
-
-        HashEntry<K, V> next;
-
-        HashEntry(K k, V v) {
-            this.key = k;
-            this.value = v;
-            this.next = null;
-        }
-
-        @Override
-        public String toString() {
-            return "HashEntry{" + "key=" + key + ", value=" + value + ", next=" + next + '}';
-        }
-
+    public Node(int key, int val, Node next){
+        this.key = key;
+        this.val = val;
+        this.next = next;
     }
 
-    private final HashEntry[] entries = new HashEntry[SIZE];
+}
 
-    public void put(K key, V value) {
-
-        int hash = getHash(key);
-        
-        final HashEntry hashEntry = new HashEntry(key, value);
-
-        if (entries[hash] == null) {
-            entries[hash] = hashEntry;
-        } else { // collision => chaining
-            HashEntry currentEntry = entries[hash];
-            while (currentEntry.next != null) {
-                currentEntry = currentEntry.next;
-            }
-
-            currentEntry.next = hashEntry;
-        }
+class MyHashMap {
+    int size = 1_000_001;
+    Node[] node;
+    public MyHashMap() {
+        node = new Node[size];
     }
 
-    public V get(K key) {
+    public void put(int key, int value) {
+        remove(key);
+        int pos = hashFunc(key);
+        node[pos] = new Node(key,value,node[pos]);
+    }
 
-        int hash = getHash(key);
-        
-        if (entries[hash] != null) {
-            HashEntry currentEntry = entries[hash];
+    public int get(int key) {
+        int pos = hashFunc(key);
+        Node temp = node[pos];
+        while (temp != null){
+            if (temp.key == key) return temp.val;
+            temp = temp.next;
+        }
+        return -1;
+    }
 
-            // Check the entry linked list for matching the given 'key'
-            while (currentEntry != null) {                
-
-                if (currentEntry.key.equals(key)) {
-                    return (V) currentEntry.value;
+    public void remove(int key) {
+        int pos = hashFunc(key);
+        Node temp = node[pos];
+        if (temp == null) return;
+        if (temp.key == key) node[pos] = temp.next;
+        else{
+            while (temp.next != null){
+                if (temp.next.key == key){
+                    temp.next = temp.next.next;
+                    return;
                 }
-                
-                currentEntry = currentEntry.next;
+                temp = temp.next;
             }
         }
-
-        return null;
     }
 
-    private int getHash(K key) {        
-        return Math.abs(key.hashCode() % SIZE);
-    }    
-}
-//#######################
-//Main.java
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        HashTable hashTable = new HashTable();
-
-        // Put some key-value
-        hashTable.put("ana", "ana".toUpperCase());
-        hashTable.put("carina", "carina".toUpperCase());
-        hashTable.put("barbu", "barbu".toUpperCase());
-        hashTable.put("leo", "leo".toUpperCase());
-        hashTable.put("marius", "marius".toUpperCase());
-        hashTable.put(5, "FIVE");
-        hashTable.put(10, "TEN");
-
-        // The following keys should exists
-        System.out.println("Get(ana): " + hashTable.get("ana"));
-        System.out.println("Get(carina): " + hashTable.get("carina"));
-        System.out.println("Get(barbu): " + hashTable.get("barbu"));
-        System.out.println("Get(leo): " + hashTable.get("leo"));
-        System.out.println("Get(marius): " + hashTable.get("marius"));
-        System.out.println("Get(5): " + hashTable.get(5));
-        System.out.println("Get(10): " + hashTable.get(10));
-
-        // The following two keys should not exists
-        System.out.println("Get(anna): " + hashTable.get("anna"));
-        System.out.println("Get(15): " + hashTable.get(15));
+    private int hashFunc(int key){
+        return key%size;
     }
 }
-
-
-
-
 ```
 ---
 ## Caching
