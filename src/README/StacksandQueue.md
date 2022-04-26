@@ -1121,43 +1121,5 @@ class BinaryTree {
 ```
 ---
 
-## Priority_Queue_aka_Heap
----
-### Sort_Array_of_String_vowels_consonants
-#### TC: O(n^2) , MC: O(N)
-- Using the Priority a
-- [Back to Top](#Table-of-contents)
-```java
-class Solution {   
-String test = "This is a Sample" +
-                    "test String that will be test String for this test";
-            Set<Character> vSet = new HashSet<>();
-            // Create a HashMap with index and diff
-            Map<Integer, Integer> indexHash = new HashMap<>();
-            ArrayList<String> inputArray = new ArrayList<>();
-            vSet.add('a');vSet.add('e');vSet.add('i');vSet.add('o');vSet.add('u');
-            int stringPosition = 0;
-            for (String s : test.split("\\s")){
-                char [] cArray = s.trim().toCharArray();
-                int vCounter = 0;
-                for (int i = 0; i < cArray.length; i ++){
-                    if (vSet.contains(cArray[i]))
-                        vCounter++;
-                }
-                inputArray.add(stringPosition, s.trim());
-                indexHash.put(stringPosition ++, cArray.length-vCounter);
-            }
-            // populate the priority queue
-            PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b)-> (a.getValue() - b.getValue()));
-            pq.addAll(indexHash.entrySet());
 
-            while (!pq.isEmpty()){
-                Map.Entry<Integer, Integer> entry = pq.poll();
-                System.out.println(String.format("%s has a diff of %d", inputArray.get(entry.getKey()), entry.getValue()));
-            }
-}
-
-
-```
----
 

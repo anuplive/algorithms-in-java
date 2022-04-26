@@ -5,8 +5,8 @@ Table of contents
 <!--ts-->
 | Name                                                    |                                                                                           |                                                                               |                                                                                                               |                                                                                                                                         |                                                                   |                                                                 |                                                                       |                                               |   |
 |---------------------------------------------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------------|---|
-| [Handy Checks](#Handy-Checks)                            |                                                                                           |                                                                               |                                                                                                               |                                                                                                                                         |                                                                   |                                                                 |                                                                       |                                               |   |
-| [Simple Problems](#Simple-Problems)                     | [Regex Matching](#Regex-Matching)                                                         | [Fruits Basket](#Fruits-into-Baskets)                                         | [Longest Substring with maximum K Distinct Characters](#Longest-Substring-with-maximum-K-Distinct-Characters) |   [Sort By Frequency of Character](#Sort-By-Frequency-of-Character)                                                                     |                                                                   |                                                                 |                                                                       |                                               |   |
+| [Handy Checks](#Handy-Checks)                            |                                                                                           |                                                                               |                                                                                                               |                                                                                                                                        |                                                                   |                                                                 |                                                                       |                                               |   |
+| [Simple Problems](#Simple-Problems)                     | [Regex Matching](#Regex-Matching)                                                         | [Fruits Basket](#Fruits-into-Baskets)                                         | [Longest Substring with maximum K Distinct Characters](#Longest-Substring-with-maximum-K-Distinct-Characters) |   [Sort By Frequency of Character](#Sort-By-Frequency-of-Character)                                                                     | [Sort Vowels and Consonants](#Sort-Vowels-and-Consonants      )   |                                                                 |                                                                       |                                               |   |
 | [Remove_Characters](#Remove_Characters)                 | [Remove Duplicates from a String](#Remove-Duplicates-from-a-String)                       | Whitespaces                                                                   |                                                                                                               |                                                                                                                                         |                                                                   |                                                                 |                                                                       |                                               |   |
 | [SubSequence and Substring](#SubSequence-and-Substring) | [Dictionary Word Break Problem](#Dictionary-Word-Break-Problem)                           | [Longest Common Substring](#Longest-Common-Substring)                         | [Longest Common Subsequence](#Longest-Common-Subsequence)                                                     | [Minimum Deletions & Insertions to Transform a String Into Another](#Minimum-Deletions-&-Insertions-to-Transform-a-String-Into-Another) | [Shortest Common Super-sequence](#Shortest-Common-Super-sequence) | [Longest Repeating Subsequence](#Longest-Repeating-Subsequence) | [Edit Distance Transform s1 to s2](#Edit-Distance-Transform-s1-to-s2) | [Strings Interleaving](#Strings-Interleaving) |   |
 | [Palindrome](#Palindrome)                               | [Longest Palindromic Subsequence](#Longest-Palindromic-Subsequence)                       | [Longest Palindromic Substring](#Longest-Palindromic-Substring)               | [Count of Palindromic Substrings](#Count-of-Palindromic-Substrings)                                            | [Find all Palindrome Substrings](#Find-all-Palindrome-Substrings)                                                                       | [Palindromic Partitioning](#Palindromic-Partitioning)             |                                                                 |                                                                       |                                               |   |
@@ -283,6 +283,41 @@ public static int findLength(String str, int k) {
     return maxLength;
   }
 ```
+### Sort Vowels and Consonants
+#### TC: O (NlogN) , MC: O ( N)
+- Heap
+- [Back to Top](#Table-of-contents)
+```java
+class Solution {   
+String test = "This is a Sample" +
+                    "test String that will be test String for this test";
+            Set<Character> vSet = new HashSet<>();
+            // Create a HashMap with index and diff
+            Map<Integer, Integer> indexHash = new HashMap<>();
+            ArrayList<String> inputArray = new ArrayList<>();
+            vSet.add('a');vSet.add('e');vSet.add('i');vSet.add('o');vSet.add('u');
+            int stringPosition = 0;
+            for (String s : test.split("\\s")){
+                char [] cArray = s.trim().toCharArray();
+                int vCounter = 0;
+                for (int i = 0; i < cArray.length; i ++){
+                    if (vSet.contains(cArray[i]))
+                        vCounter++;
+                }
+                inputArray.add(stringPosition, s.trim());
+                indexHash.put(stringPosition ++, cArray.length-vCounter);
+            }
+            // populate the priority queue
+            PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b)-> (a.getValue() - b.getValue()));
+            pq.addAll(indexHash.entrySet());
+
+            while (!pq.isEmpty()){
+                Map.Entry<Integer, Integer> entry = pq.poll();
+                System.out.println(String.format("%s has a diff of %d", inputArray.get(entry.getKey()), entry.getValue()));
+            }
+}
+```
+
 
 ## String_Conversions
 ### String_To_Integer
