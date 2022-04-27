@@ -6,7 +6,7 @@
   Topics
   | Links         | Link          | Links | Links | Links | Links |
   | ------------- |:-------------:| -----:| -----:| -----:| -----:|
-  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | | |  
+  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | [SOLID Principles](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) | |  
   
 * Exceptions in JAVA 
   | Links         | Link          | Links |
