@@ -3,34 +3,28 @@
 ## Table of contents
 =================
 <!--ts-->
+| Name                                                |                                                                                                                                    |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------|---|
+| [Conversions](#Conversions)                         | [Handy Checks](#Handy-Checks)                                                                                                      |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Sorting Array](#Sorting-Array)                     | [Insertion Sort](#Insertion-Sort)                                                                                                  | [Merge Sort](#Merge-Sort)                                                                                                                                        | [Quick Sort](#Quick-Sort)                                                                                                                                             | [Cyclic Sort](#Cyclic-Sort)                                                 | [Custom Sorting Frequency Sort](#Custom-Sorting-Frequency-Sort) |   |
+| [Searching](#Searching)                             | [Binary Search](#Binary-Search)                                                                                                    | [Rotated Sorted Array](#Rotated-Sorted-Array)                                                                                                                    | [2D Matrix](#2D-Matrix)                                                                                                                                               | [Order Agnostic BS](#Order-Agnostic-BS)                                     |                                                                 |   |
+| [Sliding Window](#Sliding-Window)                   | [MaxSum SubArray Size K](#MaxSum-SubArray-Size-K)                                                                                  | [Longest Substring K Distinct Characters](#Longest-Substring-K-Distinct-Characters)                                                                              | [Sliding Window Max](#Sliding-Window-Max)                                                                                                                             | [Sub arrays Product Less than Target](#Sub-arrays-Product-Less-than-Target) |                                                                 |   |
+| [Two Pointer](#Two-Pointer)                         | [Squaring an Array](#Squaring-an-Array)                                                                                            | [Minimum Window to be Sorted](#Minimum_Window_to_be_Sorted)                                                                                                      | [Remove Duplicates](#Remove-Duplicates)                                                                                                                               |                                                                             |                                                                 |   |
+| [TP-Triplet SUM](#Triplet-SUM)                      | [Pair Target Sum](#Pair-Target-Sum)                                                                                                | [Triplet Sum Zero](#Triplet-Sum-Zero)                                                                                                                            | [Triplet Sum Close to Target](#Triplet-Sum-Close-to-Target)                                                                                                           | [Quadruple Sum to Target](#Quadruple-Sum-to-Target)                         |                                                                 |   |
+| [TP-Rearrange Array](#Rearrange-Array)              | [Dutch Flag](#Dutch-Flag)                                                                                                          | [Array in Max/Min Form](#Array-in-Max/Min-Form)                                                                                                                  | [Rearrange Positive & Negative Values](#Rearrange-Positive-&-Negative-Values)                                                                                         |                                                                             |                                                                 |   |
+| [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest) | [Find Second Max](#Find-Second-Max)                                                                                                | [Kth Largest Element](#Kth-Largest-Element)                                                                                                                      |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Kadanes Algorithm](#Kadanes-Algorithm)             | [Buy and Sell Stock](#Buy-and-Sell-Stock)                                                                                          | [Maximum Sum Subarray](#Maximum-Sum-Subarray)                                                                                                                    |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Left Scan Right Scan](#Left-Scan-Right-Scan)       | [Products of All Elements Except Itself](#Products-of-All-Elements-Except-Itself)                                                  |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Two Arrays](#Two-Arrays)                           | [Smallest Common Number Sorted Array](#Smallest-Common-Number-Sorted-Array)                                                        |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Merging Intervals](#Merging-Intervals)             | [Merge Array Overlapping Intervals](#Merge-Array-Overlapping-Intervals)                                                            | [Conflicting Appointments](#Conflicting-Appointments)                                                                                                            | [Minimum Meeting Rooms](#Minimum-Meeting-Rooms)                                                                                                                       |                                                                             |                                                                 |   |
+| [Permutations](#Permutations)                       | [Possible permutations](#Possible-permutations)                                                                                    |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Matrix](#Matrix)                                   | [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)                  | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution)                                                 | [Winner of Tic Tac Toe](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.) |                                                                             |                                                                 |   |
+| Matrix-DFS                                          | [Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)                             | [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))                                               |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| Matrix-DP                                           | [Maximal Square in Matrix](https://leetcode.com/problems/maximal-square/discuss/1726028/brute-force-and-dp-solution-with-comments) |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| Matrix BFS                                          | [Rotting Oranges](#Rotting-Oranges)                                                                                                | [Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76934/10ms-BFS-Java-solution-with-explanation) |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| Matrix-Search                                       | [2D Matrix](#2D-Matrix)                                                                                                            |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| Mathematical                                        | [Nth Prime](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number)                       | [Prime till numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes)                                                           |                                                                                                                                                                       |                                                                             |                                                                 |   |
 
-| Label         |  Links____________________________        | Links___________________________ | Links___________________________ | Links___________________________ | Links___________________________ | Links___________________________ | 
-| ------------- |:-------------:| -----:| -----:| -----:| -----:| -----:| 
-| Conversion | [Conversions](#Conversions)      |    [NA] |
-| Sort | [Sorting Array](#Sorting-Array)      | Insertion ___ Merge ___ Quick Sort ___ Cyclic ___ Custom Sorting |
-| Searching | [Searching](#Searching)      |    BinarySearch___Rotated_Array___Matrix___Order_Agnoistic |
-| Sliding Window| [Sliding Window](#Sliding-Window) | [Max in Sliding Window](https://leetcode.com/problems/sliding-window-maximum/discuss/1967108/Java-Simple-Solution-with-Max-Heap-and-Deque) | [Longest_Substring_After_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR) | [Longest Subarray with Ones after_Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) |
-|Sliding Window|[Longest Substring with Same Letters after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR)|[Longest Subarray with Ones after Replacement](https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ) | [Permutation in a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv)  |
-|Sliding Window| [String Anagrams](https://www.educative.io/courses/grokking-the-oding-interview/xl2g3vxrMq3) | [Smallest Window containing Substring](https://www.educative.io/courses/grokking-the-coding-interview/xoyL4q6ApNE) | [Words Concatenation](https://www.educative.io/courses/grokking-the-coding-interview/N8nMBvDQJ0m) |       
-| Two Pointer| [Two Pointer](#Two-Pointer)   | [Pair with Target Sum](https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP)|  [Triplet Sum to Zero](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r) |  [Triplet Sum Close to Target](https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA) |  [Triplets with Smaller Sum](https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO)  | 
-|Two Pointer | [Subarrays with Product Less than a Target](https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz)|
-| Two Pointer | [Remove from Array](#Remove-from-Array) | Duplicates, Whitespaces, Zeros, Squaring Array  | [Dutch National Flag Problem](https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0) |
-| Fast Slow Pointers|[LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D) |  [Start of LinkedList Cycle](https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN) |  [Happy Number](https://www.educative.io/courses/grokking-the-coding-interview/39q3ZWq27jM)  | [Middle of the LinkedList](https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM) ||
-|[Nth Smallest OR Largest](#Nth-Smallest-OR-Largest)||
-|[Kadanes Algorithm](#Kadanes-Algorithm)|Maximum Sum Subarray |  Stocks Buy Sell|
-|[Left Scan Right Scan](Left-Scan-Right-Scan)|
-|[Two Arrays](#Two-Arrays)|
-|[Merging Intervals](#Merging-Intervals)|
-|[Permutations](#Permutations)| [Match Permutation of Pattern with a String](https://www.educative.io/courses/grokking-the-coding-interview/N0o9QnPLKNv) ||
-| [Mathematical](#Mathematical) |  [isPrime ? ](https://leetcode.com/discuss/general-discussion/573063/how-to-efficiently-find-nth-prime-number) ___  [prime till Numbers](https://leetcode.com/problems/count-primes/discuss/1876693/sieve-of-eratosthenes) ___ | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/discuss/1913854/Java-easy-understanding-solution) ___ [Roman to Integer](https://leetcode.com/problems/roman-to-integer/discuss/1914300/Java-most-easiest-solution) |
-|Matrix| [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)||
-|Matrix |DFS |[Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)| [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))| 
-|Matrix | DP |[Maximal Square in Matrix](https://leetcode.com/problems/maximal-square/discuss/1726028/brute-force-and-dp-solution-with-comments)|
-|MATRIX | BFS | [Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76934/10ms-BFS-Java-solution-with-explanation) | [Rotting_Oranges](#Rotting_Oranges) |
-|MATRIX | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution) | [Winner of Tic Tac Toe ](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.)|
-|Matrix| [Search_a_2D_Matrix](#Search_a_2D_Matrix) ||
-___
-___
 <!--te-->
 
 ## Handy Checks
@@ -127,7 +121,7 @@ public int[] sortArray(int[] nums) {
   }
 ```
 ---
-### Quicksort Algorithm
+### Quick Sort
 #### TC: O(NlogN)  , MC: O(logN)
 - Recursive Algo has three parts
   - partition: divides the array at pivot
@@ -238,8 +232,8 @@ public static String sortCharacterByFrequency(String str) {
 
 ## Searching
 ---
-### Binary Search on a Sorted Array
-#### TC:  , MC:
+### Binary Search
+#### TC: O(Log N) , MC:
 - Recursive
 - [Back to Top](#Table-of-contents)
 ```java
@@ -283,7 +277,7 @@ static int binSearch(int[] A, int key) {
 ```
 ---
 ---
-### Searching in a Rotated Sorted Array
+### Rotated Sorted Array
 #### TC: O(log n) , MC:  O(1)
 - Recursive , we have two sorted arrays search in them
 - [Back to Top](#Table-of-contents)
@@ -348,7 +342,7 @@ static int binarySearchRotated(int[] arr, int key) {
 ```
 ---
 ---
-### Search_a_2D_Matrix
+### 2D Matrix
 #### TC: O(logmn)  , MC: O(1)
 - The 2D array is represented as pivotted array
 - 
@@ -382,7 +376,7 @@ public boolean searchMatrix(int[][] matrix, int target) {
 ---
 
 ---
-### Order-agnostic Binary Search
+### Order Agnostic BS
 #### TC: O(logN) , MC: O(1)
 - Some comment
 - [Back to Top](#Table-of-contents)
@@ -418,7 +412,7 @@ public static int search(int[] arr, int key) {
 
 ## Sliding Window
 ---
-### Maximum Sum Subarray of Size K
+### MaxSum SubArray Size K
 #### TC: O(N)  , MC: O(1), Easy
 [Back to Top](#Table-of-contents)
 - Hint: Have a start pointer, and a currentWindowSum
@@ -470,7 +464,7 @@ public static int findMinSubArray(int S, int[] arr) {
 
 ```
 ---
-### Longest Substring with maximum K Distinct Characters
+### Longest Substring K Distinct Characters
 #### TC: O(N) , MC: O(N)
 - [Back to Top](#Table-of-contents)
 ```java
@@ -529,55 +523,41 @@ public int lengthOfLongestSubstring(String s) {
 }
 ```
 ---
-### Find Maximum in Sliding Window
-#### TC: O(N) , MC: O(w)
-- For each of the window create a queue
-- add the element in the queue if if next elemnt is greater
+### Sliding Window Max
+#### TC: NlogK  , MC:
+- Maintaing a Heap
 - [Back to Top](#Table-of-contents)
 ```java
-public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
-		ArrayDeque<Integer> result = new ArrayDeque<>(); // ArrayDeque for storing values
-		Deque<Integer> indexList = new ArrayDeque<Integer>(); // creating a linked list
-
-		if (arr.length > 0) {
-			// If window_size is greater than the array size,
-			// set the window_size to nums.size()
-			if (arr.length < windowSize)
-				windowSize = arr.length;
-            // Populate the window 
-			for (int i = 0; i < windowSize; ++i) {
-				// Removing last smallest element index
-				while (!indexList.isEmpty() && arr[i] >= arr[indexList.peekLast()]) {
-                 indexList.removeLast();
-				}
-				// Adding newly picked element index
-                indexList.addLast(i);
-			}
-
-			for (int i = windowSize; i < arr.length; ++i) {
-				result.add(arr[indexList.peek()]);
-
-				// Removing all the elements indexes which are not in the current window
-				while ((!indexList.isEmpty()) && list.peek() <= i - windowSize)
-                      indexList.removeFirst();
-
-				// Removing the smaller elements indexes which are not required
-				while ((!indexList.isEmpty()) && arr[i] >= arr[indexList.peekLast()])
-                    indexList.removeLast();
-
-				// Adding newly picked element index
-                  indexList.addLast(i);
-			}
-
-			// Adding the max number of the current window in the result
-			result.add(arr[indexList.peek()]);
-			return result; // returning result
-		} else
-			return result;
-	}
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int[] ret = new int[nums.length - k  + 1];
+        int left = 0;
+        int right = 0;
+		// max heap that first sorts elements by value (descending) and by their index (ascending) for duplicates
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> (a != b) ? Integer.compare(nums[b], nums[a]) : 
+                                                            Integer.compare(a, b));
+        // Offer all elements from the first window
+		for (; right < k; right++) {
+            maxHeap.offer(right);
+        }
+		// This is because of heap property
+        ret[left++] = nums[maxHeap.peek()];
+        while (right < nums.length) {
+		    // Making sure that the heap top always is within the current window
+            while (!maxHeap.isEmpty() && maxHeap.peek() < left) {
+                maxHeap.poll();
+            }
+            maxHeap.offer(right);
+            ret[left] = nums[maxHeap.peek()];
+            left++;
+            right++;
+        }
+        
+        return ret;
+    }
+}
 ```
----
-### Sub arrays with Product Less than a Target.
+### Sub arrays Product Less than Target
 #### TC: O(N)  MC: O(N)  ,
 - Some Comments 
 - [Back to Top](#Table-of-contents)
@@ -605,6 +585,30 @@ public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize
 ---
 
 ## Two Pointer
+### Remove from Array
+- Two pointer, nextNegativeNumber = 0 ; scanner will run from 0 to N-1
+- Remove Duplicates, WhiteSpaces, etc
+- End the string wit '\0'
+### Remove Duplicates
+#### TC: O(NLogN)  , MC: O(1)
+- Sort the Array, compute adjacent elements, update the nextNonDuplicateIndex
+- [Back to Top](#Table-of-contents)
+```java
+public static int remove(int[] arr) {
+    Arrays.sort(arr);
+    int nextNonDuplicate = 1; // index of the next non-duplicate element
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[nextNonDuplicate - 1] != arr[i]) {
+        arr[nextNonDuplicate] = arr[i];
+        nextNonDuplicate++;
+      }
+    }
+
+    return nextNonDuplicate;
+  }
+```
+---
+---
 ### Squaring an Array
 #### TC: O(NLogN)  , MC: O(N)
 - Sort the Array, take two pointers at end populate the result[] from last index
@@ -631,75 +635,47 @@ public static int[] makeSquares(int[] arr) {
   }
 ```
 ---
-### Dutch National Flag Problem
-#### TC: O(N) , MC: O(1)
-- Take two pointers Low and High, iterate array with index i
-- If arr[i] == 0, swap i with Low, I ++ and Low ++
-- If arr[i] == 1,  I ++
-- If arr[i] == 2, swap i with High, I ++ and High ++
+### Minimum Window to be Sorted
+#### TC: O(N)  , MC: O(1)
+- Scan from Left and Right and find pointer that are out of order.
+- Find the Min and Max value in that Range
+- Include the numbers that are greater than MIN and smaller than MAX
 - [Back to Top](#Table-of-contents)
 ```java
-public void sortColors(int[] nums) {
+public static int sort(int[] arr) {
+    int low = 0, high = arr.length - 1;
+    // find the first number out of sorting order from the beginning
+    while (low < arr.length - 1 && arr[low] <= arr[low + 1])
+      low++;
 
-    // Set the boundries for the 0 and the 2, and start iterating from 0 
-        int nextZeroIndex = 0 , nextTwoIndex = nums.length -1;
-        int curr = 0;
+    if (low == arr.length - 1) // if the array is sorted
+      return 0;
 
-        int temp = 0;
-    // Boundry condition     
-        while(curr <= nextTwoIndex){
-    
-    // If ==0 then swap increment both Indices        
-        if (nums[curr] == 0){
-        temp = nums[nextZeroIndex];
-        nums[nextZeroIndex ++] = nums[curr];
-        nums[curr++] = temp;
-        
-    // If ==2 decrement only the right Indices
-        }else if (nums[curr] == 2){
-        temp = nums[nextTwoIndex];
-        nums[nextTwoIndex --] = nums[curr];
-        nums[curr] = temp;
+    // find the first number out of sorting order from the end
+    while (high > 0 && arr[high] >= arr[high - 1])
+      high--;
 
-        }else {
-        curr ++;
-        }
-        }
- }
+    // find the maximum and minimum of the subarray
+    int subarrayMax = Integer.MIN_VALUE, subarrayMin = Integer.MAX_VALUE;
+    for (int k = low; k <= high; k++) {
+      subarrayMax = Math.max(subarrayMax, arr[k]);
+      subarrayMin = Math.min(subarrayMin, arr[k]);
+    }
+
+    // extend the subarray to include any number which is bigger than the minimum of the subarray 
+    while (low > 0 && arr[low - 1] > subarrayMin)
+      low--;
+    // extend the subarray to include any number which is smaller than the maximum of the subarray
+    while (high < arr.length - 1 && arr[high + 1] < subarrayMax)
+      high++;
+
+    return high - low + 1;
+  }
 ```
 ---
 
----
-### Rearrange Sorted Array in Max/Min Form
-#### TC:  , MC:
-- Keep switching between large and small pointer for every iteration
-- [Back to Top](#Table-of-contents)
-```java
-public static void maxMin(int[] arr) {
-    //Create a result array to hold re-arranged version of given arr
-    int[] result = new int[arr.length];
-    int pointerSmall = 0;     //PointerSmall => Start of arr
-    int pointerLarge = arr.length - 1;   //PointerLarge => End of arr
-
-    //Flag which will help in switching between two pointers
-    boolean switchPointer = true;
-
-    for (int i = 0; i < arr.length; i++) {
-      if (switchPointer)
-        result[i] = arr[pointerLarge--]; // copy large values
-      else 
-        result[i] = arr[pointerSmall++]; // copy small values
-      switchPointer = !switchPointer;   // switching between samll and large
-    } 
-
-```
----
-
----
-
-## Two OR Three numbers SUM
----
-### Pair with Target Sum
+## TP-Triplet SUM
+### Pair Target Sum
 #### TC:O(N)  , MC:O(1)
 - Sort the array, Two pointers at start and end; 
 - [Back to Top](#Table-of-contents)
@@ -722,7 +698,7 @@ public static int[] search(int[] arr, int targetSum) {
 ---
 
 ---
-### Triplet Sum to Zero
+### Triplet Sum Zero
 #### TC: O(N^2)  , MC: O(N)
 - Sort the Array, Iterate from Start using Index
 - TargetSum: - arr[Index], Left = Index
@@ -849,49 +825,71 @@ public static List<List<Integer>> searchQuadruplets(int[] arr, int target) {
 ---
 
 ---
-### Minimum Window that should be Sorted 
-#### TC: O(N)  , MC: O(1)
-- Scan from Left and Right and find pointer that are out of order.
-- Find the Min and Max value in that Range
-- Include the numbers that are greater than MIN and smaller than MAX
+
+## TP-Rearrange Array
+### Dutch Flag
+#### TC: O(N) , MC: O(1)
+- Take two pointers Low and High, iterate array with index i
+- If arr[i] == 0, swap i with Low, I ++ and Low ++
+- If arr[i] == 1,  I ++
+- If arr[i] == 2, swap i with High, I ++ and High ++
 - [Back to Top](#Table-of-contents)
 ```java
-public static int sort(int[] arr) {
-    int low = 0, high = arr.length - 1;
-    // find the first number out of sorting order from the beginning
-    while (low < arr.length - 1 && arr[low] <= arr[low + 1])
-      low++;
+public void sortColors(int[] nums) {
 
-    if (low == arr.length - 1) // if the array is sorted
-      return 0;
+    // Set the boundries for the 0 and the 2, and start iterating from 0 
+        int nextZeroIndex = 0 , nextTwoIndex = nums.length -1;
+        int curr = 0;
 
-    // find the first number out of sorting order from the end
-    while (high > 0 && arr[high] >= arr[high - 1])
-      high--;
+        int temp = 0;
+    // Boundry condition     
+        while(curr <= nextTwoIndex){
+    
+    // If ==0 then swap increment both Indices        
+        if (nums[curr] == 0){
+        temp = nums[nextZeroIndex];
+        nums[nextZeroIndex ++] = nums[curr];
+        nums[curr++] = temp;
+        
+    // If ==2 decrement only the right Indices
+        }else if (nums[curr] == 2){
+        temp = nums[nextTwoIndex];
+        nums[nextTwoIndex --] = nums[curr];
+        nums[curr] = temp;
 
-    // find the maximum and minimum of the subarray
-    int subarrayMax = Integer.MIN_VALUE, subarrayMin = Integer.MAX_VALUE;
-    for (int k = low; k <= high; k++) {
-      subarrayMax = Math.max(subarrayMax, arr[k]);
-      subarrayMin = Math.min(subarrayMin, arr[k]);
-    }
-
-    // extend the subarray to include any number which is bigger than the minimum of the subarray 
-    while (low > 0 && arr[low - 1] > subarrayMin)
-      low--;
-    // extend the subarray to include any number which is smaller than the maximum of the subarray
-    while (high < arr.length - 1 && arr[high + 1] < subarrayMax)
-      high++;
-
-    return high - low + 1;
-  }
+        }else {
+        curr ++;
+        }
+        }
+ }
 ```
 ---
 
-## Remove from Array
-- Two pointer, nextNegativeNumber = 0 ; scanner will run from 0 to N-1
-- Remove Duplicates, WhiteSpaces, etc
-- End the string wit '\0'
+---
+### Array in Max/Min Form
+#### TC:  , MC:
+- Keep switching between large and small pointer for every iteration
+- [Back to Top](#Table-of-contents)
+```java
+public static void maxMin(int[] arr) {
+    //Create a result array to hold re-arranged version of given arr
+    int[] result = new int[arr.length];
+    int pointerSmall = 0;     //PointerSmall => Start of arr
+    int pointerLarge = arr.length - 1;   //PointerLarge => End of arr
+
+    //Flag which will help in switching between two pointers
+    boolean switchPointer = true;
+
+    for (int i = 0; i < arr.length; i++) {
+      if (switchPointer)
+        result[i] = arr[pointerLarge--]; // copy large values
+      else 
+        result[i] = arr[pointerSmall++]; // copy small values
+      switchPointer = !switchPointer;   // switching between samll and large
+    } 
+
+```
+---
 
 ---
 ### Move All Zeros to the Beginning of the Array
@@ -932,27 +930,7 @@ static void moveZerosToLeft(int[] nums) {
 ---
 
 --- 
-### Remove Duplicates
-#### TC: O(NLogN)  , MC: O(1)
-- Sort the Array, compute adjacent elements, update the nextNonDuplicateIndex
-- [Back to Top](#Table-of-contents)
-```java
-public static int remove(int[] arr) {
-    Arrays.sort(arr);
-    int nextNonDuplicate = 1; // index of the next non-duplicate element
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[nextNonDuplicate - 1] != arr[i]) {
-        arr[nextNonDuplicate] = arr[i];
-        nextNonDuplicate++;
-      }
-    }
-
-    return nextNonDuplicate;
-  }
-```
----
----
-### Re-arrange Positive & Negative Values
+### Rearrange Positive & Negative Values
 #### TC:  , MC:
 - Some comment
 - [Back to Top](#Table-of-contents)
@@ -978,10 +956,9 @@ public static void reArrange(int[] arr)
 
 ---
 
+
 ## Nth Smallest OR Largest
----
----
-### Find Second Maximum Value in an Array
+### Find Second Max
 #### TC: O(N) , MC: O(1)
 - min = Integer.min(a[0], a[1]) and max = Integer.max(a[0], a[1])
 - [Back to Top](#Table-of-contents)
@@ -1006,7 +983,7 @@ public static int findSecondMaximum(int[] arr) {
 ---
 
 ---
-### Kth Largest Element in an Array
+### Kth Largest Element
 #### TC: O(Nlogk) , MC: O(K)
 - PriorityQueue<E> pq = new PriorityQueue(int initialCapacity, Comparator<E> comparator);
 - [Back to Top](#Table-of-contents)
@@ -1031,10 +1008,8 @@ public int findKthLargest(int[] nums, int k) {
 ```
 ---
 
-
-
 ## Kadanes Algorithm
-### Best Time to Buy and Sell Stock
+### Buy and Sell Stock
 #### TC: O(N)  , MC: O(1)
 - Find the Global Minima , use that to compute MaxProfit.  
 - [Back to Top](#Table-of-contents)
@@ -1058,7 +1033,7 @@ public int maxProfit(int[] prices) {
 
 ```
 ---
-### Maximum Subarray Kadane
+### Maximum Sum Subarray
 #### TC: O(N) , MC: O(1)
 - Maintain GlobalMaxSum and LocalRunningSum
 - LocalRunningSum = max(LocalRunningSum + a[i], a[i])
@@ -1084,9 +1059,9 @@ public int maxSubArray(int[] nums) {
 ---
 
 ---
+
 ## Left Scan Right Scan
----
-### Array of Products of All Elements Except Itself
+### Products of All Elements Except Itself
 #### TC: O(N) , MC: O(1)
 - Some comment
 - [Back to Top](#Table-of-contents)
@@ -1124,7 +1099,7 @@ public static int[] findProduct(int arr[])
 
 ## Two Arrays
 ---
-### Find the Smallest Common Number in Sorted Arrays 
+### Smallest Common Number Sorted Array
 #### TC:  , MC:
 - If Arrays are not Sorted Sort them 
 - [Back to Top](#Table-of-contents)
@@ -1162,7 +1137,7 @@ static Integer findLeastCommonNumber(int[] arr1, int[] arr2, int[] arr3) {
 
 ## Merging Intervals
 ---
-### Merge an Array With Overlapping Intervals
+### Merge Array Overlapping Intervals
 #### TC:  , MC:
 - Hint: Sort the intervals and Initialize the interval with first entry.
 - Compare a[i-1].end with a[i] start
@@ -1302,7 +1277,7 @@ class MinimumMeetingRooms {
 
 ## Permutations
 ---
-### Generate all the possible permutations
+### Possible permutations
 #### TC: O(N∗N!), MC: O(N∗N!)
 - Some comment
 - [Back to Top](#Table-of-contents)
@@ -1345,8 +1320,10 @@ public class Solution {
 
 
 ---
+
+
 ## Matrix
-### Rotting_Oranges
+### Rotting Oranges
 #### TC:  , MC:
 - BFS Search
 - [Back to Top](#Table-of-contents)
