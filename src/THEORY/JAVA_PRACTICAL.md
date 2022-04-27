@@ -6,7 +6,7 @@
   Topics
   | Links         | Link          | Links | Links | Links | Links |
   | ------------- |:-------------:| -----:| -----:| -----:| -----:|
-  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | [SQL Optimization](https://www.mantralabsglobal.com/blog/sql-query-optimization-tips/) | [Teradata utils](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/August-2020/Introduction-to-Teradata-PT/High-Level-Description/Teradata-PT-and-the-Teradata-Utilities)|  
+  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | | |  
   
 * Exceptions in JAVA 
   | Links         | Link          | Links |
@@ -32,7 +32,7 @@
 * JDBC
   | Links         | Link          | Links |
   | ------------- |:-------------:| -----:|
-  | [JDBC](https://github.com/RameshMF/JDBC-Tutorial) | are neat      |    $1 |
+  | [JDBC](https://github.com/RameshMF/JDBC-Tutorial) |  [SQL Optimization](https://www.mantralabsglobal.com/blog/sql-query-optimization-tips/)      |    [Teradata utils](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/August-2020/Introduction-to-Teradata-PT/High-Level-Description/Teradata-PT-and-the-Teradata-Utilities) |
   | [Transactions](https://www.javaguides.net/2018/10/jdbc-transactions-with-example.html) | [SQL Exceptions](https://www.javaguides.net/2018/10/jdbc-handling-sqlexceptions.html)      |    $1 |
 
 <!--te-->
