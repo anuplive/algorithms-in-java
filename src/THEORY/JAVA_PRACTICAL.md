@@ -4,9 +4,9 @@
 <!--ts-->
 * System Design
   Topics
-  | Links         | Link          | Links | Links |
-  | ------------- |:-------------:| -----:| -----:|
-  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | 
+  | Links         | Link          | Links | Links | Links | Links |
+  | ------------- |:-------------:| -----:| -----:| -----:| -----:|
+  | [Design Patterns](https://github.com/anuplive/algorithms-in-java/blob/master/src/README/Design.md) | [REST](https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch)    | [JMS](https://www.softwaretestinghelp.com/jms-interview-questions/)   | [Kerberos](https://phoenixnap.com/blog/kerberos-authentication) | [SQL Optimization](https://www.mantralabsglobal.com/blog/sql-query-optimization-tips/) | [Teradata utils](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/August-2020/Introduction-to-Teradata-PT/High-Level-Description/Teradata-PT-and-the-Teradata-Utilities)|  
   
 * Exceptions in JAVA 
   | Links         | Link          | Links |
