@@ -14,7 +14,7 @@
 | [TP-Rearrange Array](#Rearrange-Array)              | [Dutch Flag](#Dutch-Flag)                                                                                                          | [Array in Max/Min Form](#Array-in-Max/Min-Form)                                                                                                                  | [Rearrange Positive & Negative Values](#Rearrange-Positive-&-Negative-Values)                                                                                         |                                                                             |                                                                 |   |
 | [Nth Smallest OR Largest](#Nth-Smallest-OR-Largest) | [Find Second Max](#Find-Second-Max)                                                                                                | [Kth Largest Element](#Kth-Largest-Element)                                                                                                                      |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Kadanes Algorithm](#Kadanes-Algorithm)             | [Buy and Sell Stock](#Buy-and-Sell-Stock)                                                                                          | [Maximum Sum Subarray](#Maximum-Sum-Subarray)                                                                                                                    |                                                                                                                                                                       |                                                                             |                                                                 |   |
-| [Left Scan Right Scan](#Left-Scan-Right-Scan)       | [Products of All Elements Except Itself](#Products-of-All-Elements-Except-Itself)                                                  |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
+| [Left Scan Right Scan](#Left-Scan-Right-Scan)       | [Products of All Elements Except Itself](#Products-of-All-Elements-Except-Itself)                                                  | [Container Water](#Container-Water)                                                                                                                                                                 |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Two Arrays](#Two-Arrays)                           | [Smallest Common Number Sorted Array](#Smallest-Common-Number-Sorted-Array)                                                        |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Merging Intervals](#Merging-Intervals)             | [Merge Array Overlapping Intervals](#Merge-Array-Overlapping-Intervals)                                                            | [Conflicting Appointments](#Conflicting-Appointments)                                                                                                            | [Minimum Meeting Rooms](#Minimum-Meeting-Rooms)                                                                                                                       | [Minimum Platfroms Train Station](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)                                                                            |                                                                 |   |
 | [Permutations](#Permutations)                       | [Possible permutations](#Possible-permutations)                                                                                    |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
@@ -1096,6 +1096,42 @@ public static int[] findProduct(int arr[])
 
 ```
 ---
+### Container Water
+#### TC: O(N) , MC: O(1)
+- [LeetCode](https://leetcode.com/problems/container-with-most-water/discuss/1934424/Java-3ms-Two-Pointers-Explanation-O(N))
+- [Back to Top](#Table-of-contents)
+```java
+class Solution {
+  public int maxArea(int[] height) {
+    int leftPtr = 0;
+    int rightPtr = height.length - 1;
+
+    int maxArea = 0;
+
+    while(leftPtr < rightPtr) {
+      int leftHeight = height[leftPtr];
+      int rightHeight = height[rightPtr];
+
+      int minHeight = Math.min(leftHeight, rightHeight);
+      int width = rightPtr - leftPtr;
+
+      int currentArea = minHeight * width;
+
+      maxArea = Math.max(maxArea, currentArea);
+
+      if(leftHeight > rightHeight) rightPtr--;
+      else if(leftHeight < rightHeight) leftPtr++;
+      else {
+        rightPtr--;
+        leftPtr++;
+      }
+
+    }
+
+    return maxArea;
+  }
+}
+```
 
 ## Two Arrays
 ---
