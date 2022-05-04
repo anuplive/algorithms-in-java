@@ -24,9 +24,10 @@
   | Number of Factors (1, 3, 4)  |[GRK-14](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/NE52PnMY376)   | TDM  |
   | Minimum Number of Jumps | [GRk-15](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/7nAKN0Qz67r)  | TDM  |
   |CAN JUMP ? |[Leetcode](https://leetcode.com/problems/jump-game/discuss/1729319/JAVA-Easy-and-clean-code-with-comments-or-100.00-faster)| Simple Approach | 
-* | Minimum Jumps with Fee  | [GRK-16](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/7nDNy6JDP1G)  | TDM  |
+  | Minimum Jumps with Fee  | [GRK-16](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/7nDNy6JDP1G)  | TDM  |
   | House Theif | [GRK-17](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2EOxJ0Nkp3#Top-down-Dynamic-Programming-with-Memoization)  | TDM  |
-  | Palindromic SubSequence |   |   |
+  |[Unique Paths](https://leetcode.com/problems/unique-paths/discuss/1985500/Java-Solution-using-DP-oror-2-Approach) | [Minimum Cost HomeComing](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/discuss/1598879/Java-or-Simple-Straight-Solution-or-O(1)-Space) | []() |
+* | Palindromic SubSequence |   |   |
   | [Longest Palindromic Subsequence](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/RMk1D1DY1PL) | [Longest Palindromic Substring](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2yRjwxBY7A)  | [Count of Palindromic Substrings](https://www.educative.io/module/lesson/data-structures-in-java/B14okNLQZPY)  | []() | | |
   | Longest Palindromic Substring  |   |   |
   |  |   |   |
