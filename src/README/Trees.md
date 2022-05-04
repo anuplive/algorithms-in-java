@@ -28,8 +28,7 @@
   | Distribute Coins in Binary Tree   | [Solution -1](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/1400248/Java-oror-Easy-Approach-with-Explanation-oror-Postorder-oror-DFS)      |[Solution -2](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/938244/simple-java-solution)     |
   | Good Nodes in a B-tree   | [Solution-1](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1707670/Simple-intuitive-approach-oror-JAVA-oror-Easy-to-understand)      |[Solution-2 ](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1908852/Java-oror-Easy-oror-Recursion)     |
 
-
-<!--te-->
+<!--te--> 
 
 ---
 ### Binary_Tree_Implementation
