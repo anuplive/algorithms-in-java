@@ -15,6 +15,7 @@
   | Post-Order Traversal | [Recursive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1883195/Java-Solutions-Iterative-and-Recursive-or-Intuition-and-Explanation)      |[Iterative](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1963914/Java-with-One-Stack)     |
   | BFS Traversal | [Recursive](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/1392186/Simple-and-Easy-Java-solution-(recursion-100))      |[Iterative](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/1950972/Java-1ms-BFS-Queue-Explanation-Simple-O(N))     |
   | Level Order Traversal |[Iterative](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/2007955/Java-oror-Easy-Understanding-oror-Queue) |
+  |Invert a BTree| [Recursive](https://leetcode.com/problems/invert-binary-tree/discuss/2006084/Easy-Java-Implemenatation) |
   | Height of BTree  | [Recursive](https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/1956452/Easy-java-solution-recursion)      |
   | Max Path Sum |[Recursive](https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/2008104/Java-oror-Easy-to-Understand-oror-O(n)) |
   | Width of BTree | [Queue](https://leetcode.com/problems/maximum-width-of-binary-tree/discuss/1858483/Very-Basic-Approach-Java-O(N)-Iterative-Sol) |
