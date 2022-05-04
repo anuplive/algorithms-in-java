@@ -16,7 +16,7 @@
 | [Kadanes Algorithm](#Kadanes-Algorithm)             | [Buy and Sell Stock](#Buy-and-Sell-Stock)                                                                                          | [Maximum Sum Subarray](#Maximum-Sum-Subarray)                                                                                                                    |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Left Scan Right Scan](#Left-Scan-Right-Scan)       | [Products of All Elements Except Itself](#Products-of-All-Elements-Except-Itself)                                                  | [Container Water](#Container-Water)                                                                                                                                                                 |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Two Arrays](#Two-Arrays)                           | [Smallest Common Number Sorted Array](#Smallest-Common-Number-Sorted-Array)                                                        |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
-| [Merging Intervals](#Merging-Intervals)             | [Merge Array Overlapping Intervals](#Merge-Array-Overlapping-Intervals)                                                            | [Conflicting Appointments](#Conflicting-Appointments)                                                                                                            | [Minimum Meeting Rooms](#Minimum-Meeting-Rooms)                                                                                                                       | [Minimum Platfroms Train Station](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)                                                                            |                                                                 |   |
+| [Merging Intervals](#Merging-Intervals)             | [Merge Array Overlapping Intervals](#Merge-Array-Overlapping-Intervals)                                                            | [Conflicting Appointments](#Conflicting-Appointments)                                                                                                            | [Minimum Meeting Rooms](#Minimum-Meeting-Rooms)                                                                                                                       | [Minimum Platfroms Train Station](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)                                                                            | [Merging Intervals Basic](https://leetcode.com/problems/merge-intervals/discuss/2006038/Java-or-With-comments-or-Easy-to-Understand)    | [Inserting Intervals](https://leetcode.com/problems/insert-interval/discuss/1979787/Java-Solution)  |
 | [Permutations](#Permutations)                       | [Possible permutations](#Possible-permutations)                                                                                    |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Matrix](#Matrix)                                   | [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)                  | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution)                                                 | [Winner of Tic Tac Toe](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.) |  [Rotate Image](https://leetcode.com/problems/rotate-image/discuss/2003278/0ms-100.00-faster)     |                                                                 |   |
 | Matrix-DFS                                          | [Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)                             | [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))                                               |                                                                                                                                                                       |                                                                             |                                                                 |   |
@@ -1208,6 +1208,43 @@ static Integer findLeastCommonNumber(int[] arr1, int[] arr2, int[] arr3) {
 
 ## Merging Intervals
 ---
+### Merging Intervals Basic
+#### TC:  , MC:
+- Hint: Sort the intervals and Initialize the interval with first entry.
+- Compare a[i-1].end with a[i] start
+- [Back to Top](#Table-of-contents)
+```java
+class Solution {
+  public int[][] merge(int[][] intervals) {
+    // Sort the array
+    Arrays.sort(intervals,(arr1,arr2)->arr1[0]-arr2[0]);
+    // New Array for the result
+    ArrayList<int[]> list=new ArrayList<>();
+    // Iterate through the array
+    for(int[] interval:intervals){
+      if(list.size()==0){
+        list.add(interval);
+      }
+      else{
+        int[] prev_interval=list.get(list.size()-1);
+        // Condition for the overlap
+        if(prev_interval[1]>=interval[0]){
+
+          prev_interval[1]=Math.max(prev_interval[1],interval[1]);
+          list.set(list.size()-1, prev_interval);
+
+        }
+        else
+          list.add(interval);
+      }
+    }
+   // convert the array to list
+    return list.toArray(new int[list.size()][]);
+  }
+}
+```
+---
+
 ### Merge Array Overlapping Intervals
 #### TC:  , MC:
 - Hint: Sort the intervals and Initialize the interval with first entry.
