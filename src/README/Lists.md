@@ -5,7 +5,7 @@
 | Name           |                                           |                                           |   |   |   |
 |----------------|-------------------------------------------|-------------------------------------------|---|---|---|
 | Implementation | [Doubly Linked List](#Doubly-Linked-List) | [Singly Linked List](#Singly-Linked-List) |   |   |   |
-|                |                                           |                                           |   |   |   |
+| Remove Nodes   | [Remove Nth Node](https://leetcode.com/problems/remove-nth-node-from-end-of-list/discuss/1988826/Simple-Java-solutionor-Two-pointer-approach)  |                                           |   |   |   |
 <!--te-->
 
 ### Doubly Linked List

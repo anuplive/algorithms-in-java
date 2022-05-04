@@ -18,7 +18,7 @@
 | [Two Arrays](#Two-Arrays)                           | [Smallest Common Number Sorted Array](#Smallest-Common-Number-Sorted-Array)                                                        |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | [Merging Intervals](#Merging-Intervals)             | [Merge Array Overlapping Intervals](#Merge-Array-Overlapping-Intervals)                                                            | [Conflicting Appointments](#Conflicting-Appointments)                                                                                                            | [Minimum Meeting Rooms](#Minimum-Meeting-Rooms)                                                                                                                       | [Minimum Platfroms Train Station](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)                                                                            |                                                                 |   |
 | [Permutations](#Permutations)                       | [Possible permutations](#Possible-permutations)                                                                                    |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
-| [Matrix](#Matrix)                                   | [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)                  | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution)                                                 | [Winner of Tic Tac Toe](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.) |                                                                             |                                                                 |   |
+| [Matrix](#Matrix)                                   | [Spiral Traversal](https://leetcode.com/problems/spiral-matrix/discuss/1973026/Easy-understandable-Java-Solution)                  | [TIC-TAC-TOE](https://leetcode.com/problems/design-tic-tac-toe/discuss/1720452/Easy-Understanding-Java-Solution)                                                 | [Winner of Tic Tac Toe](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/discuss/1690470/Java%3A-Easy-to-understand-Beats-100-with-detailed-comments.) |  [Rotate Image](https://leetcode.com/problems/rotate-image/discuss/2003278/0ms-100.00-faster)     |                                                                 |   |
 | Matrix-DFS                                          | [Search Cross Word](https://leetcode.com/problems/word-search/discuss/1897337/Java-or-Simple-Approach)                             | [Count Islands](https://leetcode.com/problems/number-of-islands/discuss/1954752/Java-3ms-DFS-Explanation-O(M-*-N))                                               |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | Matrix-DP                                           | [Maximal Square in Matrix](https://leetcode.com/problems/maximal-square/discuss/1726028/brute-force-and-dp-solution-with-comments) |                                                                                                                                                                  |                                                                                                                                                                       |                                                                             |                                                                 |   |
 | Matrix BFS                                          | [Rotting Oranges](#Rotting-Oranges)                                                                                                | [Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76934/10ms-BFS-Java-solution-with-explanation) |                                                                                                                                                                       |                                                                             |                                                                 |   |
@@ -677,7 +677,7 @@ public static int sort(int[] arr) {
 ## TP-Triplet SUM
 ### Pair Target Sum
 #### TC:O(N)  , MC:O(1)
-- Sort the array, Two pointers at start and end; 
+- Array alrdeay sorted , Two pointers at start and end; 
 - [Back to Top](#Table-of-contents)
 ```java
 public static int[] search(int[] arr, int targetSum) {
@@ -696,13 +696,48 @@ public static int[] search(int[] arr, int targetSum) {
   }
 ```
 ---
+#### TC:O(N)  , MC:O(1)
+- Unsorted Array , Two pointers at start and end;
+- [Back to Top](#Table-of-contents)
+```java
+class Solution {
+
+  public int[] twoSum(int[] nums, int target) {
+
+    Map<Integer,Integer> hashMap = new HashMap<>();
+    int[] ans = new int[2];
+    int len = nums.length;
+
+    //create a hashMap from the nums array
+    //iterate over nums array to find the remaining part sum in the hashMap
+    for(int i = 0; i < len; i++) {
+      int partSum = target - nums[i];
+      if(!hashMap.containsKey(partSum))
+        hashMap.put(nums[i], i);
+      else {
+        int index = hashMap.get(partSum);
+        if(i != index) {
+          ans[0] = i;
+          ans[1] = index;
+          break;
+        }
+      }
+    }
+    return ans;
+  }
+}
+```
+---
+
 
 ---
+
 ### Triplet Sum Zero
 #### TC: O(N^2)  , MC: O(N)
 - Sort the Array, Iterate from Start using Index
 - TargetSum: - arr[Index], Left = Index
-- Find the TargetSum in the left of Index using Two Sum Problem  
+- Find the TargetSum in the left of Index using Two Sum Problem 
+- [Grocking](https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r)
 - [Back to Top](#Table-of-contents)
 ```java
 public static List<List<Integer>> searchTriplets(int[] arr) {

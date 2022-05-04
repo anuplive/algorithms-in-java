@@ -1,8 +1,8 @@
 <!--ts-->
 * Other
-  | LeetCode-100         | Microsoft-100          | Run Time Complexity  |Run Time Complexity 2  |
-  | ------------- |:-------------:| -----:| -----:|
-  | [LC-100](https://leetcode.com/problem-list/top-100-liked-questions/) | [MS-100](https://leetcode.com/problem-list/top-microsoft-questions/)      |    [Cheat](https://www.bigocheatsheet.com/)  | [Cheat - 2](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/) |
+  | LeetCode-100         | Microsoft-100          | Blind Curated |Run Time Complexity  |Run Time Complexity 2  |
+  | ------------- |:-------------:| -----:| -----:| -----:|
+  | [LC-100](https://leetcode.com/problem-list/top-100-liked-questions/) | [MS-100](https://leetcode.com/problem-list/top-microsoft-questions/)      | [Blind Curated](https://leetcode.com/list/xoqag3yj/) |   [Cheat](https://www.bigocheatsheet.com/)  | [Cheat - 2](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/) |
 ---
 
 * DataStructures
