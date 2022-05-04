@@ -27,7 +27,7 @@
   | Minimum Jumps with Fee  | [GRK-16](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/7nDNy6JDP1G)  | TDM  |
   | House Theif | [GRK-17](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2EOxJ0Nkp3#Top-down-Dynamic-Programming-with-Memoization)  | TDM  |
   |[Unique Paths](https://leetcode.com/problems/unique-paths/discuss/1985500/Java-Solution-using-DP-oror-2-Approach) | [Minimum Cost HomeComing](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/discuss/1598879/Java-or-Simple-Straight-Solution-or-O(1)-Space) | []() |
-* | Palindromic SubSequence |   |   |
+  | Palindromic SubSequence |   |   |
   | [Longest Palindromic Subsequence](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/RMk1D1DY1PL) | [Longest Palindromic Substring](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2yRjwxBY7A)  | [Count of Palindromic Substrings](https://www.educative.io/module/lesson/data-structures-in-java/B14okNLQZPY)  | []() | | |
   | Longest Palindromic Substring  |   |   |
   |  |   |   |
