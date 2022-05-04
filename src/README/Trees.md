@@ -14,6 +14,7 @@
   | Pre-Order Traversal | [Recursive](https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/1888434/Recursive-%2B-Iterative-solutions-JAVA)      |[Iterative](https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/1888434/Recursive-%2B-Iterative-solutions-JAVA)     |
   | Post-Order Traversal | [Recursive](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1883195/Java-Solutions-Iterative-and-Recursive-or-Intuition-and-Explanation)      |[Iterative](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/1963914/Java-with-One-Stack)     |
   | BFS Traversal | [Recursive](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/1392186/Simple-and-Easy-Java-solution-(recursion-100))      |[Iterative](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/1950972/Java-1ms-BFS-Queue-Explanation-Simple-O(N))     |
+  | Level Order Traversal |[Iterative](https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/2007955/Java-oror-Easy-Understanding-oror-Queue) |
   | Height of BTree  | [Recursive](https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/1956452/Easy-java-solution-recursion)      |
   | Width of BTree | [Queue](https://leetcode.com/problems/maximum-width-of-binary-tree/discuss/1858483/Very-Basic-Approach-Java-O(N)-Iterative-Sol) |
   | Find Successor   | [Solution](https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/)           |
@@ -21,7 +22,8 @@
   | Print Tree Perimeter   | [Solution](https://leetcode.com/problems/boundary-of-binary-tree/discuss/1964248/Java-easy-to-understand-solution)      |[Iterative]()     |
   | Connect Same Level Nodes   | [Solution](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/1940128/Easy-to-Understand-(1ms)-solution-for-beginners)     |
   | Serialize-Deserialize Tree    | [Recursive](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/1945181/Easy-to-Understand-or-Java)      
-  |Validate a Binary Tree | [Recursive](https://leetcode.com/problems/validate-binary-search-tree/discuss/1721938/Java-Explanatory-Solution) |
+  | Populate a Tree InOrder/PreOreder| [Recursive](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/787534/EASY-JAVA-solution-Explained-with-comments) |
+  | Validate a Binary Tree | [Recursive](https://leetcode.com/problems/validate-binary-search-tree/discuss/1721938/Java-Explanatory-Solution) |
   |Same Tree |[Recursive](https://leetcode.com/problems/same-tree/discuss/1968750/Small-JAVA-easy-solution-using-recursion) |
   | Distribute Coins in Binary Tree   | [Solution -1](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/1400248/Java-oror-Easy-Approach-with-Explanation-oror-Postorder-oror-DFS)      |[Solution -2](https://leetcode.com/problems/distribute-coins-in-binary-tree/discuss/938244/simple-java-solution)     |
   | Good Nodes in a B-tree   | [Solution-1](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1707670/Simple-intuitive-approach-oror-JAVA-oror-Easy-to-understand)      |[Solution-2 ](https://leetcode.com/problems/count-good-nodes-in-binary-tree/discuss/1908852/Java-oror-Easy-oror-Recursion)     |
