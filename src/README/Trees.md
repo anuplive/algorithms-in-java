@@ -21,6 +21,7 @@
   | Width of BTree | [Queue](https://leetcode.com/problems/maximum-width-of-binary-tree/discuss/1858483/Very-Basic-Approach-Java-O(N)-Iterative-Sol) |
   | Find Successor   | [Solution](https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/)           |
   | Find Predecessor   | [Solution](https://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/?ref=lbp)     |
+  |Lowest Common Ancestor| [Solution](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/1156398/Java-or-easy-solution(recursive-iterative)-or-0ms(iterative)or-100faster-(Iterative)) |
   | Print Tree Perimeter   | [Solution](https://leetcode.com/problems/boundary-of-binary-tree/discuss/1964248/Java-easy-to-understand-solution)      |[Iterative]()     |
   | Connect Same Level Nodes   | [Solution](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/1940128/Easy-to-Understand-(1ms)-solution-for-beginners)     |
   | Serialize-Deserialize Tree    | [Recursive](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/1945181/Easy-to-Understand-or-Java)      
