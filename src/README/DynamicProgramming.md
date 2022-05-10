@@ -10,8 +10,8 @@
   | Subset Target Sum |[GRK-3](https://www.educative.io/module/lesson/dynamic-programming-patterns/N7O9KVPW8Bp)   | TDM-SS  |
   | Minimum Subset Sum Difference | [GRK-4](https://www.educative.io/module/lesson/dynamic-programming-patterns/N7RypYBK4y6)  | TDM  |
   | Count of SubSet Sum | [GRK-5](https://www.educative.io/module/lesson/dynamic-programming-patterns/JY88GypAPDD)  | TDM |
-  | [Combination Sum](https://leetcode.com/problems/combination-sum/discuss/1986745/Java-Explained-Easy-Understanding) |
-* | Target Sum + or - | [GRK-6](https://www.educative.io/module/lesson/dynamic-programming-patterns/q2jk1wP9yNG)  | TDM-SS |
+  | [Combination Sum](https://leetcode.com/problems/combination-sum/discuss/1986745/Java-Explained-Easy-Understanding) |   |   |
+  | Target Sum + or - | [GRK-6](https://www.educative.io/module/lesson/dynamic-programming-patterns/q2jk1wP9yNG)  | TDM-SS |
   | Unbounded Knapsack |   |   |
   | Unbounded Knapsack  | [GRK-7](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/qV6RXWME4D3)  | TDM  |
   | Rod Cutting | [GRK-8](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/RM5E56PGnVY)  | TDM-SS  |
